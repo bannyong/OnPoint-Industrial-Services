@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OnPoint × Informatica MDM</title>
+<style>
+:root{
+  --or:#FF6D00;--or2:#FF9240;--orbg:#FFF4EB;
+  --nv:#1A1A2E;--nv2:#252545;
+  --gy:#64748B;--gyl:#94A3B8;--bd:#E2E8F0;
+  --wh:#fff;--of:#F8FAFC;
+  --gn:#059669;--gnbg:#ECFDF5;--gnb:#A7F3D0;
+  --bl:#2563EB;--blbg:#EFF6FF;--blb:#BFDBFE;
+  --rd:#DC2626;--rdbg:#FEF2F2;--rdb:#FECACA;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(--nv);font-size:18px;}
+
+/* NAV DOTS */
+.nav{position:fixed;right:32px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:300;}
+.nav a{width:11px;height:11px;border-radius:50%;background:rgba(150,150,180,.35);display:block;transition:.25s;text-decoration:none;}
+.nav a.active,.nav a:hover{background:var(--or);transform:scale(1.35);}
+
+/* SLIDE BASE — each fills the viewport */
+.slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:64px 120px;}
+
+/* ── SLIDE 1: TITLE ── */
+#s1{background:linear-gradient(140deg,var(--nv) 0%,#0D0D20 55%,#1B0F38 100%);position:relative;overflow:hidden;}
+#s1::before{content:'';position:absolute;right:-100px;top:-100px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,109,0,.18) 0%,transparent 68%);pointer-events:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,109,0,.14);border:1px solid rgba(255,109,0,.32);border-radius:99px;padding:8px 22px;font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--or2);margin-bottom:32px;position:relative;}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--or);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
+#s1 h1{font-size:clamp(42px,4.5vw,76px);font-weight:900;color:#fff;line-height:1.06;max-width:860px;position:relative;}
+#s1 h1 em{font-style:normal;color:var(--or);}
+#s1 .sub{font-size:20px;color:rgba(255,255,255,.44);margin-top:20px;max-width:580px;line-height:1.65;position:relative;}
+.stats{display:flex;border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden;margin-top:56px;width:fit-content;position:relative;}
+.stat{padding:24px 48px;display:flex;flex-direction:column;gap:6px;border-right:1px solid rgba(255,255,255,.1);}
+.stat:last-child{border-right:none;}
+.stat .v{font-size:40px;font-weight:900;color:var(--or);line-height:1;}
+.stat .l{font-size:12px;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.08em;}
+
+/* ── SLIDE 2: LANDSCAPE ── */
+#s2{background:var(--wh);}
+.stag{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--gyl);margin-bottom:12px;}
+.sh{font-size:clamp(28px,3.2vw,48px);font-weight:800;color:var(--nv);line-height:1.15;margin-bottom:44px;}
+.landscape{display:flex;align-items:center;gap:0;}
+.sys-col{display:flex;flex-direction:column;gap:10px;}
+.sbox{border-radius:12px;padding:14px 22px;font-size:14px;font-weight:600;text-align:center;border:2px solid transparent;min-width:170px;}
+.sbox.silo{background:var(--rdbg);border-color:var(--rdb);color:var(--rd);}
+.sbox.sf{background:var(--blbg);border-color:var(--blb);color:var(--bl);padding:22px 28px;font-size:16px;min-width:190px;}
+.arr-col{display:flex;flex-direction:column;gap:10px;padding:0 16px;align-items:center;justify-content:center;}
+.arr-bad{color:#FCA5A5;font-size:20px;font-weight:900;line-height:1;}
+.pain-col{display:flex;flex-direction:column;gap:10px;padding-left:24px;}
+.pc{background:var(--rdbg);border:1.5px solid var(--rdb);border-radius:14px;padding:16px 20px;}
+.pc-t{font-size:15px;font-weight:700;color:var(--rd);}
+.pc-d{font-size:13px;color:#7F1D1D;margin-top:4px;line-height:1.45;}
+.gap-pill{background:#FEF9C3;border:1px solid #FDE68A;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:#92400E;margin-top:8px;align-self:flex-start;}
+.mid-arrow{font-size:32px;color:#FCA5A5;padding:0 12px;}
+
+/* ── SLIDE 3: CHALLENGES ── */
+#s3{background:var(--of);}
+.tabs{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
+.tb{padding:11px 26px;border-radius:99px;border:2px solid var(--bd);background:var(--wh);font-size:15px;font-weight:600;color:var(--gy);cursor:pointer;transition:.2s;}
+.tb.active,.tb:hover{background:var(--or);border-color:var(--or);color:var(--wh);}
+.panel{display:none;animation:fadeUp .3s ease;}
+.panel.active{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.wf{background:var(--wh);border-radius:18px;padding:28px 32px;border:2px solid var(--bd);}
+.wf.fu{border-color:var(--gn);background:var(--gnbg);}
+.wfl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;}
+.wf .wfl{color:var(--rd);}.wf.fu .wfl{color:var(--gn);}
+.steps{display:flex;flex-direction:column;}
+.st{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--bd);}
+.st:last-child{border-bottom:none;}
+.stn{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px;}
+.wf .stn{background:#FEE2E2;color:var(--rd);}.wf.fu .stn{background:#D1FAE5;color:var(--gn);}
+.stx{font-size:14px;line-height:1.6;color:var(--gy);}
+.stx strong{color:var(--nv);}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:99px;margin-top:4px;}
+.tag-bad{background:#FEE2E2;color:var(--rd);}.tag-ok{background:#D1FAE5;color:var(--gn);}
+
+/* ── SLIDE 4: SOLUTION ── */
+#s4{background:var(--wh);}
+.s4-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.hub{display:flex;align-items:center;justify-content:center;margin-bottom:28px;}
+.h-src{display:flex;flex-direction:column;gap:9px;}
+.hb{background:var(--of);border:2px solid var(--bd);border-radius:11px;padding:11px 18px;font-size:13px;font-weight:600;color:var(--gy);min-width:140px;text-align:center;transition:.22s;cursor:default;}
+.hb:hover{border-color:var(--or);color:var(--or);}
+.hb.tgt{border-color:var(--blb);background:var(--blbg);color:var(--bl);}
+.hb.tgt:hover{border-color:var(--bl);}
+.harr{display:flex;flex-direction:column;justify-content:center;gap:9px;padding:0 12px;color:var(--gyl);font-size:18px;}
+.hcenter{background:linear-gradient(135deg,var(--nv),var(--nv2));border-radius:20px;padding:28px 36px;text-align:center;box-shadow:0 0 0 10px rgba(255,109,0,.1),0 0 0 20px rgba(255,109,0,.05);margin:0 6px;}
+.hcl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:6px;}
+.hct{font-size:22px;font-weight:900;color:#fff;}.hcs{font-size:13px;color:var(--or2);margin-top:3px;}
+.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.cap{background:var(--of);border:2px solid var(--bd);border-radius:14px;padding:20px 22px;cursor:pointer;transition:.22s;}
+.cap:hover,.cap.active{border-color:var(--or);background:var(--orbg);}
+.cap-icon{font-size:22px;margin-bottom:8px;}
+.cap-title{font-size:15px;font-weight:700;color:var(--nv);margin-bottom:5px;}
+.cap-body{font-size:13px;color:var(--gy);line-height:1.55;}
+.cap-detail-area{min-height:220px;}
+.cap-detail{display:none;animation:fadeUp .25s;}
+.cap-detail.show{display:block;}
+.cd-box{background:var(--of);border:2px solid var(--bd);border-radius:16px;padding:26px 30px;}
+.cd-label{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--or);margin-bottom:12px;}
+.cd-title{font-size:20px;font-weight:800;color:var(--nv);margin-bottom:10px;}
+.cd-body{font-size:15px;color:var(--gy);line-height:1.7;}
+.cd-body strong{color:var(--nv);}
+
+/* ── SLIDE 5: BEFORE/AFTER ── */
+#s5{background:var(--of);}
+.toggle-bar{display:flex;background:var(--bd);border-radius:99px;padding:5px;width:fit-content;margin-bottom:36px;}
+.tgb{padding:12px 36px;border-radius:99px;font-size:16px;font-weight:700;cursor:pointer;transition:.25s;border:none;background:transparent;color:var(--gy);}
+.tgb.active{background:var(--wh);color:var(--nv);box-shadow:0 2px 12px rgba(0,0,0,.1);}
+.bav{display:none;}.bav.active{display:grid;grid-template-columns:1fr 1fr;gap:32px;animation:fadeUp .3s;}
+.tl{display:flex;flex-direction:column;position:relative;padding-left:36px;}
+.tl::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:var(--bd);}
+.tli{position:relative;padding:16px 0 16px 24px;border-bottom:1px solid var(--bd);}
+.tli:last-child{border-bottom:none;}
+.tld{position:absolute;left:-27px;top:22px;width:16px;height:16px;border-radius:50%;border:3px solid var(--of);}
+.tld.r{background:var(--rd);}.tld.g{background:var(--gn);}
+.tlt{font-size:12px;font-weight:700;color:var(--gyl);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;}
+.tlx{font-size:15px;color:var(--gy);line-height:1.55;}.tlx strong{color:var(--nv);}
+.oc{border-radius:14px;padding:18px 22px;}
+.oc-bad{background:var(--rdbg);border:1.5px solid var(--rdb);}
+.oc-good{background:var(--gnbg);border:1.5px solid var(--gnb);}
+.oc-t{font-size:15px;font-weight:700;margin-bottom:5px;}
+.oc-bad .oc-t{color:var(--rd);}.oc-good .oc-t{color:var(--gn);}
+.oc-d{font-size:14px;line-height:1.5;}
+.oc-bad .oc-d{color:#7F1D1D;}.oc-good .oc-d{color:#065F46;}
+.oc-stack{display:flex;flex-direction:column;gap:14px;justify-content:center;}
+
+/* ── SLIDE 6: CLOSE ── */
+#s6{background:linear-gradient(135deg,var(--nv) 0%,#0D0D20 100%);}
+.qbox{background:rgba(255,109,0,.1);border:1px solid rgba(255,109,0,.26);border-radius:18px;padding:28px 36px;font-size:21px;font-style:italic;color:rgba(255,255,255,.86);line-height:1.75;margin-bottom:40px;position:relative;}
+.qbox::before{content:'"';font-size:72px;color:var(--or);line-height:1;position:absolute;top:-12px;left:18px;opacity:.28;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.sc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px 26px;display:flex;flex-direction:column;gap:8px;transition:.2s;cursor:default;}
+.sc:hover{background:rgba(255,109,0,.12);border-color:rgba(255,109,0,.3);}
+.scn{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--or);}
+.sct{font-size:17px;font-weight:700;color:#fff;line-height:1.3;}
+.scd{font-size:12px;color:rgba(255,255,255,.33);margin-top:auto;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="sidenav">
+  <a href="#s1" class="active" title="Title"></a>
+  <a href="#s2" title="Today"></a>
+  <a href="#s3" title="Challenges"></a>
+  <a href="#s4" title="Solution"></a>
+  <a href="#s5" title="Impact"></a>
+  <a href="#s6" title="Next Steps"></a>
+</nav>
+
+<!-- ═══ SLIDE 1: TITLE ═══ -->
+<section class="slide" id="s1">
+  <div class="eyebrow"><span class="dot"></span>OnPoint Industrial Services &nbsp;·&nbsp; Informatica MDM</div>
+  <h1>From <em>Data Chaos</em><br>to Exit-Ready.</h1>
+  <p class="sub">How a single source of truth prepares OnPoint for the MML Capital exit.</p>
+  <div class="stats">
+    <div class="stat"><span class="v">$225M</span><span class="l">Annual Revenue</span></div>
+    <div class="stat"><span class="v">$7M</span><span class="l">Duplicate Rev. Found</span></div>
+    <div class="stat"><span class="v">9</span><span class="l">Acquisitions</span></div>
+    <div class="stat"><span class="v">~2027</span><span class="l">Target PE Exit</span></div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 2: LANDSCAPE ═══ -->
+<section class="slide" id="s2">
+  <div class="stag">The Situation Today</div>
+  <div class="sh">Data lives everywhere.<br>Insight lives nowhere.</div>
+  <div class="landscape">
+    <div class="sys-col">
+      <div class="sbox silo">Sage Intacct<div style="font-size:12px;font-weight:400;margin-top:3px;">Financials &amp; Actuals</div></div>
+      <div class="sbox silo">Workday<div style="font-size:12px;font-weight:400;margin-top:3px;">HRIS (implementing)</div></div>
+      <div class="sbox silo">Bullhorn<div style="font-size:12px;font-weight:400;margin-top:3px;">Recruiting &amp; Staffing</div></div>
+      <div class="sbox silo">Excel / Homegrown<div style="font-size:12px;font-weight:400;margin-top:3px;">Quoting &amp; Forecasting</div></div>
+    </div>
+    <div class="arr-col">
+      <span class="arr-bad">✗→</span><span class="arr-bad">✗→</span><span class="arr-bad">✗→</span><span class="arr-bad">✗→</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+      <div class="sbox sf">Salesforce CRM<div style="font-size:13px;font-weight:400;margin-top:5px;">No actuals · No hierarchy</div></div>
+      <div class="gap-pill">⚠️ Actuals never return to Salesforce</div>
+    </div>
+    <span class="mid-arrow">→</span>
+    <div class="pain-col">
+      <div class="pc"><div class="pc-t">📊 Board Prep = Days of Excel</div><div class="pc-d">8 BU forecasts reconciled manually each cycle</div></div>
+      <div class="pc"><div class="pc-t">🔀 $7M in Duplicate Revenue</div><div class="pc-d">9 acquisitions · no unified customer identity</div></div>
+      <div class="pc"><div class="pc-t">⏱ 2+ Hours to Price One Proposal</div><div class="pc-d">Historical actuals inaccessible to the sales team</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 3: CHALLENGES ═══ -->
+<section class="slide" id="s3">
+  <div class="stag">Challenge Deep-Dive</div>
+  <div class="sh">Current vs. Future Workflow</div>
+  <div class="tabs">
+    <button class="tb active" onclick="showPanel(0,this)">Pricing a Proposal</button>
+    <button class="tb" onclick="showPanel(1,this)">Board Reporting</button>
+    <button class="tb" onclick="showPanel(2,this)">Acquisition Data</button>
+    <button class="tb" onclick="showPanel(3,this)">Cross-Sell Targeting</button>
+  </div>
+
+  <div class="panel active" id="p0">
+    <div class="wf">
+      <div class="wfl">❌ Today</div>
+      <div class="steps">
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>Open Salesforce</strong> — no actuals attached to last proposal<span class="tag tag-bad">Dead end</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Call the CRO</strong> — only person with Sage Intacct access in sales org</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Wait for emailed export</strong> — CRO runs report, manually extracts data</div></div>
+        <div class="st"><div class="stn">4</div><div class="stx"><strong>2 meetings + 1 hr of work</strong> to land a competitive price<span class="tag tag-bad">~2 hrs total</span></div></div>
+        <div class="st"><div class="stn">5</div><div class="stx"><strong>Post-job:</strong> overperformed proposal by 24% — no way to diagnose why</div></div>
+      </div>
+    </div>
+    <div class="wf fu">
+      <div class="wfl">✅ With Informatica MDM</div>
+      <div class="steps">
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>Open Salesforce</strong> — actuals for every prior job at this site are already there<span class="tag tag-ok">Live data</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Compare proposed vs. actual margin</strong> in seconds — no calls, no exports</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Submit competitive bid</strong> with confidence<span class="tag tag-ok">~5 minutes</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="p1">
+    <div class="wf">
+      <div class="wfl">❌ Today</div>
+      <div class="steps">
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>8 BU leaders</strong> email separate Excel forecast files</div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Naming conflicts</strong> — "Beaumont" ≠ "BMT" ≠ "BTR" blocks aggregation<span class="tag tag-bad">Manual dedup</span></div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Investment bankers paid</strong> to reformat into a coherent board view</div></div>
+        <div class="st"><div class="stn">4</div><div class="stx"><strong>Days of prep</strong> — CRO can't answer real-time follow-ups in the meeting</div></div>
+      </div>
+    </div>
+    <div class="wf fu">
+      <div class="wfl">✅ With Informatica MDM</div>
+      <div class="steps">
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>MDM resolves all aliases automatically</strong> — "BMT" = "Beaumont"<span class="tag tag-ok">Zero manual dedup</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Tableau / CRMA</strong> pulls clean, governed data — no reconciliation needed</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Board deck auto-refreshes</strong> — hours of prep, not days<span class="tag tag-ok">Real-time answers</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="p2">
+    <div class="wf">
+      <div class="wfl">❌ Today</div>
+      <div class="steps">
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>New entity acquired</strong> — brings its own customer IDs, job codes, naming conventions</div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Duplicates multiply</strong> — same customer in 5+ systems under different names<span class="tag tag-bad">$7M found so far</span></div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>PE buyer asks</strong> "show us revenue by customer" — no clean answer available</div></div>
+      </div>
+    </div>
+    <div class="wf fu">
+      <div class="wfl">✅ With Informatica MDM</div>
+      <div class="steps">
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>MDM ingests all source systems</strong> — no changes to existing sources required<span class="tag tag-ok">Non-disruptive</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Survivorship rules</strong> produce one governed golden record per customer</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>PE due diligence:</strong> revenue-by-customer answered instantly<span class="tag tag-ok">M&amp;A = strength</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="p3">
+    <div class="wf">
+      <div class="wfl">❌ Today</div>
+      <div class="steps">
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>Marathon: 9 sites</strong> — logged under different names across business units</div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>No account hierarchy</strong> — total wallet share requires manual aggregation</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Rep leaves</strong> — 6–12 months of account context disappears with them</div></div>
+      </div>
+    </div>
+    <div class="wf fu">
+      <div class="wfl">✅ With MDM — "Data Texture"</div>
+      <div class="steps">
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>B2B Hierarchy:</strong> Marathon parent → 9 sites → projects — all in Salesforce<span class="tag tag-ok">One click</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Zero-revenue sites surface automatically</strong> as cross-sell targets</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Account intelligence lives in the system</strong> — survives any rep turnover</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 4: SOLUTION ═══ -->
+<section class="slide" id="s4">
+  <div class="stag">The Solution</div>
+  <div class="sh">One Hub. Every System Benefits.</div>
+  <div class="s4-layout">
+    <div>
+      <div class="hub">
+        <div class="h-src">
+          <div class="hb">Sage Intacct</div>
+          <div class="hb">Workday</div>
+          <div class="hb">Bullhorn</div>
+          <div class="hb">Homegrown Tool</div>
+          <div class="hb">Excel / Legacy</div>
+        </div>
+        <div class="harr"><span>→</span><span>→</span><span>→</span><span>→</span><span>→</span></div>
+        <div class="hcenter">
+          <div class="hcl">Informatica</div>
+          <div class="hct">MDM</div>
+          <div class="hcs">Golden Record</div>
+        </div>
+        <div class="harr"><span>→</span><span>→</span><span>→</span></div>
+        <div class="h-src">
+          <div class="hb tgt">Salesforce CRM</div>
+          <div class="hb tgt">Tableau / CRMA</div>
+          <div class="hb tgt">Board Reporting</div>
+        </div>
+      </div>
+      <div class="cap-grid">
+        <div class="cap active" onclick="showCap(0,this)">
+          <div class="cap-icon">🔀</div>
+          <div class="cap-title">Multi-source Consolidation</div>
+          <div class="cap-body">One golden record from all systems — without changing any source.</div>
+        </div>
+        <div class="cap" onclick="showCap(1,this)">
+          <div class="cap-icon">🗂️</div>
+          <div class="cap-title">Reference Data Management</div>
+          <div class="cap-body">"BMT" = "Beaumont" = "BTR" — resolved automatically across every BU.</div>
+        </div>
+        <div class="cap" onclick="showCap(2,this)">
+          <div class="cap-icon">🏗️</div>
+          <div class="cap-title">B2B Hierarchy Management</div>
+          <div class="cap-body">Parent → site → project hierarchy delivered into Salesforce.</div>
+        </div>
+        <div class="cap" onclick="showCap(3,this)">
+          <div class="cap-icon">🛡️</div>
+          <div class="cap-title">Data Governance</div>
+          <div class="cap-body">Guardrails at point of entry — stops duplicates before they're created.</div>
+        </div>
+      </div>
+    </div>
+    <div class="cap-detail-area">
+      <div class="cap-detail show" id="cd0">
+        <div class="cd-box">
+          <div class="cd-label">Multi-source Consolidation</div>
+          <div class="cd-title">Eliminate the $7M duplicate problem — permanently.</div>
+          <div class="cd-body">MDM ingests records from Salesforce, Sage Intacct, Workday, Bullhorn, and the homegrown quoting tool simultaneously. Survivorship rules decide which field value wins. <strong>No source system needs to change.</strong> The result: one master customer ID across all 9 acquired entities — the foundation for clean PE due diligence.</div>
+        </div>
+      </div>
+      <div class="cap-detail" id="cd1">
+        <div class="cd-box">
+          <div class="cd-label">Reference Data Management</div>
+          <div class="cd-title">Board reports that don't require a week of prep.</div>
+          <div class="cd-body">Every BU can keep using the location names they're comfortable with. MDM maps them all to one canonical record behind the scenes. <strong>"Beaumont," "BMT," "BTR," "BYT," and "Baytown" all resolve to the same place.</strong> Tableau and CRMA pull clean data — investment bankers no longer required to manually reformat board decks.</div>
+        </div>
+      </div>
+      <div class="cap-detail" id="cd2">
+        <div class="cd-box">
+          <div class="cd-label">B2B Hierarchy Management</div>
+          <div class="cd-title">Mac's "data texture" — delivered into Salesforce.</div>
+          <div class="cd-body">Marathon parent company → 9 individual sites → individual projects — all mapped in a full relationship graph and pushed to Salesforce. <strong>Total wallet share in one click. Zero-revenue sites surface automatically as cross-sell targets.</strong> Account intelligence lives in the system, not in any one person's head.</div>
+        </div>
+      </div>
+      <div class="cap-detail" id="cd3">
+        <div class="cd-box">
+          <div class="cd-label">Data Governance</div>
+          <div class="cd-title">The guardrails Timothy asked for, built in.</div>
+          <div class="cd-body">When a rep starts typing a customer name, MDM suggests the existing record before a duplicate can be created. <strong>Data quality enforced at the point of entry</strong> — not corrected on the back end. Standardized KPI definitions mean the CRO, CFO, and board all see the same numbers from the same source.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 5: BEFORE/AFTER ═══ -->
+<section class="slide" id="s5">
+  <div class="stag">Impact</div>
+  <div class="sh">Board Prep: Before vs. After</div>
+  <div class="toggle-bar">
+    <button class="tgb active" onclick="toggleBA('before',this)">Today</button>
+    <button class="tgb" onclick="toggleBA('after',this)">With MDM</button>
+  </div>
+
+  <div class="bav active" id="ba-before">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:var(--gyl);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px;">Timeline — Days Before Board Meeting</div>
+      <div class="tl">
+        <div class="tli"><div class="tld r"></div><div class="tlt">Day −7</div><div class="tlx"><strong>8 BU leaders</strong> export separate Excel forecasts</div></div>
+        <div class="tli"><div class="tld r"></div><div class="tlt">Day −6 to −4</div><div class="tlx"><strong>Manual dedup:</strong> "Beaumont" vs "BMT" vs "BTR" across every BU</div></div>
+        <div class="tli"><div class="tld r"></div><div class="tlt">Day −3 to −2</div><div class="tlx"><strong>Investment bankers paid</strong> to reformat data into board-ready output</div></div>
+        <div class="tli"><div class="tld r"></div><div class="tlt">Day −1</div><div class="tlx"><strong>Last-minute corrections</strong> when numbers don't reconcile</div></div>
+        <div class="tli"><div class="tld r"></div><div class="tlt">Day 0 — Board Meeting</div><div class="tlx"><strong>CRO can't answer ad-hoc follow-up questions</strong></div></div>
+      </div>
+    </div>
+    <div class="oc-stack">
+      <div class="oc oc-bad"><div class="oc-t">⏱ Days of prep — every single cycle</div><div class="oc-d">Same manual effort from scratch at every board meeting</div></div>
+      <div class="oc oc-bad"><div class="oc-t">💸 Investment bankers doing data janitorial work</div><div class="oc-d">Very expensive way to reformat spreadsheets</div></div>
+      <div class="oc oc-bad"><div class="oc-t">❓ No real-time answers in the room</div><div class="oc-d">Ad-hoc questions during the meeting go unanswered</div></div>
+    </div>
+  </div>
+
+  <div class="bav" id="ba-after">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:var(--gyl);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px;">Timeline — Hours Before Board Meeting</div>
+      <div class="tl">
+        <div class="tli"><div class="tld g"></div><div class="tlt">Morning of meeting</div><div class="tlx"><strong>Tableau / CRMA</strong> auto-refreshes from MDM-governed data</div></div>
+        <div class="tli"><div class="tld g"></div><div class="tlt">1 hour before</div><div class="tlx"><strong>CRO reviews dashboard</strong> — data is already reconciled and standardized</div></div>
+        <div class="tli"><div class="tld g"></div><div class="tlt">During the meeting</div><div class="tlx"><strong>Real-time drill-down</strong> — any follow-up question answered on the spot</div></div>
+      </div>
+    </div>
+    <div class="oc-stack">
+      <div class="oc oc-good"><div class="oc-t">✅ Days → Hours</div><div class="oc-d">Board prep collapses to a morning review task</div></div>
+      <div class="oc oc-good"><div class="oc-t">✅ Exit-ready analytics</div><div class="oc-d">"Revenue by service line by region" — answered instantly for any PE buyer question</div></div>
+      <div class="oc oc-good"><div class="oc-t">✅ No investment banker data tax</div><div class="oc-d">Data is board-ready by default, not by expensive manual effort</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 6: CLOSE ═══ -->
+<section class="slide" id="s6">
+  <div class="stag" style="color:rgba(255,255,255,.32);">The Bottom Line</div>
+  <div class="sh" style="color:#fff;margin-bottom:32px;">Built for your exit.</div>
+  <div class="qbox">"Informatica MDM gives OnPoint the foundation to walk into management meetings with MML Capital's buyer and answer every question about where revenue lives, where it's going, and why OnPoint is the most attractive asset in the portfolio."</div>
+  <div class="steps-grid">
+    <div class="sc"><div class="scn">Step 01</div><div class="sct">MDM Art of the Possible Demo</div><div class="scd">Jun 24, 2026</div></div>
+    <div class="sc"><div class="scn">Step 02</div><div class="sct">Gather customer record count &amp; source systems</div><div class="scd">Action: Timothy &amp; Mac</div></div>
+    <div class="sc"><div class="scn">Step 03</div><div class="sct">Extended session: CEO, CFO, IT Head</div><div class="scd">By Sep 2026</div></div>
+    <div class="sc"><div class="scn">Step 04</div><div class="sct">Business case &amp; commercial proposal</div><div class="scd">Explore deferred payment options</div></div>
+  </div>
+</section>
+
+<script>
+// Nav dots
+const sids=['s1','s2','s3','s4','s5','s6'];
+const nls=document.querySelectorAll('.nav a');
+window.addEventListener('scroll',()=>{
+  let c=0;
+  sids.forEach((id,i)=>{const e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=window.innerHeight*.5)c=i;});
+  nls.forEach((a,i)=>a.classList.toggle('active',i===c));
+},{passive:true});
+
+// Tabs
+function showPanel(i,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('p'+i).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Capability cards
+function showCap(i,btn){
+  document.querySelectorAll('.cap-detail').forEach(d=>d.classList.remove('show'));
+  document.querySelectorAll('.cap').forEach(c=>{c.classList.remove('active');});
+  document.getElementById('cd'+i).classList.add('show');
+  btn.classList.add('active');
+}
+
+// Before/After
+function toggleBA(w,btn){
+  document.querySelectorAll('.bav').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.tgb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('ba-'+w).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
