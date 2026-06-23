@@ -29,7 +29,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .int-badge{background:var(--rdbg);border:1px solid var(--rdb);border-radius:99px;padding:5px 16px;font-size:12px;font-weight:700;color:var(--rd);letter-spacing:.05em;}
 
 /* ── LAYOUT ── */
-.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 70px);}
+.layout{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 70px);}
 .sidebar{background:var(--wh);border-right:1px solid var(--bd);padding:20px 0;position:sticky;top:70px;height:calc(100vh - 70px);overflow-y:auto;}
 .sb-sec{padding:8px 18px 4px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gyl);margin-top:12px;}
 .sidebar a{display:block;padding:8px 20px;font-size:13px;font-weight:500;color:var(--gy);text-decoration:none;transition:.15s;border-left:3px solid transparent;}
@@ -67,10 +67,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .qb-gn{background:var(--gnbg);border-left:4px solid var(--gn);}
 .qb-yl{background:var(--ylbg);border-left:4px solid #F59E0B;}
 .qb-pu{background:var(--pubg);border-left:4px solid var(--pu);}
+.qb-rd{background:var(--rdbg);border-left:4px solid var(--rd);}
 .qb-who{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:7px;}
 .qb-or .qb-who{color:var(--or);}.qb-bl .qb-who{color:var(--bl);}
 .qb-gn .qb-who{color:var(--gn);}.qb-yl .qb-who{color:var(--yl);}
-.qb-pu .qb-who{color:var(--pu);}
+.qb-pu .qb-who{color:var(--pu);}.qb-rd .qb-who{color:var(--rd);}
 .qb-text{font-size:14px;font-style:italic;color:var(--nv);line-height:1.75;}
 .qb-ctx{font-size:12px;color:var(--gyl);margin-top:8px;font-style:normal;}
 
@@ -80,6 +81,13 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .sn-b{font-size:14px;color:var(--gy);line-height:1.7;}
 .sn-b strong{color:var(--nv);}
 .sn-b ul{margin-left:20px;margin-top:8px;display:flex;flex-direction:column;gap:6px;}
+
+/* ── ALERT NOTE ── */
+.alert{background:#FFF1F2;border:1.5px solid #FFE4E6;border-radius:12px;padding:18px 20px;margin-bottom:16px;}
+.alert-l{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--rd);margin-bottom:8px;}
+.alert-b{font-size:14px;color:var(--gy);line-height:1.7;}
+.alert-b strong{color:var(--nv);}
+.alert-b ul{margin-left:20px;margin-top:8px;display:flex;flex-direction:column;gap:6px;}
 
 /* ── OBJECTIONS ── */
 .obj{background:#FFF1F2;border:1.5px solid #FFE4E6;border-radius:12px;padding:18px 20px;margin-bottom:14px;}
@@ -100,19 +108,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .chip-bl{background:var(--blbg);color:var(--bl);border:1px solid var(--blb);}
 .chip-gn{background:var(--gnbg);color:var(--gn);border:1px solid var(--gnb);}
 .chip-pu{background:var(--pubg);color:var(--pu);border:1px solid var(--pub);}
-
-/* ── ACCORDIONS ── */
-.acc{background:var(--wh);border:1.5px solid var(--bd);border-radius:14px;margin-bottom:14px;overflow:hidden;}
-.acc-head{padding:18px 22px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;gap:12px;user-select:none;}
-.acc-head:hover{background:var(--of);}
-.acc-title{font-size:16px;font-weight:700;color:var(--nv);}
-.acc-sub{font-size:13px;color:var(--gyl);margin-top:2px;}
-.chev{font-size:12px;color:var(--gyl);transition:.25s;flex-shrink:0;}
-.acc.open .chev{transform:rotate(180deg);}
-.acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease;}
-.acc.open .acc-body{grid-template-rows:1fr;}
-.acc-inner{overflow:hidden;padding:0 22px;border-top:1px solid var(--bd);}
-.acc.open .acc-inner{padding:22px;}
+.chip-rd{background:var(--rdbg);color:var(--rd);border:1px solid var(--rdb);}
 
 /* ── FLOW COMPARE ── */
 .flow-cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
@@ -124,6 +120,14 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .fc-step{font-size:13px;color:var(--gy);padding:6px 0;border-bottom:1px solid rgba(0,0,0,.06);line-height:1.45;}
 .fc-step:last-child{border-bottom:none;}
 .fc-step strong{color:var(--nv);}
+
+/* ── WORKDAY TIMELINE ── */
+.wd-timeline{display:flex;gap:0;background:var(--nv);border-radius:14px;overflow:hidden;margin-bottom:20px;}
+.wdt{flex:1;padding:16px 20px;border-right:1px solid rgba(255,255,255,.1);}
+.wdt:last-child{border-right:none;}
+.wdt-l{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:4px;}
+.wdt-v{font-size:15px;font-weight:800;color:var(--or);}
+.wdt-s{font-size:12px;color:rgba(255,255,255,.38);margin-top:2px;}
 
 p{margin-bottom:12px;color:var(--gy);font-size:14px;line-height:1.7;}
 p:last-child{margin-bottom:0;}
@@ -138,7 +142,7 @@ h4:first-child{margin-top:0;}
     <div class="hdr-badge">INFA MDM</div>
     <div>
       <div class="hdr-title">OnPoint Industrial Services — MDM Deal</div>
-      <div class="hdr-sub">Internal Speaker Notes &nbsp;·&nbsp; Demo: Jun 24, 2026</div>
+      <div class="hdr-sub">Internal Speaker Notes &nbsp;·&nbsp; Demo: Jun 24, 2026 &nbsp;·&nbsp; Updated with Customer Agenda Feedback</div>
     </div>
   </div>
   <div class="int-badge">🔒 Internal Only</div>
@@ -149,18 +153,21 @@ h4:first-child{margin-top:0;}
   <div class="sb-sec">Overview</div>
   <a href="#overview" class="active">Company Overview</a>
   <a href="#deal">Deal at a Glance</a>
-  <a href="#stakeholders">Stakeholders</a>
+  <a href="#stakeholders">Stakeholders (Jun 24)</a>
   <a href="#framing">Strategic Framing</a>
+  <a href="#customer-feedback">Customer Agenda Feedback</a>
   <div class="sb-sec">Slide Notes</div>
-  <a href="#s-landscape">Slide 2 — Landscape</a>
-  <a href="#s-pricing">Slide 3 — Pricing</a>
-  <a href="#s-board">Slide 3 — Board Reporting</a>
-  <a href="#s-acquisition">Slide 3 — Acquisitions</a>
+  <a href="#s-stack">Slide 2 — Your Stack</a>
+  <a href="#s-exxon">Slide 3 — ExxonMobil</a>
+  <a href="#s-standard">Slide 3 — Setting Standard</a>
+  <a href="#s-q2c">Slide 3 — Quote-to-Cash</a>
   <a href="#s-crosssell">Slide 3 — Cross-Sell</a>
   <a href="#s-solution">Slide 4 — Solution</a>
   <a href="#s-impact">Slide 5 — Impact</a>
   <a href="#s-close">Slide 6 — Close</a>
   <div class="sb-sec">Supporting</div>
+  <a href="#golden-record">Golden Record Discussion</a>
+  <a href="#handling-ben">Handling Ben (IT)</a>
   <a href="#objections">Objections &amp; Responses</a>
   <a href="#commercial">Commercial Context</a>
 </nav>
@@ -175,7 +182,7 @@ h4:first-child{margin-top:0;}
   </div>
   <div class="info-box" style="background:var(--blbg);border:1.5px solid var(--blb);">
     <div class="ib-l" style="color:var(--bl);">What OnPoint Does</div>
-    <div class="ib-c">OnPoint Industrial Services is the safety and logistics backbone for large industrial plants — oil refineries, petrochemical facilities, and similar sites across all 50 states. They specialize in <strong>turnarounds</strong> (massive, scheduled plant shutdowns), providing safety oversight, confined space technology, materials management, and workforce coordination. Revenue comes from service contracts, technology licensing (their proprietary WatchPoint and TrackPoint systems), and managed logistics fees. Founded in 2005, grown from $15M to $225M under PE ownership. 95% labor-based business; staffing and workforce allocation are the operational core.</div>
+    <div class="ib-c">OnPoint Industrial Services is the safety and logistics backbone for large industrial plants — oil refineries, petrochemical facilities, and similar sites across all 50 states. They specialize in <strong>turnarounds</strong> (massive, scheduled plant shutdowns), providing safety oversight, confined-space monitoring technology, materials management, and workforce coordination. Revenue comes from service contracts, technology licensing (proprietary WatchPoint and TrackPoint systems), and managed logistics fees. Founded in 2005, grown from $15M to $225M under PE ownership. 95% labor-based business; staffing and workforce allocation are the operational core.</div>
   </div>
 </section>
 
@@ -191,19 +198,28 @@ h4:first-child{margin-top:0;}
     <div class="db"><div class="db-l">Deal Status</div><div class="db-v">Final Neg.</div><div class="db-s">Committed in Vivun (Jun 12)</div></div>
     <div class="db"><div class="db-l">Target PE Exit</div><div class="db-v">Late 2027</div><div class="db-s">MML Capital — 3rd PE sponsor</div></div>
   </div>
+
+  <div class="wd-timeline">
+    <div class="wdt"><div class="wdt-l">Workday HRIS Go-Live</div><div class="wdt-v">Oct 1, 2026</div><div class="wdt-s">~3 months out — IT decisions locked</div></div>
+    <div class="wdt"><div class="wdt-l">Workday Finance Go-Live</div><div class="wdt-v">Jan 1, 2027</div><div class="wdt-s">Quote-to-cash fully in Workday</div></div>
+    <div class="wdt"><div class="wdt-l">MDM Window</div><div class="wdt-v">Now → Jan 1</div><div class="wdt-s">Set the standard before dirty data enters Workday</div></div>
+    <div class="wdt"><div class="wdt-l">PE Exit</div><div class="wdt-v">~FY28</div><div class="wdt-s">Clean data = higher EBITDA multiple</div></div>
+  </div>
+
   <div class="two-col">
     <div class="info-box" style="background:var(--blbg);border:1.5px solid var(--blb);">
-      <div class="ib-l" style="color:var(--bl);">Tech Stack</div>
-      <div class="ib-c">Salesforce (legacy CRM, revived ~4 yrs ago), Sage Intacct (financials — limited access), Workday (HRIS: ~4 months out; Finance: ~6 months out), Bullhorn (recruiting/staffing), Excel (quoting &amp; forecasting), Homegrown web quoting tool (Doug's Outside the Fence BU only)</div>
+      <div class="ib-l" style="color:var(--bl);">Committed Tech Stack</div>
+      <div class="ib-c"><strong>Salesforce</strong> — 100% committed CRM. Quote and pipeline system. <strong>Workday</strong> — implementing now; HRIS Oct 1, Finance Jan 1. Becomes the cash system. <strong>Bullhorn</strong> — recruiting/staffing. <strong>Sage Intacct</strong> — current financials (transitioning to Workday Finance). <strong>Excel/Homegrown</strong> — quoting tools (Outside the Fence BU).</div>
     </div>
     <div class="info-box" style="background:var(--orbg);border:1.5px solid #FFD0A8;">
       <div class="ib-l" style="color:var(--or);">Two Business Divisions</div>
-      <div class="ib-c"><strong>Inside Defense (Mac's BU):</strong> Larger, slower-cycle deals. Uses Salesforce today.<br><br><strong>Outside the Fence (Doug's BU):</strong> ~25% of revenue. High-volume, quick-turn, smaller transactions. Uses the homegrown web tool — NOT Salesforce. Speed of quoting is critical here.</div>
+      <div class="ib-c"><strong>Inside Defense (Mac's BU):</strong> Larger, slower-cycle deals. Uses Salesforce today.<br><br><strong>Outside the Fence (Doug's BU):</strong> ~25% of revenue. High-volume, quick-turn. Uses homegrown web tool — NOT Salesforce. Speed of quoting is critical here.</div>
     </div>
   </div>
+
   <div class="sn">
     <div class="sn-l">🎯 The Single Most Important Frame</div>
-    <div class="sn-b">Everything in this presentation connects back to one question: <strong>"What does this cost OnPoint in a management meeting with MML Capital's buyer?"</strong> Timothy said the PE chairman knows about these Informatica conversations. The CEO has visibility. MDM is not an IT project — it is a <strong>valuation lever</strong>. Every pain point maps to a lower exit multiple if left unresolved.</div>
+    <div class="sn-b">Everything in this presentation connects back to one question: <strong>"What does this cost OnPoint in a management meeting with MML Capital's buyer?"</strong> Timothy connected MDM directly to PE exit prep without being prompted. MDM is not an IT project — it is a <strong>valuation lever</strong>. Every pain point maps to a lower exit multiple if left unresolved.</div>
   </div>
 </section>
 
@@ -211,7 +227,7 @@ h4:first-child{margin-top:0;}
 <section class="sec" id="stakeholders">
   <div class="sec-hdr">
     <div class="sec-icon">👥</div>
-    <div><div class="sec-title">Stakeholders</div><div class="sec-sub">Jun 24 attendees and extended cast</div></div>
+    <div><div class="sec-title">Stakeholders — Jun 24 Room</div><div class="sec-sub">Updated with new attendees added by Timothy</div></div>
   </div>
   <table class="stk">
     <thead><tr><th>Name</th><th>Title</th><th>Role</th><th>What They Care About</th><th>Notes for the Room</th></tr></thead>
@@ -220,36 +236,36 @@ h4:first-child{margin-top:0;}
         <td><strong>Timothy Long</strong><br><span style="font-size:11px;color:var(--gyl);">tlong@onpoint-us.com</span></td>
         <td>CRO</td>
         <td><span class="chip chip-or">Primary Champion</span></td>
-        <td>PE exit readiness, board reporting speed, data as a strategic asset</td>
-        <td>With OnPoint since 2012 (grew $15M → $225M). <em>Unusually data-governance-fluent for a CRO</em> — Peter Sheehan noted this live on the June 5 call. PE chairman aware of these conversations. Very receptive to the MDM framing. Let him drive — he'll often articulate the problem better than you can.</td>
+        <td>PE exit readiness, Golden Record governance, board reporting speed</td>
+        <td>With OnPoint since 2012 ($15M → $225M). <em>Unusually data-governance-fluent for a CRO.</em> PE chairman knows about these conversations. He explicitly named "Golden Record" as the key concept in his agenda feedback — use his language. Let him drive; he often articulates the problem better than you can.</td>
       </tr>
       <tr>
         <td><strong>Mac McKinney</strong><br><span style="font-size:11px;color:var(--gyl);">amckinney@onpoint-us.com</span></td>
         <td>VP Business Development</td>
         <td><span class="chip chip-bl">Data Advocate</span></td>
         <td>"Data texture" — hierarchy, actuals, cross-sell visibility. Speed of quoting.</td>
-        <td>First name Andrew; goes by Mac (ex-Marines, 10 years). 5 years at OnPoint; ran recruiting before BD — deep operational perspective. Introduced the phrase "data texture" himself; echo it back. Very concrete thinker — use his ventilation proposal example. Will ask for specifics on hierarchy model.</td>
+        <td>First name Andrew; goes by Mac (ex-Marines). 5 years at OnPoint. Introduced "data texture" himself — echo it back. Very concrete thinker — use his ventilation proposal example. Will ask for specifics on the B2B hierarchy model.</td>
       </tr>
       <tr>
         <td><strong>Doug Gebhardt</strong><br><span style="font-size:11px;color:var(--gyl);">dgebhardt@onpoint-us.com</span></td>
         <td>Sales, Outside the Fence BU</td>
-        <td><span class="chip chip-gn">New Attendee</span></td>
+        <td><span class="chip chip-gn">Operational</span></td>
         <td>Speed of quoting — his BU runs high-volume quick-turn deals. Based in Katy, TX.</td>
-        <td>~8 months with OnPoint, still learning. His BU uses a homegrown tool, NOT Salesforce — don't assume CRM familiarity. Relaxed personality on the June 5 call; receptive but will need the value to land in operational terms (faster quotes, not "data governance").</td>
+        <td>~8 months with OnPoint. His BU uses a homegrown tool, NOT Salesforce — don't assume CRM familiarity. Relaxed personality; receptive but needs value framed in operational terms (faster quotes, not "data governance").</td>
       </tr>
-      <tr>
-        <td><strong>CEO</strong> (not yet named)</td>
-        <td>Chief Executive Officer</td>
-        <td><span class="chip chip-or">Future Champion</span></td>
-        <td>PE mandate, EBITDA story for investors</td>
-        <td>Female. Was supposed to attend June 5 call but had travel. Timothy: "she's pretty interested in this." He plans to bring her to the extended session (target: within 90 days of Jun 5 = by ~Sep 5).</td>
+      <tr style="background:#FFFBEB;">
+        <td><strong>Liz</strong><br><span style="font-size:11px;color:var(--gyl);">Last name TBD</span></td>
+        <td>Data Practitioner (role TBD)</td>
+        <td><span class="chip chip-or">New — Data Owner</span></td>
+        <td>Data cleanup and standardization work she's been doing with Timothy</td>
+        <td><strong>Added by Timothy specifically for this meeting.</strong> "Liz and I have been working through a lot of our data lately and can answer most any of your questions between the 2 of us." Treat her as the most knowledgeable person in the room about the actual state of the data. Direct technical questions about customer records, naming, and data quality to her and Timothy jointly. She is an ally — not skeptical.</td>
       </tr>
-      <tr>
-        <td><strong>Joe Hartmann</strong></td>
-        <td>EVP Technology / Head of IT</td>
-        <td><span class="chip chip-pu">Integration Owner</span></td>
-        <td>Workday rollout, platform architecture, integration complexity</td>
-        <td>Overseeing the Workday implementation. Not on Jun 24 demo. Critical to include in extended session — his team will own MDM implementation. Make sure the "no source system changes required" message is front and center for him.</td>
+      <tr style="background:#FEF2F2;">
+        <td><strong>Ben</strong><br><span style="font-size:11px;color:var(--gyl);">Last name TBD</span></td>
+        <td>IT Leadership</td>
+        <td><span class="chip chip-rd">IT Reality Check</span></td>
+        <td>Workday implementation integrity, IT constraints, platform decisions already made</td>
+        <td><strong>Added by Timothy to provide "a reality check from the current state of our Workday implementation and the ballast of IT leadership."</strong> Ben is there to protect IT decisions already made. Do NOT position MDM as replacing, overlapping with, or complicating Workday. Emphasize: MDM requires zero source system changes. Workday stays exactly as-is. MDM governs the layer <em>between</em> systems. See "Handling Ben" section for full guidance.</td>
       </tr>
     </tbody>
   </table>
@@ -264,148 +280,152 @@ h4:first-child{margin-top:0;}
   <div class="qb qb-or">
     <div class="qb-who">Timothy Long — CRO (Jun 5 call, 00:19:46)</div>
     <div class="qb-text">"We're private equity backed. We're on our third private equity sponsor today. We're in year four. Our belief is we're going to be ready to go to market late 27... we view this exercise as a necessity for the future of the business just operationally. We also think it's going to help us tell stories around revenue makeup, future opportunities as we go to the auction process with an investment banking group and you know 5 to 10 to 20 management meetings in the future."</div>
-    <div class="qb-ctx">Timothy connected the MDM initiative directly to PE exit prep — without being prompted. This is the frame he has already chosen. Use it.</div>
+    <div class="qb-ctx">Timothy connected MDM to PE exit prep without being prompted. This is the frame he has already chosen. Use it.</div>
   </div>
   <div class="sn">
-    <div class="sn-l">🎤 Opening Line Option</div>
-    <div class="sn-b">Start the demo by recapping what they told you: <em>"When we spoke on June 5th, you described three things: actuals that never make it back to Salesforce, location names that mean six different things to six different people, and board prep that takes a week and still costs you investment banker fees. Today we want to show you what it looks like when all three of those are solved — and why that matters for the story you'll need to tell MML Capital."</em></div>
+    <div class="sn-l">🎤 Recommended Opening</div>
+    <div class="sn-b">Start by honoring what Timothy told you: <em>"When we spoke on June 5th, you described three things: actuals that never return to Salesforce, location names that mean seven different things to seven different people, and board prep that takes a week and still costs you investment banker fees. You also told us you're 100% committed to Salesforce and Workday is implementing right now. Today we want to show you what it looks like when those three things are solved — in a way that works with the stack you've already committed to, not around it. And we want to ground it in the ExxonMobil Beaumont example you described, because that's not a one-off — it's the pattern."</em></div>
   </div>
 </section>
 
-<!-- ═══ SLIDE 2 NOTES ═══ -->
-<section class="sec" id="s-landscape">
+<!-- ═══ CUSTOMER AGENDA FEEDBACK ═══ -->
+<section class="sec" id="customer-feedback">
+  <div class="sec-hdr">
+    <div class="sec-icon">📩</div>
+    <div><div class="sec-title">Customer Agenda Feedback</div><div class="sec-sub">Received June 23, 2026 — from Timothy Long. Read before you walk in.</div></div>
+  </div>
+
+  <div class="qb qb-pu">
+    <div class="qb-who">Timothy Long — Agenda Feedback (Jun 23, 2026)</div>
+    <div class="qb-text">"I think your agenda is fine, but I want to make sure it's grounded in where we sit today. We're currently implementing Workday, so a lot of our master data mgt. is going to be limited or guided by the decisions our IT team has made already. We go live with the HRIS module on 10/1 and the finance module on 1/1/2027. We are 100% committed to using SF and know that we need to get our data act cleaned up and standardized. We have been discussing our 'data cube' or lack thereof and what we think we need to standardize on from a data perspective. I have asked Liz and Ben to join as Liz and I have been working through a lot of our data lately and can answer most any of your questions between the 2 of us. Ben is going to be there to provide us a reality check from the current state of our Workday implementation and the ballast of IT leadership."</div>
+    <div class="qb-ctx">This is the single most important thing to read before walking in. The entire demo must be grounded in their current state.</div>
+  </div>
+
+  <div class="qb qb-or">
+    <div class="qb-who">Timothy Long — The ExxonMobil Example (same message)</div>
+    <div class="qb-text">"I think the concept of 'Golden Record' will be important to discuss as we need to standardize on where this is created and how it is managed through the lifecycle of creation through cash and 'storage' at OnPoint. Ex. We have been working with ExxonMobil in Beaumont for many years. It probably has 7 iterations of naming conventions in our legacy disparate systems that go back many years. How do we clean that up in the historical data, how do we set the new 'standard', and how do we ensure that it is managed to that standard from quote (SF) to cash (Workday) going forward. I have myriad examples of the same problem many times over."</div>
+    <div class="qb-ctx">Timothy explicitly named Golden Record and gave you a real example. The three questions he wants answered: (1) clean up historical, (2) set the new standard, (3) govern from SF to Workday going forward. Build the entire demo around these three questions.</div>
+  </div>
+
+  <h4>What This Changes for the Demo</h4>
+  <div class="sn">
+    <div class="sn-l">📋 Key Adjustments Based on Feedback</div>
+    <div class="sn-b">
+      <ul>
+        <li><strong>"Grounded in where we sit today"</strong> — Every slide should reference their committed stack (SF + Workday). Do not show MDM as a third CRM or as an alternative to either system.</li>
+        <li><strong>Golden Record is the organizing concept</strong> — Use it throughout. Timothy introduced the term himself. Not "master data" or "data quality" — say <em>Golden Record</em>.</li>
+        <li><strong>ExxonMobil Beaumont is the anchor example</strong> — Do not generalize with abstract examples. Use ExxonMobil Beaumont specifically for every naming convention demonstration.</li>
+        <li><strong>"Data cube"</strong> — Timothy's term for the data model they're missing. Use it when describing what MDM provides: <em>"MDM becomes your data cube — the governed standard the rest of your stack references."</em></li>
+        <li><strong>Lifecycle framing: creation → cash → storage</strong> — Timothy explicitly described this arc. Walk them through it: how is the Golden Record created? How is it maintained from SF to Workday? Where does it live long-term?</li>
+        <li><strong>"Myriad examples"</strong> — He said ExxonMobil is just one of many. Don't dwell on just that example — invite him to name others. This opens a productive discovery moment.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 2 NOTES: YOUR STACK ═══ -->
+<section class="sec" id="s-stack">
   <div class="sec-hdr">
     <div class="sec-icon">🗺️</div>
-    <div><div class="sec-title">Slide 2 — Today's Data Landscape</div><div class="sec-sub">Speaker notes</div></div>
+    <div><div class="sec-title">Slide 2 — Your Stack Today</div><div class="sec-sub">Speaker notes — the committed system framing</div></div>
   </div>
   <div class="sn">
     <div class="sn-l">🎤 Speaker Notes</div>
-    <div class="sn-b">Let the diagram do the work — don't read it to them. Point to the broken arrows and say: <em>"This is what you described to us on June 5th — everything flows in, but nothing flows back."</em> Then point to the three pain cards: <em>"These are the three moments where that disconnect costs you the most."</em>
+    <div class="sn-b">This slide is critical because Timothy asked you to <strong>ground the demo in where they are today.</strong> The frame is: you've already made the right decisions (SF and Workday) — MDM connects them rather than replacing them.
     <ul>
-      <li><strong>Goal of this slide: recognition, not education.</strong> They should be nodding before you move on.</li>
-      <li>The "actuals never return" pill is the most important visual element — pause on it.</li>
-      <li>Don't editorialize on the $7M figure — Timothy initially said "I don't think we have a duplicate issue." The $7M is from internal intel. Frame it as a consequence of the naming chaos they DID acknowledge.</li>
+      <li>Point to Salesforce first: <em>"You've told us you're 100% committed to Salesforce. Full stop. That doesn't change."</em></li>
+      <li>Point to Workday: <em>"You're mid-implementation on Workday. IT decisions are locked. That also doesn't change."</em></li>
+      <li>Point to the gap in the middle: <em>"The question is what governs the customer standard that lives between these two systems — and right now the answer is: nothing. That's the gap."</em></li>
+      <li>The Workday go-live dates are a <strong>natural urgency trigger</strong> for Ben in particular: if MDM isn't in place before Workday Finance goes live on Jan 1, the first thing that goes into the new finance system is dirty, ungoverned customer data.</li>
     </ul></div>
   </div>
-  <div class="info-box" style="background:var(--ylbg);border:1.5px solid var(--ylb);">
-    <div class="ib-l" style="color:var(--yl);">Nuance on the $7M</div>
-    <div class="ib-c">Timothy said on the June 5 call: <em>"I don't think we have a duplicate issue."</em> Mac followed immediately with the naming convention problem. The $7M figure is from Informatica's internal analysis — present it as a consequence of the naming chaos they acknowledged, not an accusation. <strong>Frame: "This kind of fragmentation typically surfaces duplicate revenue — in fact, you mentioned finding $7M during manual board prep."</strong></div>
+  <div class="info-box" style="background:var(--blbg);border:1.5px solid var(--blb);">
+    <div class="ib-l" style="color:var(--bl);">Why the Workday Timing Matters for IT</div>
+    <div class="ib-c">Ben (IT) knows Workday Finance goes live Jan 1. The risk he may not have articulated: <strong>every customer record that enters Workday on day one inherits whatever naming convention the person entering it used.</strong> Without MDM, you're starting Workday Finance with the same fragmented customer master you have today — except now it's in a new system that's even harder to fix after the fact. Frame MDM as the step that makes the Workday launch cleaner, not a competing initiative.</div>
   </div>
 </section>
 
-<!-- ═══ SLIDE 3: PRICING ═══ -->
-<section class="sec" id="s-pricing">
+<!-- ═══ SLIDE 3: EXXONMOBIL ═══ -->
+<section class="sec" id="s-exxon">
   <div class="sec-hdr">
-    <div class="sec-icon">📊</div>
-    <div><div class="sec-title">Slide 3, Tab 1 — Pricing a Proposal</div><div class="sec-sub">The ventilation job example</div></div>
+    <div class="sec-icon">🛢️</div>
+    <div><div class="sec-title">Slide 3, Tab 1 — The ExxonMobil Problem</div><div class="sec-sub">Use the example Timothy gave you, verbatim</div></div>
   </div>
   <div class="sn">
     <div class="sn-l">🎤 Speaker Notes</div>
-    <div class="sn-b"><strong>Start with Mac's ventilation story</strong> — this is the most vivid, real example from the call. Mac gave it voluntarily. Use his own words.
+    <div class="sn-b"><strong>Open this tab by referencing Timothy's own words from the agenda feedback.</strong> He gave you this example — using it signals you listened carefully.
     <ul>
-      <li>Walk the current-state workflow slowly. Let step 2 ("call the CRO") land — it's uncomfortable for Timothy to hear himself described as a bottleneck.</li>
-      <li>On the future state: <em>"Nothing changes for the rep. They still work in Salesforce. The actuals just appear."</em></li>
-      <li>The 24% overperformance story (Mac's) is the emotional anchor — it's not just inefficiency, it's margin leakage with no ability to learn from it.</li>
+      <li>Say: <em>"Timothy, you mentioned ExxonMobil Beaumont specifically — about 7 naming iterations going back years. That's exactly what we want to use as our anchor today."</em></li>
+      <li>When you get to the future state, pause on survivorship: <em>"MDM doesn't just match the records — it makes a decision about which one wins. You define the rule. That's how the standard gets set."</em></li>
+      <li>At the end of this tab, invite the room: <em>"You said you have myriad examples of this same problem. What's one more that comes to mind?"</em> — Let Liz and Timothy answer. This is your discovery extension moment.</li>
+      <li>Do NOT frame the $7M figure as an accusation. Tie it to the naming chaos they acknowledged: "This kind of naming fragmentation is exactly where duplicate revenue hides."</li>
     </ul></div>
   </div>
-  <h4>Verbatim Discovery Quotes — Use These</h4>
-  <div class="qb qb-bl">
-    <div class="qb-who">Mac McKinney — VP BD (00:12:34)</div>
-    <div class="qb-text">"We had to do a proposal this week for a ventilation job... We're looking at the last proposal. We don't have last actuals to look at, right? To see, okay, we proposed X, we performed at X. Where can we land with this proposal to be competitive? So the business intelligence end — in order to achieve any business intelligence — it's difficult. So I think that took us two different 30-minute meetings plus probably an hour working on the proposal outside of that just to land at the right number, when it's instantly available but in several different places that require looking, require digging, and it's just — nothing closes the loop with itself."</div>
-    <div class="qb-ctx">Mac is describing a proposal that happened that very week. Not hypothetical. This is a live pain point.</div>
+  <div class="qb qb-or">
+    <div class="qb-who">Timothy Long — Agenda Feedback (verbatim, the ExxonMobil context)</div>
+    <div class="qb-text">"We have been working with ExxonMobil in Beaumont for many years. It probably has 7 iterations of naming conventions in our legacy disparate systems that go back many years. How do we clean that up in the historical data, how do we set the new 'standard', and how do we ensure that it is managed to that standard from quote (SF) to cash (Workday) going forward. I have myriad examples of the same problem many times over."</div>
+    <div class="qb-ctx">Timothy is asking three distinct questions. Structure your answer around exactly these three: (1) clean up history, (2) set the standard, (3) govern it from SF to Workday. The tabs on Slide 3 map directly to these.</div>
   </div>
-  <div class="qb qb-bl">
-    <div class="qb-who">Mac McKinney (00:43:01)</div>
-    <div class="qb-text">"We we overperformed the proposal by 24% which I'm sure the customer is not thrilled with, but we don't have any other information behind that. Was that what ballooned out when we did propose? There's nothing for us to look back on the actual side of it to get the texture to redevelop the proposal out the door."</div>
-    <div class="qb-ctx">24% overrun with no root-cause visibility. The margin consequence is real and ongoing.</div>
+</section>
+
+<!-- ═══ SLIDE 3: SETTING THE STANDARD ═══ -->
+<section class="sec" id="s-standard">
+  <div class="sec-hdr">
+    <div class="sec-icon">📐</div>
+    <div><div class="sec-title">Slide 3, Tab 2 — Setting the Standard</div><div class="sec-sub">The "data cube" conversation</div></div>
+  </div>
+  <div class="sn">
+    <div class="sn-l">🎤 Speaker Notes</div>
+    <div class="sn-b">Timothy used the phrase "data cube" to describe what they don't have. Use it back to him.
+    <ul>
+      <li>Say: <em>"You mentioned a 'data cube' — the thing you're trying to build but haven't been able to. MDM is essentially that data cube. It's the governed standard that every system in your stack references."</em></li>
+      <li>The Workday urgency lives here: <strong>"If the data cube doesn't exist before Jan 1, Workday Finance launches on day one with ungoverned customer data. MDM fixes that before the switch gets flipped."</strong></li>
+      <li>This is also where Ben (IT) can become an ally rather than a skeptic — frame it as MDM being the thing that makes Workday's launch cleaner and protects the investment IT has already made.</li>
+    </ul></div>
+  </div>
+  <div class="qb qb-pu">
+    <div class="qb-who">Timothy Long — Agenda Feedback (Jun 23)</div>
+    <div class="qb-text">"We have been discussing our 'data cube' or lack thereof and what we think we need to standardize on from a data perspective."</div>
+    <div class="qb-ctx">Use "data cube" as your entry point into the MDM governance conversation. He's already using it internally — it will resonate when you reflect it back.</div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 3: QUOTE TO CASH ═══ -->
+<section class="sec" id="s-q2c">
+  <div class="sec-hdr">
+    <div class="sec-icon">🔄</div>
+    <div><div class="sec-title">Slide 3, Tab 3 — Quote → Cash Governance</div><div class="sec-sub">The lifecycle Timothy explicitly asked about</div></div>
+  </div>
+  <div class="sn">
+    <div class="sn-l">🎤 Speaker Notes</div>
+    <div class="sn-b">Timothy named the exact lifecycle he wants governed: <strong>"from quote (SF) to cash (Workday)"</strong>. This is the architecture conversation. Walk it slowly.
+    <ul>
+      <li><em>"Right now a quote in Salesforce and a job in Workday are two separate universes. The same ExxonMobil job exists in both — under different names, with no shared identifier."</em></li>
+      <li><em>"MDM creates a shared identity. The Golden Record ID that lives in SF is the same ID that travels to Workday. When the job closes in Workday, those actuals can come back to SF. The loop closes."</em></li>
+      <li>Reference Mac's ventilation proposal here: <em>"Mac, you described pricing that job where you didn't have actuals — that's this gap. With MDM, the next ventilation proposal at ExxonMobil Beaumont opens in Salesforce with all prior performance attached."</em></li>
+      <li>For Ben: emphasize that this is <strong>additive to Workday, not a modification of it</strong>. Workday's implementation is unaffected. MDM sits in the integration layer.</li>
+    </ul></div>
   </div>
   <div class="qb qb-or">
-    <div class="qb-who">Timothy Long — CRO (00:14:43)</div>
-    <div class="qb-text">"There's not everybody has access to Intact. I mean, I think I may be the only person in the sales organization that has it... our actuals never make it back into Salesforce. So whether we do better, worse, anywhere in that universe, it's not readily accessible to the sales [team]."</div>
-    <div class="qb-ctx">Timothy volunteering that he is a single point of failure for financial data access. Significant operational risk.</div>
-  </div>
-  <div class="qb qb-or">
-    <div class="qb-who">Timothy Long (00:39:07) — His #1 stated value-add from MDM</div>
-    <div class="qb-text">"If we can push actuals back into Salesforce when a project is done, that's going to help us do a lot because we'll know what we proposed, what actually happened, and ultimately I think that is — there's a lot of value in that. Um, I think that's probably the biggest first step."</div>
-    <div class="qb-ctx">This is Timothy explicitly naming actuals-to-Salesforce as his single biggest MDM priority. Anchor your demo to it.</div>
+    <div class="qb-who">Timothy Long — Agenda Feedback (Jun 23) — His exact framing of the lifecycle</div>
+    <div class="qb-text">"How do we ensure that it is managed to that standard from quote (SF) to cash (Workday) going forward."</div>
+    <div class="qb-ctx">This is the most concrete thing he said. He has already mapped the architecture: SF = quote, Workday = cash. MDM governs the standard across both. That's your answer.</div>
   </div>
   <div class="flow-cmp">
     <div class="fc now">
-      <div class="fc-l">❌ Today — ~2 Hours</div>
-      <div class="fc-step"><strong>Salesforce:</strong> no actuals → dead end</div>
-      <div class="fc-step"><strong>Call Timothy</strong> (only Sage Intacct access in sales org)</div>
-      <div class="fc-step"><strong>Timothy runs report</strong>, emails file</div>
-      <div class="fc-step"><strong>2 meetings + 1hr</strong> → price submitted</div>
-      <div class="fc-step"><strong>Post-job:</strong> 24% overrun, no diagnosis possible</div>
+      <div class="fc-l">❌ Today — The Lifecycle Breaks</div>
+      <div class="fc-step"><strong>Salesforce:</strong> Quote → "ExxonMobil Beaumont" (rep's version)</div>
+      <div class="fc-step"><strong>Won → Bullhorn/Job Forms:</strong> "Exxon BMT" (different name)</div>
+      <div class="fc-step"><strong>Actuals land in Workday:</strong> "XOM Beaumont" — no link back</div>
+      <div class="fc-step"><strong>Next job:</strong> Rep prices blind. Timothy is the only Sage Intacct access.</div>
     </div>
     <div class="fc fut">
-      <div class="fc-l">✅ With MDM — ~5 Minutes</div>
-      <div class="fc-step"><strong>Salesforce:</strong> actuals for all prior jobs at this site — live</div>
-      <div class="fc-step"><strong>Compare</strong> proposed vs. actual margin instantly</div>
-      <div class="fc-step"><strong>Submit confident bid</strong> — no calls, no meetings</div>
+      <div class="fc-l">✅ With MDM — Full Loop</div>
+      <div class="fc-step"><strong>Salesforce:</strong> Quote references Golden Record ID — canonical name</div>
+      <div class="fc-step"><strong>Won → Workday:</strong> Same Golden Record ID — no re-entry, no drift</div>
+      <div class="fc-step"><strong>Actuals in Workday → MDM → back to SF:</strong> Loop closed</div>
+      <div class="fc-step"><strong>Next job:</strong> Rep opens SF — full actuals history visible. 5 minutes to price.</div>
     </div>
-  </div>
-</section>
-
-<!-- ═══ SLIDE 3: BOARD REPORTING ═══ -->
-<section class="sec" id="s-board">
-  <div class="sec-hdr">
-    <div class="sec-icon">📋</div>
-    <div><div class="sec-title">Slide 3, Tab 2 — Board Reporting</div><div class="sec-sub">The naming chaos and investment banker cost</div></div>
-  </div>
-  <div class="sn">
-    <div class="sn-l">🎤 Speaker Notes</div>
-    <div class="sn-b">The board reporting story lands hardest with <strong>Timothy</strong>. He volunteered the investment banker cost himself — it's a real, recurring, avoidable line item.
-    <ul>
-      <li>Emphasize that the naming chaos is not a technology problem — it's a governance problem that MDM is purpose-built to solve.</li>
-      <li>Connect Tableau / CRMA as the visible front end: <em>"MDM is the clean foundation; Tableau is the board-ready output."</em></li>
-      <li>Timothy said on the call: <em>"I would say we have an access challenge, not an accuracy challenge."</em> — Honor this. MDM solves aggregation and accessibility, not data correction.</li>
-    </ul></div>
-  </div>
-  <div class="qb qb-or">
-    <div class="qb-who">Timothy Long (00:19:46)</div>
-    <div class="qb-text">"Right now we're paying very, very expensive investment banking analysts to take our information out of Excel, do what they do with it, and then help us present it back."</div>
-    <div class="qb-ctx">Direct, measurable cost. Timothy volunteered this unprompted. It's a line item he wants to eliminate.</div>
-  </div>
-  <div class="qb qb-or">
-    <div class="qb-who">Timothy Long (00:18:02) — The naming convention problem</div>
-    <div class="qb-text">"We may call it BMT, Bowmont, uh, BTR... the challenge is our business unit leaders are creating their forecast and they're using whatever vernacular is comfortable to them. Baytown, BYT, BTO. That happens a lot in our organization because everybody's got different regional upbringings, so on so forth."</div>
-  </div>
-  <div class="qb qb-or">
-    <div class="qb-who">Timothy Long (00:18:55)</div>
-    <div class="qb-text">"You can't just pivot data. You can't run clean reporting. Stuff shows up in different places. Like if you have one job at one site, it may show up in three different places because the name's not the same. We know it inherently because we know our customers, but it's not automatically able to be aggregated."</div>
-    <div class="qb-ctx">Timothy articulating the MDM Reference Data Management problem in his own words.</div>
-  </div>
-  <div class="qb qb-gn">
-    <div class="qb-who">Timothy Long — Important nuance (00:15:44)</div>
-    <div class="qb-text">"I would say we have an access challenge, not an accuracy challenge."</div>
-    <div class="qb-ctx">Do NOT imply their numbers are wrong. Frame MDM as solving accessibility and aggregation — not correction. Timothy is proud of their financial governance within Sage Intacct.</div>
-  </div>
-</section>
-
-<!-- ═══ SLIDE 3: ACQUISITIONS ═══ -->
-<section class="sec" id="s-acquisition">
-  <div class="sec-hdr">
-    <div class="sec-icon">🔀</div>
-    <div><div class="sec-title">Slide 3, Tab 3 — Acquisition Data</div><div class="sec-sub">The PE due diligence story</div></div>
-  </div>
-  <div class="sn">
-    <div class="sn-l">🎤 Speaker Notes</div>
-    <div class="sn-b"><strong>This is the exit story.</strong> 9 acquisitions in 8 years is an operational strength — but a liability in PE due diligence if the data isn't clean. Frame it as: <em>"Every acquisition brought new data. Right now that's a story buyers will want to untangle. MDM makes the M&A track record a feature, not a risk."</em>
-    <ul>
-      <li>Named acquisitions: Amerisafe Group, JSS Safety, Texas Motive, CertifiedSafety</li>
-      <li>Timothy acknowledged the PE process will involve "5 to 10 to 20 management meetings" — buyers will probe data hard</li>
-    </ul></div>
-  </div>
-  <div class="qb qb-or">
-    <div class="qb-who">Timothy Long (00:20:46)</div>
-    <div class="qb-text">"We also think it's going to help us tell stories around revenue makeup, future opportunities as we go to the auction process with an investment banking group and you know 5 to 10 to 20 management meetings in the future."</div>
-    <div class="qb-ctx">Timothy connecting MDM directly to PE exit readiness — without being prompted. You don't need to make this leap for him.</div>
-  </div>
-  <div class="qb qb-gn">
-    <div class="qb-who">Peter Sheehan — Informatica SE (00:26:16) — Framing that resonated</div>
-    <div class="qb-text">"The next round of private equity or whoever's coming in to write a check is asking me some analytical use cases and I can now answer them."</div>
-    <div class="qb-ctx">Timothy responded "Yeah. 100%." Reuse this framing.</div>
   </div>
 </section>
 
@@ -413,26 +433,26 @@ h4:first-child{margin-top:0;}
 <section class="sec" id="s-crosssell">
   <div class="sec-hdr">
     <div class="sec-icon">🏗️</div>
-    <div><div class="sec-title">Slide 3, Tab 4 — Cross-Sell Targeting</div><div class="sec-sub">"Data texture" and the Marathon example</div></div>
+    <div><div class="sec-title">Slide 3, Tab 4 — Cross-Sell &amp; Hierarchy</div><div class="sec-sub">"Data texture" and the Marathon example</div></div>
   </div>
   <div class="sn">
     <div class="sn-l">🎤 Speaker Notes</div>
-    <div class="sn-b"><strong>Use Mac's exact phrase "data texture"</strong> — he introduced it himself and used it multiple times. Echoing it signals that you were listening.
+    <div class="sn-b"><strong>Use Mac's exact phrase "data texture"</strong> — he introduced it himself and used it multiple times. Echoing it signals you were listening.
     <ul>
       <li>The Marathon example (9 sites) is the most concrete illustration — use it explicitly</li>
-      <li>Cross-sell is stated as <strong>#2 company priority</strong> by Timothy — this is not a nice-to-have</li>
-      <li>The rep turnover point hits emotionally — Timothy said it sets them back 6–12 months per departure</li>
+      <li>Cross-sell is stated as <strong>#2 company priority by Timothy</strong> — this is not a nice-to-have</li>
+      <li>The rep turnover point hits emotionally — Timothy said it sets them back 6–12 months per departure. <em>He said this in the room with Doug present</em> — Doug was described as too new to know the accounts yet.</li>
     </ul></div>
   </div>
   <div class="qb qb-bl">
     <div class="qb-who">Mac McKinney (00:40:14) — "Data texture"</div>
-    <div class="qb-text">"You'll hear me use the term data texture a lot because that's really what we need. We need to be able to see the layers of the data. So hierarchy here is — do I care about what Marathon spent? Yes. If I'm preparing to go do the annual review that I've got to do with Marathon every year, I care how much the Marathon ecosystem spent. But I also care about what is in that bucket... the next level of hierarchy under the parent corporate account would be the site account... It's important to know that within the Marathon umbrella, we have a lot of revenue being stacked. None of it being stacked at Gatlinburg, zero."</div>
-    <div class="qb-ctx">Mac describing the exact B2B Hierarchy Management use case. This is his mental model of what MDM should deliver.</div>
+    <div class="qb-text">"You'll hear me use the term data texture a lot because that's really what we need. We need to be able to see the layers of the data... the next level of hierarchy under the parent corporate account would be the site account... It's important to know that within the Marathon umbrella, we have a lot of revenue being stacked. None of it being stacked at Gatlinburg, zero."</div>
+    <div class="qb-ctx">Mac describing the exact B2B Hierarchy use case. This is his mental model of what MDM should deliver.</div>
   </div>
   <div class="qb qb-or">
     <div class="qb-who">Timothy Long (00:21:42)</div>
     <div class="qb-text">"Cross-sell upsell is the second most important thing in our organization... every time somebody leaves this organization it sets us back six months to a year in every account set because all the information is lying here and partially in Mac's head and Doug is so new he's — it's really hard for him to tell anything at this point because he's still digesting it."</div>
-    <div class="qb-ctx">Timothy connecting account intelligence retention directly to cross-sell performance. He admitted it's a people-dependency risk in the room with Doug present.</div>
+    <div class="qb-ctx">Timothy said this with Doug in the room. It was not unkind — it was honest about the systemic risk. Account intelligence as people-dependency is a live pain point they all feel.</div>
   </div>
 </section>
 
@@ -440,27 +460,23 @@ h4:first-child{margin-top:0;}
 <section class="sec" id="s-solution">
   <div class="sec-hdr">
     <div class="sec-icon">🔧</div>
-    <div><div class="sec-title">Slide 4 — The Solution</div><div class="sec-sub">Hub diagram + capability deep-dives</div></div>
+    <div><div class="sec-title">Slide 4 — The Solution</div><div class="sec-sub">Lifecycle diagram + capability deep-dives</div></div>
   </div>
   <div class="sn">
     <div class="sn-l">🎤 Speaker Notes</div>
-    <div class="sn-b">Let the hub diagram anchor the explanation. Key spoken lines:
+    <div class="sn-b">Let the lifecycle diagram anchor the explanation. Walk it left to right.
     <ul>
-      <li><em>"Everything on the left is a system you already have — nothing goes away."</em></li>
-      <li><em>"MDM sits in the middle and creates one governed record every downstream system can trust."</em></li>
-      <li><em>"Salesforce is still where your team lives. The difference is the data that flows into it is clean."</em></li>
-      <li>Use Peter Sheehan's "plumbing" framing: <em>"If we do our job, you won't even know we're there."</em> — Timothy responded well to this on the June 5 call.</li>
+      <li><em>"On the left — the 7 ExxonMobil variants. That's today."</em></li>
+      <li><em>"MDM in the middle ingests all of them, runs survivorship rules, and produces one Golden Record."</em></li>
+      <li><em>"On the right: that Golden Record pushes into Salesforce — your quote system — and into Workday — your cash system. One ID. Both systems."</em></li>
+      <li>For Ben specifically: <em>"Workday stays exactly as you've implemented it. No configuration changes. MDM governs the layer above — it's additive."</em></li>
+      <li>Use Timothy's own words from the June 5 call: "guardrails" is his term. <em>"The guardrails you described — MDM enforces them at the point of entry, not as a cleanup exercise."</em></li>
     </ul></div>
   </div>
   <div class="qb qb-or">
-    <div class="qb-who">Timothy Long — responding to the MDM framing (00:28:16)</div>
-    <div class="qb-text">"Yeah. I mean, I think at a high level that's what we're after."</div>
-    <div class="qb-ctx">Clear verbal buy-in to the "starting line" framing. Reuse this language: MDM gets you to the starting line for everything else.</div>
-  </div>
-  <div class="qb qb-or">
-    <div class="qb-who">Timothy Long (00:22:30) — On what he wants from MDM</div>
+    <div class="qb-who">Timothy Long (00:22:30)</div>
     <div class="qb-text">"The way I understand the opportunity in front of us is you guys can help us maybe get back to a homeostasis point within our data where we can get it all in one place, get it cleaned up to where moving forward we have rules, guardrails... a process by which we can box everybody in to give them a process to work through this."</div>
-    <div class="qb-ctx">Timothy articulating the MDM governance model in his own words. Use "guardrails" — it's his word.</div>
+    <div class="qb-ctx">Timothy articulating the MDM governance model in his own words. Use "guardrails" — it's his word, not ours.</div>
   </div>
 </section>
 
@@ -468,15 +484,15 @@ h4:first-child{margin-top:0;}
 <section class="sec" id="s-impact">
   <div class="sec-hdr">
     <div class="sec-icon">📈</div>
-    <div><div class="sec-title">Slide 5 — Impact: Board Prep Before vs. After</div></div>
+    <div><div class="sec-title">Slide 5 — Impact: Before vs. After</div></div>
   </div>
   <div class="sn">
     <div class="sn-l">🎤 Speaker Notes</div>
-    <div class="sn-b">Show "Today" first — let it land for a moment — then toggle to "With MDM." <strong>Don't narrate the toggle. Let the visual do the work.</strong>
+    <div class="sn-b">This slide uses the ExxonMobil Beaumont lifecycle as the before/after. Show "Today" first — let it land — then toggle to "With MDM."
     <ul>
-      <li>On "Today": <em>"This is a week of your life, every board cycle."</em></li>
-      <li>On "With MDM": <em>"This is the same process when the data is governed."</em></li>
-      <li>The investment banker cost is a real, volunteered number — it's your strongest ROI handle if they push on cost justification.</li>
+      <li>On "Today": <em>"This is what happens every single time a new ExxonMobil job comes in — and Timothy said it's the same pattern across myriad customers."</em></li>
+      <li>On "With MDM": <em>"Same scenario. Different result. The loop closes automatically."</em></li>
+      <li>The PE due diligence row is your strongest closing visual — tie it to the management meeting framing Timothy used on June 5.</li>
     </ul></div>
   </div>
 </section>
@@ -489,17 +505,81 @@ h4:first-child{margin-top:0;}
   </div>
   <div class="sn">
     <div class="sn-l">🎤 Speaker Notes</div>
-    <div class="sn-b">The close should feel like a natural continuation, not a pitch. Timothy already agreed to an extended session (CEO, CFO, Joe) within 90 days of June 5. Your job at the end of June 24:
+    <div class="sn-b">The close should feel like a natural continuation, not a pitch. Timothy already indicated interest in an extended session.
     <ul>
-      <li><strong>Confirm Step 2:</strong> Ask Timothy and Mac to come back with customer record count and a list of source systems. This inputs the cost/scope analysis.</li>
-      <li><strong>Set Step 3 date:</strong> <em>"What does late July or early August look like for getting the extended team together?"</em></li>
-      <li><strong>Plant the commercial seed:</strong> Timothy said he's open to any commercial arrangement. Dylan can mention deferred payment to remove the 2027 budget objection.</li>
+      <li><strong>Step 2 action:</strong> Ask Timothy and Liz to come back with customer record count and a source systems list. <em>"Liz — you've been closest to the data. Could you and Timothy get us a count of unique customer records across your systems and where they live? That's the input for scoping."</em></li>
+      <li><strong>Urgency hook:</strong> <em>"The natural window here is before January 1 — before Workday Finance goes live. Starting MDM now means Workday inherits a governed customer master, not the fragmented one you have today."</em></li>
+      <li><strong>Commercial seed:</strong> Timothy said he's open to any commercial arrangement. Dylan can surface deferred payment to remove the 2027 budget objection.</li>
     </ul></div>
   </div>
   <div class="qb qb-or">
     <div class="qb-who">Timothy Long (00:53:59)</div>
     <div class="qb-text">"This has got visibility at her [CEO's] level. So I'm going to stop short of saying we have buy-in with everybody, but we have heavy, heavy interest and we understand the business challenge literally at the highest level. Our private equity chairman knows that I'm having this meeting today."</div>
-    <div class="qb-ctx">The PE chairman knows about these conversations. This is C-suite sanctioned. Treat it accordingly.</div>
+    <div class="qb-ctx">The PE chairman knows about these conversations. This is C-suite sanctioned. Treat it accordingly in the close.</div>
+  </div>
+</section>
+
+<!-- ═══ GOLDEN RECORD DISCUSSION ═══ -->
+<section class="sec" id="golden-record">
+  <div class="sec-hdr">
+    <div class="sec-icon">🏆</div>
+    <div><div class="sec-title">Golden Record — Discussion Guide</div><div class="sec-sub">Timothy's three questions, fully answered</div></div>
+  </div>
+  <p>Timothy explicitly asked about three things regarding the Golden Record. Here is a prepared answer for each:</p>
+
+  <h4>Question 1: "How do we clean that up in the historical data?"</h4>
+  <div class="sn">
+    <div class="sn-l">Prepared Answer</div>
+    <div class="sn-b"><em>"MDM uses probabilistic and deterministic matching to compare records across every source system you connect to it. For ExxonMobil Beaumont specifically, it would find all 7 variants, match them based on configurable rules (industry, location, relationship data, etc.), and merge them into one Golden Record. The historical data in Salesforce, Sage Intacct, Bullhorn — it all gets updated to point to the same master. You're not deleting history; you're connecting it."</em></div>
+  </div>
+
+  <h4>Question 2: "How do we set the new 'standard'?"</h4>
+  <div class="sn">
+    <div class="sn-l">Prepared Answer</div>
+    <div class="sn-b"><em>"You configure survivorship rules — the business logic that decides which value wins when two records conflict. For customer name, you might say 'prefer the Salesforce value' or 'prefer the most recently updated' or 'prefer the value that matches the ZoomInfo enrichment you already have.' You own the rules. MDM enforces them automatically, every time a new record is created or updated."</em></div>
+  </div>
+
+  <h4>Question 3: "How do we ensure it is managed to that standard from quote (SF) to cash (Workday) going forward?"</h4>
+  <div class="sn">
+    <div class="sn-l">Prepared Answer</div>
+    <div class="sn-b"><em>"Once the Golden Record exists, MDM publishes a master record ID. That ID is the shared key between Salesforce and Workday. A quote in SF references ID 00041 — ExxonMobil Beaumont. When that job moves to Workday, it carries ID 00041. When actuals are posted in Workday, they're tagged to ID 00041 and can flow back to Salesforce automatically. Any new record that tries to enter either system gets checked against the Golden Record before it's created — the guardrails Timothy described are built into the transaction."</em></div>
+  </div>
+</section>
+
+<!-- ═══ HANDLING BEN ═══ -->
+<section class="sec" id="handling-ben">
+  <div class="sec-hdr">
+    <div class="sec-icon">🛡️</div>
+    <div><div class="sec-title">Handling Ben (IT Leadership)</div><div class="sec-sub">He is there to protect Workday decisions already made. Don't threaten them.</div></div>
+  </div>
+  <div class="alert">
+    <div class="alert-l">⚠️ Critical Guidance — Read Before the Meeting</div>
+    <div class="alert-b">Timothy explicitly said Ben is there "to provide us a reality check from the current state of our Workday implementation and the ballast of IT leadership." Ben's job in this room is to pump the brakes on anything that conflicts with IT decisions already made. <strong>If you accidentally position MDM as overlapping with, replacing, or complicating Workday, Ben will use it to kill the deal.</strong>
+    <ul>
+      <li>Never say: "MDM will manage your customer data in Workday"</li>
+      <li>Never say: "MDM replaces what Workday is doing for master data"</li>
+      <li>Never say: "You'll need IT to make changes to Workday for this"</li>
+      <li>Always say: "No source system changes required — Workday stays exactly as-is"</li>
+      <li>Always say: "MDM governs the layer between systems — it's additive to the IT architecture"</li>
+      <li>Always say: "MDM makes the Workday launch better — you're starting Finance on Jan 1 with a clean customer master instead of today's fragmented one"</li>
+    </ul></div>
+  </div>
+
+  <h4>How to Turn Ben Into an Ally</h4>
+  <div class="sn">
+    <div class="sn-l">Strategy</div>
+    <div class="sn-b">Ben's core concern is likely: <em>"We're already deep in Workday. I don't want another data project complicating our go-live."</em> The pivot is to make MDM look like something that <strong>protects the Workday investment</strong> rather than threatening it.
+    <ul>
+      <li><em>"Ben, you're going live with Workday Finance on January 1. The question MDM answers is: what master customer data does Workday inherit on that day? Right now the answer is the same fragmented, 7-variant customer master that exists today. MDM ensures Workday inherits one clean, governed record for every customer — from day one. That makes your go-live better, not harder."</em></li>
+      <li>If he pushes back on timeline: <em>"MDM doesn't require Workday to do anything differently. The integration runs at the data layer — Workday's configuration stays untouched."</em></li>
+      <li>If he asks about integration: <em>"We have pre-built connectors for Workday. Joe Hartmann would be the right person to go deeper on the technical architecture — that's part of why we'd love to get Joe in the extended session."</em></li>
+    </ul></div>
+  </div>
+
+  <div class="obj">
+    <div class="obj-l">Likely Ben Objection</div>
+    <div class="obj-q">"We've already made our MDM decisions as part of the Workday implementation. We're using Workday's native capabilities."</div>
+    <div class="obj-a"><strong>Response:</strong> "Workday has data management capabilities within its modules — that's the right call for operational data within Workday. What Informatica MDM addresses is the <em>cross-system</em> problem: governing the customer identity that needs to be consistent between Salesforce, Workday, Bullhorn, and your legacy systems. Workday can't own the Salesforce records; Salesforce can't own the Workday records. MDM is the neutral master that both reference. They're complementary, not competing."</div>
   </div>
 </section>
 
@@ -509,25 +589,29 @@ h4:first-child{margin-top:0;}
     <div class="sec-icon">🛡️</div>
     <div><div class="sec-title">Objections &amp; Responses</div></div>
   </div>
+
   <div class="obj">
     <div class="obj-l">Likely Objection</div>
     <div class="obj-q">"We're too busy with the Workday implementation right now."</div>
-    <div class="obj-a"><strong>Response:</strong> "That's actually the strongest reason to start MDM now. Workday Finance goes live in ~6 months. If MDM isn't in place before that, you'll be integrating dirty data into a clean new system. The window to do this right is <em>before</em> Workday Finance lands — not after." Timothy acknowledged on the call that full implementation is a 2027 initiative — but also said "it's possible and wise to start conversations as early as possible."</div>
+    <div class="obj-a"><strong>Response:</strong> "That's the strongest reason to start MDM now, not later. Workday Finance goes live January 1. If MDM isn't in place before that, your brand-new finance system inherits the same fragmented customer master you have today. The window to do this right is the six months between now and January 1 — not after the go-live. Timothy — you said you want to be ready for the PE auction in late 2027. If Workday launches on dirty data, it sets back that timeline, not MDM."</div>
   </div>
+
   <div class="obj">
     <div class="obj-l">Likely Objection</div>
     <div class="obj-q">"We're cash-constrained right now."</div>
-    <div class="obj-a"><strong>Response:</strong> Timothy said verbatim: <em>"We are open to discussing any commercial arrangement that's beneficial."</em> This was said in response to Dylan raising deferred payments. Come prepared with a phased option: start with customer domain only, prove value, expand before exit. Frame it as: the cost of <em>not</em> doing this is a lower exit multiple.</div>
+    <div class="obj-a"><strong>Response:</strong> Timothy said verbatim: <em>"We are open to discussing any commercial arrangement that's beneficial."</em> Come prepared with a phased option: start with customer domain only, prove value, expand before exit. Frame it as: the cost of <em>not</em> doing this is a lower exit multiple and a delayed PE timeline. The cost of the investment banker data tax is also a real, ongoing line item — MDM eliminates it.</div>
   </div>
+
   <div class="obj">
     <div class="obj-l">Likely Objection</div>
     <div class="obj-q">"We don't really have a duplicate problem — our numbers are accurate."</div>
-    <div class="obj-a"><strong>Response:</strong> Agree with them. <em>"You're right — Timothy said as much on our last call, and we believe it."</em> MDM isn't about fixing wrong numbers — it's about making <strong>accurate numbers accessible and aggregatable</strong>. One job showing up in three places because of naming conventions isn't a data accuracy problem — it's a governance problem MDM is purpose-built to solve.</div>
+    <div class="obj-a"><strong>Response:</strong> Agree with them. <em>"You're right — Timothy said as much on our last call."</em> MDM isn't about fixing wrong numbers — it's about making accurate numbers <strong>accessible and aggregatable</strong>. ExxonMobil Beaumont showing up in 7 places under 7 names isn't an accuracy problem — it's a governance problem MDM is purpose-built to solve.</div>
   </div>
+
   <div class="obj">
     <div class="obj-l">Likely Objection</div>
     <div class="obj-q">"Won't this require big IT involvement we don't have bandwidth for?"</div>
-    <div class="obj-a"><strong>Response:</strong> "MDM doesn't require any source system to change. Salesforce, Sage Intacct, Workday, and Bullhorn all stay exactly as they are. Informatica handles the integration layer. Joe's team would be involved in implementation design, but the day-to-day burden stays low — if we do our job well, your reps won't even know Informatica is there."</div>
+    <div class="obj-a"><strong>Response:</strong> "MDM doesn't require any source system to change. Salesforce, Workday, Bullhorn, and Sage Intacct all stay exactly as they are. Informatica handles the integration layer. Joe Hartmann's team would be involved in implementation design, but the day-to-day burden is minimal — if we do our job well, your reps won't even know Informatica is there."</div>
   </div>
 </section>
 
@@ -540,22 +624,23 @@ h4:first-child{margin-top:0;}
   <div class="two-col">
     <div class="info-box" style="background:var(--gnbg);border:1.5px solid var(--gnb);">
       <div class="ib-l" style="color:var(--gn);">Deal Signals</div>
-      <div class="ib-c"><strong>Committed / Final Negotiation</strong> in Vivun as of Jun 12. PE chairman aware of Informatica conversations. CEO has visibility. Timothy: "heavy, heavy interest at the highest level." Commercial conversation is appropriate on Jun 24 if the moment is right.</div>
+      <div class="ib-c"><strong>Committed / Final Negotiation</strong> in Vivun as of Jun 12. PE chairman aware of conversations. CEO has visibility. Timothy: "heavy, heavy interest at the highest level." Liz and Ben attending signals Timothy is building internal coalition. Commercial conversation is appropriate on Jun 24 if the moment is right.</div>
     </div>
     <div class="info-box" style="background:var(--orbg);border:1.5px solid #FFD0A8;">
       <div class="ib-l" style="color:var(--or);">Timothy's Commercial Opening</div>
-      <div class="ib-c"><em>"We are open to discussing any commercial arrangement that's beneficial."</em> — Timothy Long, Jun 5 call, in response to Dylan raising deferred payment. <strong>The door is explicitly open.</strong></div>
+      <div class="ib-c"><em>"We are open to discussing any commercial arrangement that's beneficial."</em> — Timothy Long, Jun 5 call, in response to Dylan raising deferred payment. <strong>The door is explicitly open.</strong> The Jan 1 Workday Finance go-live creates a natural urgency milestone for contract timing.</div>
     </div>
   </div>
   <div class="sn">
-    <div class="sn-l">📋 Pending Customer Actions (agreed on Jun 5)</div>
-    <div class="sn-b">Confirm status of these on Jun 24:
-    <ul>
-      <li><strong>Customer record count</strong> across all systems</li>
-      <li><strong>Source systems list</strong> — where customer records currently live</li>
-      <li><strong>Required attributes</strong> — what fields/relationships need to be mastered</li>
-      <li><strong>Downstream systems</strong> — beyond Salesforce, where should the golden record be pushed?</li>
-    </ul></div>
+    <div class="sn-l">📋 Pending Customer Actions (agreed on Jun 5) — Confirm on Jun 24</div>
+    <div class="sn-b">
+      <ul>
+        <li><strong>Customer record count</strong> across all systems — ask Timothy and Liz to come prepared or commit to delivering this before the extended session</li>
+        <li><strong>Source systems list</strong> — where customer records currently live</li>
+        <li><strong>Required attributes</strong> — what fields/relationships need to be mastered</li>
+        <li><strong>Downstream systems</strong> — beyond Salesforce and Workday, where should the Golden Record be pushed?</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -576,11 +661,6 @@ const io = new IntersectionObserver(entries => {
   });
 }, {rootMargin:'-20% 0px -70% 0px'});
 sections.forEach(s => io.observe(s));
-
-// Accordion
-function toggleAcc(id){
-  document.getElementById(id).classList.toggle('open');
-}
 </script>
 </body>
 </html>

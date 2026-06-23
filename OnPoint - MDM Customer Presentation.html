@@ -13,6 +13,7 @@
   --gn:#059669;--gnbg:#ECFDF5;--gnb:#A7F3D0;
   --bl:#2563EB;--blbg:#EFF6FF;--blb:#BFDBFE;
   --rd:#DC2626;--rdbg:#FEF2F2;--rdb:#FECACA;
+  --pu:#7C3AED;--pubg:#F5F3FF;--pub:#DDD6FE;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -23,7 +24,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .nav a{width:11px;height:11px;border-radius:50%;background:rgba(150,150,180,.35);display:block;transition:.25s;text-decoration:none;}
 .nav a.active,.nav a:hover{background:var(--or);transform:scale(1.35);}
 
-/* SLIDE BASE — each fills the viewport */
+/* SLIDE BASE */
 .slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:64px 120px;}
 
 /* ── SLIDE 1: TITLE ── */
@@ -32,34 +33,55 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,109,0,.14);border:1px solid rgba(255,109,0,.32);border-radius:99px;padding:8px 22px;font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--or2);margin-bottom:32px;position:relative;}
 .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--or);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
-#s1 h1{font-size:clamp(42px,4.5vw,76px);font-weight:900;color:#fff;line-height:1.06;max-width:860px;position:relative;}
+#s1 h1{font-size:clamp(42px,4.5vw,72px);font-weight:900;color:#fff;line-height:1.06;max-width:900px;position:relative;}
 #s1 h1 em{font-style:normal;color:var(--or);}
-#s1 .sub{font-size:20px;color:rgba(255,255,255,.44);margin-top:20px;max-width:580px;line-height:1.65;position:relative;}
+#s1 .sub{font-size:19px;color:rgba(255,255,255,.44);margin-top:20px;max-width:640px;line-height:1.65;position:relative;}
 .stats{display:flex;border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden;margin-top:56px;width:fit-content;position:relative;}
 .stat{padding:24px 48px;display:flex;flex-direction:column;gap:6px;border-right:1px solid rgba(255,255,255,.1);}
 .stat:last-child{border-right:none;}
 .stat .v{font-size:40px;font-weight:900;color:var(--or);line-height:1;}
 .stat .l{font-size:12px;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.08em;}
 
-/* ── SLIDE 2: LANDSCAPE ── */
+/* ── SLIDE 2: STACK ── */
 #s2{background:var(--wh);}
 .stag{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--gyl);margin-bottom:12px;}
-.sh{font-size:clamp(28px,3.2vw,48px);font-weight:800;color:var(--nv);line-height:1.15;margin-bottom:44px;}
-.landscape{display:flex;align-items:center;gap:0;}
-.sys-col{display:flex;flex-direction:column;gap:10px;}
-.sbox{border-radius:12px;padding:14px 22px;font-size:14px;font-weight:600;text-align:center;border:2px solid transparent;min-width:170px;}
-.sbox.silo{background:var(--rdbg);border-color:var(--rdb);color:var(--rd);}
-.sbox.sf{background:var(--blbg);border-color:var(--blb);color:var(--bl);padding:22px 28px;font-size:16px;min-width:190px;}
-.arr-col{display:flex;flex-direction:column;gap:10px;padding:0 16px;align-items:center;justify-content:center;}
-.arr-bad{color:#FCA5A5;font-size:20px;font-weight:900;line-height:1;}
-.pain-col{display:flex;flex-direction:column;gap:10px;padding-left:24px;}
-.pc{background:var(--rdbg);border:1.5px solid var(--rdb);border-radius:14px;padding:16px 20px;}
-.pc-t{font-size:15px;font-weight:700;color:var(--rd);}
-.pc-d{font-size:13px;color:#7F1D1D;margin-top:4px;line-height:1.45;}
-.gap-pill{background:#FEF9C3;border:1px solid #FDE68A;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:#92400E;margin-top:8px;align-self:flex-start;}
-.mid-arrow{font-size:32px;color:#FCA5A5;padding:0 12px;}
+.sh{font-size:clamp(26px,2.9vw,44px);font-weight:800;color:var(--nv);line-height:1.15;margin-bottom:36px;}
+.sh em{font-style:normal;color:var(--or);}
 
-/* ── SLIDE 3: CHALLENGES ── */
+/* Q2C Flow */
+.q2c-wrapper{display:flex;align-items:stretch;gap:0;width:100%;margin-bottom:32px;}
+.q2c-system{flex:1;border-radius:18px;padding:26px 28px;display:flex;flex-direction:column;gap:10px;}
+.q2c-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px;}
+.q2c-name{font-size:22px;font-weight:900;}
+.q2c-role{font-size:13px;font-weight:600;margin-top:1px;}
+.q2c-items{display:flex;flex-direction:column;gap:7px;margin-top:6px;}
+.q2c-item{font-size:13px;border-radius:8px;padding:7px 12px;font-weight:500;}
+.q2c-arr{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 16px;gap:3px;}
+.q2c-arr-line{width:2px;height:60px;background:linear-gradient(to bottom,transparent,var(--bd),transparent);}
+.q2c-arr-icon{font-size:22px;color:var(--gyl);}
+.q2c-middle{flex:1.4;background:var(--rdbg);border:2px dashed var(--rdb);border-radius:18px;padding:26px 28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;}
+.q2c-gap-badge{background:var(--rd);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:99px;}
+.q2c-gap-title{font-size:19px;font-weight:800;color:var(--rd);}
+.q2c-gap-items{display:flex;flex-direction:column;gap:6px;width:100%;margin-top:2px;}
+.q2c-gap-item{background:rgba(220,38,38,.08);border:1px solid var(--rdb);border-radius:8px;padding:7px 12px;font-size:13px;color:#7F1D1D;font-weight:500;text-align:left;}
+.q2c-sys-sf{background:var(--blbg);border:2px solid var(--blb);}
+.q2c-sys-sf .q2c-label{color:var(--bl);}
+.q2c-sys-sf .q2c-name{color:var(--bl);}
+.q2c-sys-sf .q2c-item{background:rgba(37,99,235,.07);border:1px solid var(--blb);color:#1E3A8A;}
+.q2c-sys-wd{background:var(--gnbg);border:2px solid var(--gnb);}
+.q2c-sys-wd .q2c-label{color:var(--gn);}
+.q2c-sys-wd .q2c-name{color:var(--gn);}
+.q2c-sys-wd .q2c-item{background:rgba(5,150,105,.07);border:1px solid var(--gnb);color:#065F46;}
+
+.go-live-banner{background:var(--nv);border-radius:14px;padding:16px 28px;display:flex;gap:0;align-items:center;}
+.glb{flex:1;display:flex;flex-direction:column;gap:3px;padding:0 24px;}
+.glb:first-child{padding-left:0;}
+.glb-l{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.glb-v{font-size:16px;font-weight:800;color:var(--or);}
+.glb-s{font-size:12px;color:rgba(255,255,255,.38);}
+.glb-div{width:1px;background:rgba(255,255,255,.1);align-self:stretch;}
+
+/* ── SLIDE 3: GOLDEN RECORD ── */
 #s3{background:var(--of);}
 .tabs{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
 .tb{padding:11px 26px;border-radius:99px;border:2px solid var(--bd);background:var(--wh);font-size:15px;font-weight:600;color:var(--gy);cursor:pointer;transition:.2s;}
@@ -83,17 +105,33 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 
 /* ── SLIDE 4: SOLUTION ── */
 #s4{background:var(--wh);}
-.s4-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
-.hub{display:flex;align-items:center;justify-content:center;margin-bottom:28px;}
-.h-src{display:flex;flex-direction:column;gap:9px;}
-.hb{background:var(--of);border:2px solid var(--bd);border-radius:11px;padding:11px 18px;font-size:13px;font-weight:600;color:var(--gy);min-width:140px;text-align:center;transition:.22s;cursor:default;}
-.hb:hover{border-color:var(--or);color:var(--or);}
-.hb.tgt{border-color:var(--blb);background:var(--blbg);color:var(--bl);}
-.hb.tgt:hover{border-color:var(--bl);}
-.harr{display:flex;flex-direction:column;justify-content:center;gap:9px;padding:0 12px;color:var(--gyl);font-size:18px;}
-.hcenter{background:linear-gradient(135deg,var(--nv),var(--nv2));border-radius:20px;padding:28px 36px;text-align:center;box-shadow:0 0 0 10px rgba(255,109,0,.1),0 0 0 20px rgba(255,109,0,.05);margin:0 6px;}
-.hcl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:6px;}
-.hct{font-size:22px;font-weight:900;color:#fff;}.hcs{font-size:13px;color:var(--or2);margin-top:3px;}
+
+/* Lifecycle diagram */
+.lifecycle{display:flex;align-items:stretch;width:100%;gap:0;margin-bottom:30px;}
+.lc-phase{flex:1;border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:7px;}
+.lc-phase.lc-legacy{background:var(--rdbg);border:2px solid var(--rdb);}
+.lc-phase.lc-mdm{background:linear-gradient(135deg,var(--nv),var(--nv2));border:2px solid rgba(255,109,0,.4);}
+.lc-phase.lc-sf{background:var(--blbg);border:2px solid var(--blb);}
+.lc-phase.lc-wd{background:var(--gnbg);border:2px solid var(--gnb);}
+.lc-l{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;}
+.lc-legacy .lc-l{color:var(--rd);}
+.lc-mdm .lc-l{color:rgba(255,255,255,.45);}
+.lc-sf .lc-l{color:var(--bl);}
+.lc-wd .lc-l{color:var(--gn);}
+.lc-title{font-size:17px;font-weight:900;}
+.lc-legacy .lc-title{color:var(--rd);}
+.lc-mdm .lc-title{color:#fff;}
+.lc-sf .lc-title{color:var(--bl);}
+.lc-wd .lc-title{color:var(--gn);}
+.lc-items{display:flex;flex-direction:column;gap:5px;margin-top:4px;}
+.lc-item{font-size:12px;border-radius:6px;padding:5px 10px;font-weight:500;}
+.lc-legacy .lc-item{background:rgba(220,38,38,.08);color:#7F1D1D;}
+.lc-mdm .lc-item{background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);}
+.lc-sf .lc-item{background:rgba(37,99,235,.07);color:#1E3A8A;}
+.lc-wd .lc-item{background:rgba(5,150,105,.07);color:#065F46;}
+.lc-arrow{display:flex;align-items:center;padding:0 14px;color:var(--gyl);font-size:22px;}
+
+.s4-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
 .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .cap{background:var(--of);border:2px solid var(--bd);border-radius:14px;padding:20px 22px;cursor:pointer;transition:.22s;}
 .cap:hover,.cap.active{border-color:var(--or);background:var(--orbg);}
@@ -134,13 +172,13 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 
 /* ── SLIDE 6: CLOSE ── */
 #s6{background:linear-gradient(135deg,var(--nv) 0%,#0D0D20 100%);}
-.qbox{background:rgba(255,109,0,.1);border:1px solid rgba(255,109,0,.26);border-radius:18px;padding:28px 36px;font-size:21px;font-style:italic;color:rgba(255,255,255,.86);line-height:1.75;margin-bottom:40px;position:relative;}
+.qbox{background:rgba(255,109,0,.1);border:1px solid rgba(255,109,0,.26);border-radius:18px;padding:28px 36px;font-size:20px;font-style:italic;color:rgba(255,255,255,.86);line-height:1.75;margin-bottom:40px;position:relative;}
 .qbox::before{content:'"';font-size:72px;color:var(--or);line-height:1;position:absolute;top:-12px;left:18px;opacity:.28;}
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
 .sc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px 26px;display:flex;flex-direction:column;gap:8px;transition:.2s;cursor:default;}
 .sc:hover{background:rgba(255,109,0,.12);border-color:rgba(255,109,0,.3);}
 .scn{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--or);}
-.sct{font-size:17px;font-weight:700;color:#fff;line-height:1.3;}
+.sct{font-size:16px;font-weight:700;color:#fff;line-height:1.3;}
 .scd{font-size:12px;color:rgba(255,255,255,.33);margin-top:auto;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);}
 </style>
 </head>
@@ -148,8 +186,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 
 <nav class="nav" id="sidenav">
   <a href="#s1" class="active" title="Title"></a>
-  <a href="#s2" title="Today"></a>
-  <a href="#s3" title="Challenges"></a>
+  <a href="#s2" title="Your Stack"></a>
+  <a href="#s3" title="Golden Record"></a>
   <a href="#s4" title="Solution"></a>
   <a href="#s5" title="Impact"></a>
   <a href="#s6" title="Next Steps"></a>
@@ -158,129 +196,185 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 <!-- ═══ SLIDE 1: TITLE ═══ -->
 <section class="slide" id="s1">
   <div class="eyebrow"><span class="dot"></span>OnPoint Industrial Services &nbsp;·&nbsp; Informatica MDM</div>
-  <h1>From <em>Data Chaos</em><br>to Exit-Ready.</h1>
-  <p class="sub">How a single source of truth prepares OnPoint for the MML Capital exit.</p>
+  <h1>One <em>Golden Record.</em><br>Quote to Cash.</h1>
+  <p class="sub">How Informatica MDM governs the customer standard from Salesforce through Workday — and prepares OnPoint for the MML Capital exit.</p>
   <div class="stats">
     <div class="stat"><span class="v">$225M</span><span class="l">Annual Revenue</span></div>
-    <div class="stat"><span class="v">$7M</span><span class="l">Duplicate Rev. Found</span></div>
+    <div class="stat"><span class="v">7+</span><span class="l">ExxonMobil Name Variants</span></div>
     <div class="stat"><span class="v">9</span><span class="l">Acquisitions</span></div>
-    <div class="stat"><span class="v">~2027</span><span class="l">Target PE Exit</span></div>
+    <div class="stat"><span class="v">~FY28</span><span class="l">Target PE Exit</span></div>
   </div>
 </section>
 
-<!-- ═══ SLIDE 2: LANDSCAPE ═══ -->
+<!-- ═══ SLIDE 2: YOUR STACK ═══ -->
 <section class="slide" id="s2">
-  <div class="stag">The Situation Today</div>
-  <div class="sh">Data lives everywhere.<br>Insight lives nowhere.</div>
-  <div class="landscape">
-    <div class="sys-col">
-      <div class="sbox silo">Sage Intacct<div style="font-size:12px;font-weight:400;margin-top:3px;">Financials &amp; Actuals</div></div>
-      <div class="sbox silo">Workday<div style="font-size:12px;font-weight:400;margin-top:3px;">HRIS (implementing)</div></div>
-      <div class="sbox silo">Bullhorn<div style="font-size:12px;font-weight:400;margin-top:3px;">Recruiting &amp; Staffing</div></div>
-      <div class="sbox silo">Excel / Homegrown<div style="font-size:12px;font-weight:400;margin-top:3px;">Quoting &amp; Forecasting</div></div>
+  <div class="stag">Where You Sit Today</div>
+  <div class="sh">You've committed to the right systems.<br><em>The gap is what connects them.</em></div>
+
+  <div class="q2c-wrapper">
+    <div class="q2c-system q2c-sys-sf">
+      <div class="q2c-label">Quote System · Committed</div>
+      <div class="q2c-name">Salesforce</div>
+      <div class="q2c-role">100% locked in CRM</div>
+      <div class="q2c-items">
+        <div class="q2c-item">Pipeline &amp; opportunities</div>
+        <div class="q2c-item">Customer &amp; contact records</div>
+        <div class="q2c-item">Proposals &amp; quotes</div>
+      </div>
     </div>
-    <div class="arr-col">
-      <span class="arr-bad">✗→</span><span class="arr-bad">✗→</span><span class="arr-bad">✗→</span><span class="arr-bad">✗→</span>
+
+    <div class="q2c-arr">
+      <div class="q2c-arr-line"></div>
+      <div class="q2c-arr-icon">→</div>
+      <div class="q2c-arr-line"></div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
-      <div class="sbox sf">Salesforce CRM<div style="font-size:13px;font-weight:400;margin-top:5px;">No actuals · No hierarchy</div></div>
-      <div class="gap-pill">⚠️ Actuals never return to Salesforce</div>
+
+    <div class="q2c-middle">
+      <div class="q2c-gap-badge">The Gap</div>
+      <div class="q2c-gap-title">No Golden Record</div>
+      <div class="q2c-gap-items">
+        <div class="q2c-gap-item">ExxonMobil Beaumont → 7 naming iterations across legacy systems</div>
+        <div class="q2c-gap-item">No "data cube" — no standard to govern against</div>
+        <div class="q2c-gap-item">Actuals never return to Salesforce after job completion</div>
+        <div class="q2c-gap-item">Quote and cash systems cannot share a customer identity</div>
+      </div>
     </div>
-    <span class="mid-arrow">→</span>
-    <div class="pain-col">
-      <div class="pc"><div class="pc-t">📊 Board Prep = Days of Excel</div><div class="pc-d">8 BU forecasts reconciled manually each cycle</div></div>
-      <div class="pc"><div class="pc-t">🔀 $7M in Duplicate Revenue</div><div class="pc-d">9 acquisitions · no unified customer identity</div></div>
-      <div class="pc"><div class="pc-t">⏱ 2+ Hours to Price One Proposal</div><div class="pc-d">Historical actuals inaccessible to the sales team</div></div>
+
+    <div class="q2c-arr">
+      <div class="q2c-arr-line"></div>
+      <div class="q2c-arr-icon">→</div>
+      <div class="q2c-arr-line"></div>
+    </div>
+
+    <div class="q2c-system q2c-sys-wd">
+      <div class="q2c-label">Cash System · Implementing</div>
+      <div class="q2c-name">Workday</div>
+      <div class="q2c-role">IT decisions locked in</div>
+      <div class="q2c-items">
+        <div class="q2c-item">HRIS module → Oct 1, 2026</div>
+        <div class="q2c-item">Finance module → Jan 1, 2027</div>
+        <div class="q2c-item">Quote-to-cash home post-2027</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="go-live-banner">
+    <div class="glb" style="padding-left:0;">
+      <div class="glb-l">Workday HRIS Go-Live</div>
+      <div class="glb-v">Oct 1, 2026</div>
+      <div class="glb-s">3 months away</div>
+    </div>
+    <div class="glb-div"></div>
+    <div class="glb">
+      <div class="glb-l">Workday Finance Go-Live</div>
+      <div class="glb-v">Jan 1, 2027</div>
+      <div class="glb-s">Quote-to-cash fully in Workday</div>
+    </div>
+    <div class="glb-div"></div>
+    <div class="glb">
+      <div class="glb-l">MDM's Role</div>
+      <div class="glb-v">The Bridge</div>
+      <div class="glb-s">Governs the standard between both</div>
+    </div>
+    <div class="glb-div"></div>
+    <div class="glb">
+      <div class="glb-l">PE Exit Window</div>
+      <div class="glb-v">~FY28</div>
+      <div class="glb-s">Clean data = higher multiple</div>
     </div>
   </div>
 </section>
 
-<!-- ═══ SLIDE 3: CHALLENGES ═══ -->
+<!-- ═══ SLIDE 3: GOLDEN RECORD CHALLENGE ═══ -->
 <section class="slide" id="s3">
-  <div class="stag">Challenge Deep-Dive</div>
-  <div class="sh">Current vs. Future Workflow</div>
+  <div class="stag">The Golden Record Challenge</div>
+  <div class="sh">The ExxonMobil Beaumont Question — <em>Times a Thousand.</em></div>
   <div class="tabs">
-    <button class="tb active" onclick="showPanel(0,this)">Pricing a Proposal</button>
-    <button class="tb" onclick="showPanel(1,this)">Board Reporting</button>
-    <button class="tb" onclick="showPanel(2,this)">Acquisition Data</button>
-    <button class="tb" onclick="showPanel(3,this)">Cross-Sell Targeting</button>
+    <button class="tb active" onclick="showPanel(0,this)">The ExxonMobil Problem</button>
+    <button class="tb" onclick="showPanel(1,this)">Setting the Standard</button>
+    <button class="tb" onclick="showPanel(2,this)">Quote → Cash Governance</button>
+    <button class="tb" onclick="showPanel(3,this)">Cross-Sell &amp; Hierarchy</button>
   </div>
 
+  <!-- Tab 0: ExxonMobil Problem -->
   <div class="panel active" id="p0">
     <div class="wf">
-      <div class="wfl">❌ Today</div>
+      <div class="wfl">❌ Today — ExxonMobil Beaumont</div>
       <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>Open Salesforce</strong> — no actuals attached to last proposal<span class="tag tag-bad">Dead end</span></div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>Call the CRO</strong> — only person with Sage Intacct access in sales org</div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Wait for emailed export</strong> — CRO runs report, manually extracts data</div></div>
-        <div class="st"><div class="stn">4</div><div class="stx"><strong>2 meetings + 1 hr of work</strong> to land a competitive price<span class="tag tag-bad">~2 hrs total</span></div></div>
-        <div class="st"><div class="stn">5</div><div class="stx"><strong>Post-job:</strong> overperformed proposal by 24% — no way to diagnose why</div></div>
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>Years of history</strong> with ExxonMobil Beaumont — but fragmented across every legacy system since 2005<span class="tag tag-bad">9 acquisitions</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>7 naming iterations</strong> — "ExxonMobil Beaumont," "Exxon BMT," "XOM Beaumont," "XOM-B," and variants across disparate systems</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Cannot aggregate total revenue</strong> for this customer — same client is counted multiple times<span class="tag tag-bad">Duplicate exposure</span></div></div>
+        <div class="st"><div class="stn">4</div><div class="stx"><strong>PE buyer asks "show me ExxonMobil total revenue"</strong> — no clean answer available without days of manual work</div></div>
       </div>
     </div>
     <div class="wf fu">
       <div class="wfl">✅ With Informatica MDM</div>
       <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>Open Salesforce</strong> — actuals for every prior job at this site are already there<span class="tag tag-ok">Live data</span></div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>Compare proposed vs. actual margin</strong> in seconds — no calls, no exports</div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Submit competitive bid</strong> with confidence<span class="tag tag-ok">~5 minutes</span></div></div>
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>MDM ingests all 7 variants</strong> — matches and resolves them to one canonical Golden Record<span class="tag tag-ok">Auto-matched</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Survivorship rules</strong> determine the winning name — that becomes the new standard going forward</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Historical data resolved retroactively</strong> — full revenue and relationship history surfaces under one record<span class="tag tag-ok">One answer</span></div></div>
+        <div class="st"><div class="stn">4</div><div class="stx"><strong>PE due diligence answered instantly</strong> — complete ExxonMobil revenue by site, by service line, by year</div></div>
       </div>
     </div>
   </div>
 
+  <!-- Tab 1: Setting the Standard -->
   <div class="panel" id="p1">
     <div class="wf">
-      <div class="wfl">❌ Today</div>
+      <div class="wfl">❌ Today — No Standard Exists</div>
       <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>8 BU leaders</strong> email separate Excel forecast files</div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>Naming conflicts</strong> — "Beaumont" ≠ "BMT" ≠ "BTR" blocks aggregation<span class="tag tag-bad">Manual dedup</span></div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Investment bankers paid</strong> to reformat into a coherent board view</div></div>
-        <div class="st"><div class="stn">4</div><div class="stx"><strong>Days of prep</strong> — CRO can't answer real-time follow-ups in the meeting</div></div>
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>No "data cube"</strong> — no governed model to standardize Customer, Location, or hierarchy data against</div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Every BU uses their own convention</strong> — "Baytown," "BYT," "BTO," "BTR" are all valid to someone<span class="tag tag-bad">Myriad examples</span></div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Workday Finance goes live Jan 1</strong> — without a standard, dirty data enters a brand-new clean system from day one</div></div>
       </div>
     </div>
     <div class="wf fu">
-      <div class="wfl">✅ With Informatica MDM</div>
+      <div class="wfl">✅ MDM Sets and Enforces the Standard</div>
       <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>MDM resolves all aliases automatically</strong> — "BMT" = "Beaumont"<span class="tag tag-ok">Zero manual dedup</span></div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>Tableau / CRMA</strong> pulls clean, governed data — no reconciliation needed</div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Board deck auto-refreshes</strong> — hours of prep, not days<span class="tag tag-ok">Real-time answers</span></div></div>
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>MDM becomes the "data cube"</strong> — one governed model for Customer, Location, and Hierarchy<span class="tag tag-ok">The standard</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>New records enriched at point of entry</strong> — rep types "Exxon," MDM suggests the existing Golden Record</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Workday launches with clean governed data</strong> — MDM sets the standard before Finance goes live<span class="tag tag-ok">Jan 1 ready</span></div></div>
       </div>
     </div>
   </div>
 
+  <!-- Tab 2: Quote to Cash Governance -->
   <div class="panel" id="p2">
     <div class="wf">
-      <div class="wfl">❌ Today</div>
+      <div class="wfl">❌ Today — The Lifecycle Breaks</div>
       <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>New entity acquired</strong> — brings its own customer IDs, job codes, naming conventions</div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>Duplicates multiply</strong> — same customer in 5+ systems under different names<span class="tag tag-bad">$7M found so far</span></div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>PE buyer asks</strong> "show us revenue by customer" — no clean answer available</div></div>
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>Quote created in Salesforce</strong> — rep uses their version of "ExxonMobil Beaumont"</div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Job won → manually transcribed</strong> into Bullhorn, job forms, and finance — each under a different name<span class="tag tag-bad">Breaks here</span></div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Actuals land in Workday</strong> under a different name — no link back to the Salesforce proposal</div></div>
+        <div class="st"><div class="stn">4</div><div class="stx"><strong>Actuals never return to Salesforce</strong> — rep prices the next job blind. 24% overruns with no root cause.</div></div>
       </div>
     </div>
     <div class="wf fu">
-      <div class="wfl">✅ With Informatica MDM</div>
+      <div class="wfl">✅ MDM Governs the Full Lifecycle</div>
       <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>MDM ingests all source systems</strong> — no changes to existing sources required<span class="tag tag-ok">Non-disruptive</span></div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>Survivorship rules</strong> produce one governed golden record per customer</div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>PE due diligence:</strong> revenue-by-customer answered instantly<span class="tag tag-ok">M&amp;A = strength</span></div></div>
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>Quote in Salesforce</strong> references the MDM Golden Record — canonical name, canonical ID<span class="tag tag-ok">One ID</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Same Golden Record ID</strong> flows into Workday — job linked to the customer automatically, no manual re-entry</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Actuals post in Workday → MDM → back to Salesforce</strong> — the loop that never closed, closed<span class="tag tag-ok">Full loop</span></div></div>
       </div>
     </div>
   </div>
 
+  <!-- Tab 3: Cross-Sell Hierarchy -->
   <div class="panel" id="p3">
     <div class="wf">
-      <div class="wfl">❌ Today</div>
+      <div class="wfl">❌ Today — No Hierarchy, No Insight</div>
       <div class="steps">
         <div class="st"><div class="stn">1</div><div class="stx"><strong>Marathon: 9 sites</strong> — logged under different names across business units</div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>No account hierarchy</strong> — total wallet share requires manual aggregation</div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Rep leaves</strong> — 6–12 months of account context disappears with them</div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>No account hierarchy</strong> — total wallet share requires days of manual aggregation<span class="tag tag-bad">People-dependent</span></div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Rep leaves</strong> — 6–12 months of account intelligence disappears with them</div></div>
       </div>
     </div>
     <div class="wf fu">
-      <div class="wfl">✅ With MDM — "Data Texture"</div>
+      <div class="wfl">✅ "Data Texture" — Delivered</div>
       <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>B2B Hierarchy:</strong> Marathon parent → 9 sites → projects — all in Salesforce<span class="tag tag-ok">One click</span></div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>Zero-revenue sites surface automatically</strong> as cross-sell targets</div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Account intelligence lives in the system</strong> — survives any rep turnover</div></div>
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>B2B Hierarchy:</strong> Marathon parent → 9 sites → projects — all in Salesforce, in one click<span class="tag tag-ok">One click</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Zero-revenue sites surface automatically</strong> as cross-sell opportunities — no manual digging</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Account intelligence lives in the system</strong> — not in anyone's head. Survives every rep departure.</div></div>
       </div>
     </div>
   </div>
@@ -289,80 +383,105 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 <!-- ═══ SLIDE 4: SOLUTION ═══ -->
 <section class="slide" id="s4">
   <div class="stag">The Solution</div>
-  <div class="sh">One Hub. Every System Benefits.</div>
+  <div class="sh">MDM: The Governed Bridge<br>Between Quote and Cash.</div>
+
+  <!-- Golden Record Lifecycle Visual -->
+  <div class="lifecycle">
+    <div class="lc-phase lc-legacy">
+      <div class="lc-l">Historical Problem</div>
+      <div class="lc-title">7 Versions</div>
+      <div class="lc-items">
+        <div class="lc-item">"ExxonMobil Beaumont"</div>
+        <div class="lc-item">"Exxon BMT"</div>
+        <div class="lc-item">"XOM Beaumont"</div>
+        <div class="lc-item">"XOM-B" + 3 more variants</div>
+      </div>
+    </div>
+    <div class="lc-arrow">→</div>
+    <div class="lc-phase lc-mdm">
+      <div class="lc-l">Informatica MDM</div>
+      <div class="lc-title">Golden Record</div>
+      <div class="lc-items">
+        <div class="lc-item">Matches &amp; merges all variants</div>
+        <div class="lc-item">Sets canonical name + unique ID</div>
+        <div class="lc-item">Governs site hierarchy</div>
+        <div class="lc-item">Enforces standard going forward</div>
+      </div>
+    </div>
+    <div class="lc-arrow">→</div>
+    <div class="lc-phase lc-sf">
+      <div class="lc-l">Quote System</div>
+      <div class="lc-title">Salesforce</div>
+      <div class="lc-items">
+        <div class="lc-item">Clean, governed customer records</div>
+        <div class="lc-item">Actuals linked to proposals</div>
+        <div class="lc-item">Cross-sell hierarchy visible</div>
+      </div>
+    </div>
+    <div class="lc-arrow">→</div>
+    <div class="lc-phase lc-wd">
+      <div class="lc-l">Cash System</div>
+      <div class="lc-title">Workday</div>
+      <div class="lc-items">
+        <div class="lc-item">Same Golden Record ID</div>
+        <div class="lc-item">Actuals tied to customer</div>
+        <div class="lc-item">Finance module ready Jan 1</div>
+      </div>
+    </div>
+  </div>
+
   <div class="s4-layout">
     <div>
-      <div class="hub">
-        <div class="h-src">
-          <div class="hb">Sage Intacct</div>
-          <div class="hb">Workday</div>
-          <div class="hb">Bullhorn</div>
-          <div class="hb">Homegrown Tool</div>
-          <div class="hb">Excel / Legacy</div>
-        </div>
-        <div class="harr"><span>→</span><span>→</span><span>→</span><span>→</span><span>→</span></div>
-        <div class="hcenter">
-          <div class="hcl">Informatica</div>
-          <div class="hct">MDM</div>
-          <div class="hcs">Golden Record</div>
-        </div>
-        <div class="harr"><span>→</span><span>→</span><span>→</span></div>
-        <div class="h-src">
-          <div class="hb tgt">Salesforce CRM</div>
-          <div class="hb tgt">Tableau / CRMA</div>
-          <div class="hb tgt">Board Reporting</div>
-        </div>
-      </div>
       <div class="cap-grid">
         <div class="cap active" onclick="showCap(0,this)">
-          <div class="cap-icon">🔀</div>
-          <div class="cap-title">Multi-source Consolidation</div>
-          <div class="cap-body">One golden record from all systems — without changing any source.</div>
+          <div class="cap-icon">🏆</div>
+          <div class="cap-title">Golden Record Creation</div>
+          <div class="cap-body">Resolve all historical variants. One record wins. The standard is set.</div>
         </div>
         <div class="cap" onclick="showCap(1,this)">
-          <div class="cap-icon">🗂️</div>
-          <div class="cap-title">Reference Data Management</div>
-          <div class="cap-body">"BMT" = "Beaumont" = "BTR" — resolved automatically across every BU.</div>
+          <div class="cap-icon">🔄</div>
+          <div class="cap-title">Quote-to-Cash Loop</div>
+          <div class="cap-body">SF quote and Workday cash share one master ID. Actuals flow back.</div>
         </div>
         <div class="cap" onclick="showCap(2,this)">
           <div class="cap-icon">🏗️</div>
-          <div class="cap-title">B2B Hierarchy Management</div>
-          <div class="cap-body">Parent → site → project hierarchy delivered into Salesforce.</div>
+          <div class="cap-title">B2B Hierarchy</div>
+          <div class="cap-body">Parent → site → project. Mac's "data texture" — delivered into Salesforce.</div>
         </div>
         <div class="cap" onclick="showCap(3,this)">
           <div class="cap-icon">🛡️</div>
           <div class="cap-title">Data Governance</div>
-          <div class="cap-body">Guardrails at point of entry — stops duplicates before they're created.</div>
+          <div class="cap-body">Guardrails at point of entry. No source system changes required.</div>
         </div>
       </div>
     </div>
     <div class="cap-detail-area">
       <div class="cap-detail show" id="cd0">
         <div class="cd-box">
-          <div class="cd-label">Multi-source Consolidation</div>
-          <div class="cd-title">Eliminate the $7M duplicate problem — permanently.</div>
-          <div class="cd-body">MDM ingests records from Salesforce, Sage Intacct, Workday, Bullhorn, and the homegrown quoting tool simultaneously. Survivorship rules decide which field value wins. <strong>No source system needs to change.</strong> The result: one master customer ID across all 9 acquired entities — the foundation for clean PE due diligence.</div>
+          <div class="cd-label">Golden Record Creation</div>
+          <div class="cd-title">Clean the history. Set the standard. Own it going forward.</div>
+          <div class="cd-body">MDM ingests all 7 ExxonMobil Beaumont naming variants from every legacy system. Survivorship rules determine which name and attributes "win" — that becomes the canonical Golden Record. <strong>Historical data resolved retroactively. The standard is set for all future transactions.</strong> No source system needs to change for this to happen.</div>
         </div>
       </div>
       <div class="cap-detail" id="cd1">
         <div class="cd-box">
-          <div class="cd-label">Reference Data Management</div>
-          <div class="cd-title">Board reports that don't require a week of prep.</div>
-          <div class="cd-body">Every BU can keep using the location names they're comfortable with. MDM maps them all to one canonical record behind the scenes. <strong>"Beaumont," "BMT," "BTR," "BYT," and "Baytown" all resolve to the same place.</strong> Tableau and CRMA pull clean data — investment bankers no longer required to manually reformat board decks.</div>
+          <div class="cd-label">Quote-to-Cash Loop</div>
+          <div class="cd-title">The lifecycle you described — fully governed.</div>
+          <div class="cd-body">A quote in Salesforce references the MDM Golden Record ID. When the job moves to Workday, it carries <strong>the same ID</strong>. When actuals post in Workday, MDM pushes them back to Salesforce. <strong>The loop that never closed — closed.</strong> Reps price the next ExxonMobil job with full historical actuals visible.</div>
         </div>
       </div>
       <div class="cap-detail" id="cd2">
         <div class="cd-box">
-          <div class="cd-label">B2B Hierarchy Management</div>
-          <div class="cd-title">Mac's "data texture" — delivered into Salesforce.</div>
-          <div class="cd-body">Marathon parent company → 9 individual sites → individual projects — all mapped in a full relationship graph and pushed to Salesforce. <strong>Total wallet share in one click. Zero-revenue sites surface automatically as cross-sell targets.</strong> Account intelligence lives in the system, not in any one person's head.</div>
+          <div class="cd-label">B2B Hierarchy ("Data Texture")</div>
+          <div class="cd-title">Marathon parent → 9 sites → projects. One click.</div>
+          <div class="cd-body">MDM builds and maintains the full relationship graph — corporate parent, individual sites, active projects — and pushes it into Salesforce. Any rep can see total Marathon wallet share and identify zero-revenue sites instantly. <strong>Account intelligence that survives rep turnover — forever.</strong></div>
         </div>
       </div>
       <div class="cap-detail" id="cd3">
         <div class="cd-box">
           <div class="cd-label">Data Governance</div>
-          <div class="cd-title">The guardrails Timothy asked for, built in.</div>
-          <div class="cd-body">When a rep starts typing a customer name, MDM suggests the existing record before a duplicate can be created. <strong>Data quality enforced at the point of entry</strong> — not corrected on the back end. Standardized KPI definitions mean the CRO, CFO, and board all see the same numbers from the same source.</div>
+          <div class="cd-title">The guardrails you described, built into every transaction.</div>
+          <div class="cd-body">When a rep types a customer name in Salesforce, MDM suggests the existing Golden Record before a duplicate can be created. The standard you set survives every new hire, every acquisition, every BU expansion. <strong>Workday, Salesforce, and Bullhorn all stay exactly as they are</strong> — MDM governs the layer between them.</div>
         </div>
       </div>
     </div>
@@ -372,7 +491,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 <!-- ═══ SLIDE 5: BEFORE/AFTER ═══ -->
 <section class="slide" id="s5">
   <div class="stag">Impact</div>
-  <div class="sh">Board Prep: Before vs. After</div>
+  <div class="sh">ExxonMobil Beaumont: Before vs. After</div>
   <div class="toggle-bar">
     <button class="tgb active" onclick="toggleBA('before',this)">Today</button>
     <button class="tgb" onclick="toggleBA('after',this)">With MDM</button>
@@ -380,35 +499,37 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 
   <div class="bav active" id="ba-before">
     <div>
-      <div style="font-size:13px;font-weight:700;color:var(--gyl);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px;">Timeline — Days Before Board Meeting</div>
+      <div style="font-size:13px;font-weight:700;color:var(--gyl);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px;">The Full Lifecycle — Today</div>
       <div class="tl">
-        <div class="tli"><div class="tld r"></div><div class="tlt">Day −7</div><div class="tlx"><strong>8 BU leaders</strong> export separate Excel forecasts</div></div>
-        <div class="tli"><div class="tld r"></div><div class="tlt">Day −6 to −4</div><div class="tlx"><strong>Manual dedup:</strong> "Beaumont" vs "BMT" vs "BTR" across every BU</div></div>
-        <div class="tli"><div class="tld r"></div><div class="tlt">Day −3 to −2</div><div class="tlx"><strong>Investment bankers paid</strong> to reformat data into board-ready output</div></div>
-        <div class="tli"><div class="tld r"></div><div class="tlt">Day −1</div><div class="tlx"><strong>Last-minute corrections</strong> when numbers don't reconcile</div></div>
-        <div class="tli"><div class="tld r"></div><div class="tlt">Day 0 — Board Meeting</div><div class="tlx"><strong>CRO can't answer ad-hoc follow-up questions</strong></div></div>
+        <div class="tli"><div class="tld r"></div><div class="tlt">Job Won</div><div class="tlx"><strong>Proposal in Salesforce</strong> — rep uses their version of the name. No standard to check against.</div></div>
+        <div class="tli"><div class="tld r"></div><div class="tlt">Transition to Delivery</div><div class="tlx"><strong>Manual transcription</strong> — job codes created in Bullhorn and finance under a different name variant</div></div>
+        <div class="tli"><div class="tld r"></div><div class="tlt">Job Completes</div><div class="tlx"><strong>Actuals land in Sage Intacct / Workday</strong> — no link to the Salesforce proposal. Disconnected.</div></div>
+        <div class="tli"><div class="tld r"></div><div class="tlt">Next Job</div><div class="tlx"><strong>Rep prices blind</strong> — actuals are inaccessible. Only the CRO has Sage access. 24% overruns with no diagnosis.</div></div>
+        <div class="tli"><div class="tld r"></div><div class="tlt">PE Due Diligence</div><div class="tlx"><strong>"Show ExxonMobil total revenue"</strong> — requires days of manual aggregation across 7 system variants</div></div>
       </div>
     </div>
     <div class="oc-stack">
-      <div class="oc oc-bad"><div class="oc-t">⏱ Days of prep — every single cycle</div><div class="oc-d">Same manual effort from scratch at every board meeting</div></div>
-      <div class="oc oc-bad"><div class="oc-t">💸 Investment bankers doing data janitorial work</div><div class="oc-d">Very expensive way to reformat spreadsheets</div></div>
-      <div class="oc oc-bad"><div class="oc-t">❓ No real-time answers in the room</div><div class="oc-d">Ad-hoc questions during the meeting go unanswered</div></div>
+      <div class="oc oc-bad"><div class="oc-t">⏱ Pricing blind — every new job</div><div class="oc-d">No actuals in SF = no competitive pricing intelligence. Margin leakage with no root cause.</div></div>
+      <div class="oc oc-bad"><div class="oc-t">📊 7 records, 1 customer</div><div class="oc-d">ExxonMobil Beaumont shows up differently in every system — impossible to aggregate cleanly</div></div>
+      <div class="oc oc-bad"><div class="oc-t">❓ PE question unanswerable in the room</div><div class="oc-d">Revenue by customer takes days — not seconds — at the worst possible moment</div></div>
     </div>
   </div>
 
   <div class="bav" id="ba-after">
     <div>
-      <div style="font-size:13px;font-weight:700;color:var(--gyl);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px;">Timeline — Hours Before Board Meeting</div>
+      <div style="font-size:13px;font-weight:700;color:var(--gyl);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px;">The Full Lifecycle — With MDM</div>
       <div class="tl">
-        <div class="tli"><div class="tld g"></div><div class="tlt">Morning of meeting</div><div class="tlx"><strong>Tableau / CRMA</strong> auto-refreshes from MDM-governed data</div></div>
-        <div class="tli"><div class="tld g"></div><div class="tlt">1 hour before</div><div class="tlx"><strong>CRO reviews dashboard</strong> — data is already reconciled and standardized</div></div>
-        <div class="tli"><div class="tld g"></div><div class="tlt">During the meeting</div><div class="tlx"><strong>Real-time drill-down</strong> — any follow-up question answered on the spot</div></div>
+        <div class="tli"><div class="tld g"></div><div class="tlt">Job Won</div><div class="tlx"><strong>SF proposal references MDM Golden Record</strong> — canonical name, canonical ID. Standard from the first character.</div></div>
+        <div class="tli"><div class="tld g"></div><div class="tlt">Transition to Delivery</div><div class="tlx"><strong>Same Golden Record ID</strong> flows into Workday — no manual re-entry, no name drift, no reconciliation</div></div>
+        <div class="tli"><div class="tld g"></div><div class="tlt">Job Completes</div><div class="tlx"><strong>Actuals in Workday → MDM → back to Salesforce</strong> — the loop that never closed, closed automatically</div></div>
+        <div class="tli"><div class="tld g"></div><div class="tlt">Next Job</div><div class="tlx"><strong>Rep opens SF</strong> — all historical actuals for ExxonMobil Beaumont visible. Confident pricing in 5 minutes.</div></div>
+        <div class="tli"><div class="tld g"></div><div class="tlt">PE Due Diligence</div><div class="tlx"><strong>"Show ExxonMobil total revenue"</strong> — answered instantly, down to site level and service line</div></div>
       </div>
     </div>
     <div class="oc-stack">
-      <div class="oc oc-good"><div class="oc-t">✅ Days → Hours</div><div class="oc-d">Board prep collapses to a morning review task</div></div>
-      <div class="oc oc-good"><div class="oc-t">✅ Exit-ready analytics</div><div class="oc-d">"Revenue by service line by region" — answered instantly for any PE buyer question</div></div>
-      <div class="oc oc-good"><div class="oc-t">✅ No investment banker data tax</div><div class="oc-d">Data is board-ready by default, not by expensive manual effort</div></div>
+      <div class="oc oc-good"><div class="oc-t">✅ Proposals priced on real actuals</div><div class="oc-d">Every future job at ExxonMobil Beaumont builds on prior performance data</div></div>
+      <div class="oc oc-good"><div class="oc-t">✅ One record. Every system.</div><div class="oc-d">SF and Workday share the same customer identity — zero reconciliation required</div></div>
+      <div class="oc oc-good"><div class="oc-t">✅ PE question answered in the room</div><div class="oc-d">Revenue by customer, by site, by service line — instant answers for every MML Capital management meeting</div></div>
     </div>
   </div>
 </section>
@@ -416,13 +537,13 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 <!-- ═══ SLIDE 6: CLOSE ═══ -->
 <section class="slide" id="s6">
   <div class="stag" style="color:rgba(255,255,255,.32);">The Bottom Line</div>
-  <div class="sh" style="color:#fff;margin-bottom:32px;">Built for your exit.</div>
-  <div class="qbox">"Informatica MDM gives OnPoint the foundation to walk into management meetings with MML Capital's buyer and answer every question about where revenue lives, where it's going, and why OnPoint is the most attractive asset in the portfolio."</div>
+  <div class="sh" style="color:#fff;margin-bottom:32px;">Built for your exit. Built for your stack.</div>
+  <div class="qbox">"MDM gives OnPoint one governed Golden Record — from the first quote in Salesforce to the final actuals in Workday — so every management meeting with MML Capital's buyer starts with the same clean answer."</div>
   <div class="steps-grid">
-    <div class="sc"><div class="scn">Step 01</div><div class="sct">MDM Art of the Possible Demo</div><div class="scd">Jun 24, 2026</div></div>
-    <div class="sc"><div class="scn">Step 02</div><div class="sct">Gather customer record count &amp; source systems</div><div class="scd">Action: Timothy &amp; Mac</div></div>
-    <div class="sc"><div class="scn">Step 03</div><div class="sct">Extended session: CEO, CFO, IT Head</div><div class="scd">By Sep 2026</div></div>
-    <div class="sc"><div class="scn">Step 04</div><div class="sct">Business case &amp; commercial proposal</div><div class="scd">Explore deferred payment options</div></div>
+    <div class="sc"><div class="scn">Step 01</div><div class="sct">MDM Art of the Possible Demo</div><div class="scd">Jun 24, 2026 — Today</div></div>
+    <div class="sc"><div class="scn">Step 02</div><div class="sct">Customer record count &amp; source systems inventory</div><div class="scd">Action: Timothy + Liz — inputs the scope &amp; cost analysis</div></div>
+    <div class="sc"><div class="scn">Step 03</div><div class="sct">Extended session: CEO, CFO, IT + Workday team</div><div class="scd">Target: before Sep 2026 Workday HRIS go-live</div></div>
+    <div class="sc"><div class="scn">Step 04</div><div class="sct">Business case &amp; commercial proposal</div><div class="scd">Phased option: start before Jan 1 Workday Finance go-live</div></div>
   </div>
 </section>
 
