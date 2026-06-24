@@ -163,8 +163,9 @@ h4:first-child{margin-top:0;}
   <a href="#s-q2c">Slide 3 — Quote-to-Cash</a>
   <a href="#s-crosssell">Slide 3 — Cross-Sell</a>
   <a href="#s-solution">Slide 4 — Solution</a>
-  <a href="#s-impact">Slide 5 — Impact</a>
-  <a href="#s-close">Slide 6 — Close</a>
+  <a href="#s-matching">Slide 5 — Matching &amp; Prevention</a>
+  <a href="#s-impact">Slide 6 — Impact</a>
+  <a href="#s-close">Slide 7 — Close</a>
   <div class="sb-sec">Supporting</div>
   <a href="#golden-record">Golden Record Discussion</a>
   <a href="#handling-ben">Handling Ben (IT)</a>
@@ -480,11 +481,71 @@ h4:first-child{margin-top:0;}
   </div>
 </section>
 
-<!-- ═══ SLIDE 5 NOTES ═══ -->
+<!-- ═══ SLIDE 5 NOTES: MATCHING & PREVENTION ═══ -->
+<section class="sec" id="s-matching">
+  <div class="sec-hdr">
+    <div class="sec-icon">🔍</div>
+    <div><div class="sec-title">Slide 5 — Matching &amp; Prevention</div><div class="sec-sub">Layer 1 (reactive) and Layer 2 (proactive) — new slide based on customer feedback</div></div>
+  </div>
+
+  <div class="sn">
+    <div class="sn-l">🎤 Why This Slide Exists</div>
+    <div class="sn-b">The customer asked: <em>"Given the propensity for human error when cash collections manually keys in customer information, how can we take that information and accurately match it to a Golden Record?"</em> This slide answers that question directly. Lead with Layer 1 — it requires nothing from IT. Then offer Layer 2 as the "if you can go further" option and direct the question to Ben.
+    </div>
+  </div>
+
+  <h4>Layer 1 — The Matching Engine (Reactive)</h4>
+  <div class="sn">
+    <div class="sn-l">🎤 Speaker Notes — Layer 1</div>
+    <div class="sn-b">Walk the three columns left to right.
+    <ul>
+      <li><em>"On the left — what a cash collections employee enters today. No guardrails. 'Exon Mobile,' 'Baytown Refinry.' This happens constantly."</em></li>
+      <li><em>"In the middle — MDM's matching engine. It doesn't just do string comparison. It runs fuzzy matching, phonetic matching — 'Exon' sounds like 'Exxon' — against the two mastered domains simultaneously."</em></li>
+      <li>Pause on the two match streams: <em>"Match 1 resolves the parent company. Match 2 then searches only ExxonMobil's sites — the parent string is parsed out first — so it's comparing 'Baytown Refinry' against 'Baytown Refinery,' not the full compound string."</em></li>
+      <li>Point to the gray zone: <em>"Anything below the confidence threshold doesn't auto-match — it goes to a data steward queue for a human to review. Nothing falls through."</em></li>
+      <li>Point to the bridge: <em>"The result is that the matched MDM Site ID gets written back to the job record. From that point forward, the job is linked to the correct Golden Records by ID — not by string matching."</em></li>
+    </ul></div>
+  </div>
+
+  <div class="info-box" style="background:var(--orbg);border:1.5px solid #FFD0A8;">
+    <div class="ib-l" style="color:var(--or);">The Multi-Domain Point — Say This</div>
+    <div class="ib-c">MDM is running two matches simultaneously — one against the Customer/Parent domain, one against the Site/Location domain. This is <strong>multi-domain MDM in action.</strong> Most companies only master at the parent level and still have fragmented site data. OnPoint would be mastering both — which is what enables Mac's "data texture" to actually work.</div>
+  </div>
+
+  <div class="sn">
+    <div class="sn-l">📋 Discovery Questions to Surface (Bottom of Slide)</div>
+    <div class="sn-b">These three questions are shown on the slide itself — use them as a natural segue into a live discussion:
+    <ul>
+      <li><strong>"Is the job the only entity in Cash Collections?"</strong> — We're assuming it is, but validate. If there are customer or site records stored there too, MDM scope changes.</li>
+      <li><strong>"Can a new MDM_Site_ID field be added to the job record?"</strong> — This is the bridge that makes the linkage permanent. Ben (IT) needs to answer this. Frame it as a simple schema addition, not a major IT project.</li>
+      <li><strong>"How many jobs per year?"</strong> — This determines whether MDM should master at the job/project level. OnPoint is a turnaround company — likely low hundreds of jobs per year. If that's true, mastering at job level in MDM is feasible and could power Salesforce cross-sell visibility. If volume is higher, keep jobs as transactions and only store the foreign key reference.</li>
+    </ul></div>
+  </div>
+
+  <h4>Layer 2 — Search Before Create (Proactive)</h4>
+  <div class="sn">
+    <div class="sn-l">🎤 Speaker Notes — Layer 2</div>
+    <div class="sn-b">Transition from Layer 1: <em>"That's the cure — MDM handles errors after they're entered. Layer 2 is the prevention. If your Cash Collections system supports UI customization, we can stop the error before it's ever committed."</em>
+    <ul>
+      <li>Walk the mockup top to bottom: typeahead, cascading site dropdown, auto-populated MDM_Site_ID.</li>
+      <li>The cascading dropdown is a key visual: <em>"Once ExxonMobil is selected as the parent, the site field only shows ExxonMobil's mastered sites. You can't accidentally assign the job to the wrong company."</em></li>
+      <li>End by directing to Ben: <em>"The conditional at the bottom is the honest caveat — this requires your Cash Collections system to support external API calls. Ben, is that something you know off the top of your head, or is that worth a follow-up?"</em></li>
+      <li><strong>Important:</strong> Layer 1 works regardless of Ben's answer. Don't let a "no" on Layer 2 undermine the value of Layer 1. They're additive, not dependent.</li>
+    </ul></div>
+  </div>
+
+  <div class="obj">
+    <div class="obj-l">Likely Question from Ben</div>
+    <div class="obj-q">"What API does this use? How does it connect to our Cash Collections system?"</div>
+    <div class="obj-a"><strong>Response:</strong> "Informatica exposes a Data Quality API and an MDM Search API — both REST-based. The integration work is on the Cash Collections side: your team would add an API call from the customer name input field to Informatica's endpoint, and render the response as a dropdown. The depth of that work depends on how your Cash Collections system is built — that's part of what we'd scope in the technical session with Joe Hartmann's team."</div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 6 NOTES (was 5) ═══ -->
 <section class="sec" id="s-impact">
   <div class="sec-hdr">
     <div class="sec-icon">📈</div>
-    <div><div class="sec-title">Slide 5 — Impact: Before vs. After</div></div>
+    <div><div class="sec-title">Slide 6 — Impact: ExxonMobil Beaumont Before vs. After</div></div>
   </div>
   <div class="sn">
     <div class="sn-l">🎤 Speaker Notes</div>
@@ -501,7 +562,7 @@ h4:first-child{margin-top:0;}
 <section class="sec" id="s-close">
   <div class="sec-hdr">
     <div class="sec-icon">🎯</div>
-    <div><div class="sec-title">Slide 6 — Close &amp; Next Steps</div></div>
+    <div><div class="sec-title">Slide 7 — Close &amp; Next Steps</div></div>
   </div>
   <div class="sn">
     <div class="sn-l">🎤 Speaker Notes</div>

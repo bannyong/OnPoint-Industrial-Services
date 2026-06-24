@@ -170,8 +170,107 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .oc-bad .oc-d{color:#7F1D1D;}.oc-good .oc-d{color:#065F46;}
 .oc-stack{display:flex;flex-direction:column;gap:14px;justify-content:center;}
 
-/* ── SLIDE 6: CLOSE ── */
-#s6{background:linear-gradient(135deg,var(--nv) 0%,#0D0D20 100%);}
+/* ── SLIDE 5: MATCHING & PREVENTION ── */
+#s5{background:var(--wh);}
+
+/* Layer toggle */
+.layer-tabs{display:flex;gap:12px;margin-bottom:28px;}
+.ltb{padding:14px 30px;border-radius:14px;border:2px solid var(--bd);background:var(--wh);cursor:pointer;transition:.2s;text-align:left;flex-shrink:0;}
+.ltb:hover,.ltb.active{border-color:var(--or);background:var(--orbg);}
+.ltb-n{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gyl);display:block;margin-bottom:3px;}
+.ltb.active .ltb-n,.ltb:hover .ltb-n{color:var(--or);}
+.ltb-t{font-size:15px;font-weight:700;color:var(--nv);}
+.layer{display:none;animation:fadeUp .3s ease;}
+.layer.active{display:block;}
+
+/* Matching flow (Layer 1) */
+.match-flow{display:flex;align-items:stretch;gap:0;width:100%;margin-bottom:18px;}
+.match-source{width:21%;background:var(--wh);border:2px solid var(--bd);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:9px;}
+.col-lbl{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--gyl);margin-bottom:2px;}
+.msf{border-radius:10px;padding:10px 13px;}
+.msf.bad{background:var(--rdbg);border:1.5px solid var(--rdb);}
+.msf.neutral{background:var(--of);border:1.5px solid var(--bd);}
+.msf-l{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gyl);margin-bottom:3px;}
+.msf.bad .msf-l{color:#B91C1C;}
+.msf-v{font-size:14px;font-weight:800;color:var(--nv);margin-bottom:4px;}
+.msf-tag{font-size:11px;font-weight:600;color:var(--rd);}
+.msf.neutral .msf-tag{color:var(--gyl);}
+.match-arr{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 13px;gap:4px;}
+.match-arr-line{width:2px;height:50px;background:linear-gradient(to bottom,transparent,var(--bd),transparent);}
+.match-arr-icon{font-size:18px;color:var(--gyl);}
+.match-engine{flex:1;background:linear-gradient(135deg,var(--nv),var(--nv2));border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:9px;}
+.match-stream{background:rgba(255,255,255,.07);border-radius:10px;padding:12px 14px;}
+.match-stream.gray{background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.15);}
+.ms-head{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.ms-num{width:20px;height:20px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;}
+.ms-num.gr{background:rgba(255,255,255,.2);}
+.ms-title{font-size:13px;font-weight:700;color:#fff;}
+.ms-title.gr{color:rgba(255,255,255,.4);}
+.ms-filter{font-size:11px;font-weight:500;color:rgba(255,255,255,.4);}
+.ms-body{padding-left:28px;display:flex;flex-direction:column;gap:4px;}
+.ms-input{font-size:12px;color:rgba(255,255,255,.65);font-style:italic;}
+.ms-parsed{font-size:10px;color:var(--or2);font-style:normal;}
+.ms-algo{font-size:11px;color:rgba(255,255,255,.32);}
+.ms-score{font-size:12px;font-weight:700;border-radius:6px;padding:3px 8px;display:inline-block;margin-top:1px;}
+.ms-score.hi{background:rgba(5,150,105,.3);color:#6EE7B7;}
+.match-results{width:27%;background:var(--wh);border:2px solid var(--bd);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;}
+.mr-rec{border-radius:10px;padding:11px 13px;}
+.mr-rec.par{background:var(--blbg);border:1.5px solid var(--blb);}
+.mr-rec.sit{background:var(--gnbg);border:1.5px solid var(--gnb);}
+.mr-type{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:2px;}
+.mr-rec.par .mr-type{color:var(--bl);}
+.mr-rec.sit .mr-type{color:var(--gn);}
+.mr-name{font-size:14px;font-weight:800;color:var(--nv);margin-bottom:3px;}
+.mr-id{font-size:11px;font-weight:700;font-family:monospace;}
+.mr-rec.par .mr-id{color:var(--bl);}
+.mr-rec.sit .mr-id{color:var(--gn);}
+.mr-hline{width:2px;height:14px;background:var(--bd);margin-left:16px;}
+.mr-bridge{background:var(--orbg);border:1.5px solid #FFD0A8;border-radius:10px;padding:10px 12px;margin-top:2px;}
+.mrb-l{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--or);margin-bottom:5px;}
+.mrb-job{font-size:11px;color:var(--gy);margin-bottom:4px;}
+.mrb-val{font-size:12px;font-weight:700;font-family:monospace;color:var(--nv);}
+
+/* Discovery questions bar */
+.dq-bar{background:var(--of);border:1.5px solid var(--bd);border-radius:12px;padding:12px 18px;display:flex;align-items:flex-start;gap:14px;}
+.dq-lbl{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--or);flex-shrink:0;padding-top:3px;}
+.dq-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.dq-chip{background:var(--orbg);border:1px solid #FFD0A8;border-radius:8px;padding:5px 11px;font-size:12px;font-weight:500;color:var(--nv);}
+
+/* Layer 2 — UI mockup */
+.l2-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start;}
+.ui-mock{background:var(--wh);border:2px solid var(--bd);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);}
+.ui-mock-hdr{background:var(--nv);padding:13px 18px;display:flex;align-items:center;justify-content:space-between;}
+.ui-mock-ttl{font-size:14px;font-weight:700;color:#fff;}
+.ui-mock-bdg{font-size:10px;font-weight:700;letter-spacing:.06em;background:rgba(255,109,0,.2);border:1px solid rgba(255,109,0,.4);color:var(--or2);border-radius:99px;padding:3px 10px;}
+.ui-mock-body{padding:18px 20px;display:flex;flex-direction:column;gap:14px;}
+.ui-fg-lbl{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gyl);margin-bottom:5px;display:flex;align-items:center;gap:7px;}
+.ui-fg-note{font-size:11px;font-weight:600;color:var(--gn);text-transform:none;letter-spacing:0;}
+.ui-inp{background:var(--of);border:2px solid var(--bd);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--nv);width:100%;display:flex;align-items:center;}
+.ui-inp.focus{border-color:var(--or);box-shadow:0 0 0 3px rgba(255,109,0,.1);}
+.ui-inp.auto-fill{background:var(--gnbg);border-color:var(--gnb);color:var(--gn);font-weight:700;font-family:monospace;font-size:13px;}
+.ui-cursor{display:inline-block;width:2px;height:15px;background:var(--or);margin-left:1px;animation:blink 1.1s infinite;vertical-align:middle;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.ui-dd{background:var(--wh);border:1.5px solid var(--bd);border-radius:0 0 10px 10px;box-shadow:0 8px 24px rgba(0,0,0,.1);overflow:hidden;margin-top:-2px;}
+.ui-dd-hdr{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gyl);padding:6px 13px 4px;background:var(--of);border-bottom:1px solid var(--bd);}
+.ui-dd-row{padding:8px 13px;font-size:13px;color:var(--gy);border-bottom:1px solid var(--bd);}
+.ui-dd-row:last-child{border-bottom:none;}
+.ui-dd-row.sel{background:var(--orbg);color:var(--or);font-weight:700;}
+.ui-dd-note{font-size:11px;color:var(--gyl);padding:5px 13px 7px;font-style:italic;}
+
+/* L2 callout notes */
+.l2-notes{display:flex;flex-direction:column;gap:12px;}
+.l2-note{display:flex;gap:13px;background:var(--wh);border:2px solid var(--bd);border-radius:14px;padding:16px 18px;}
+.l2-note.cond{border-color:#FFD0A8;background:var(--orbg);}
+.l2-nn{width:26px;height:26px;border-radius:50%;background:var(--nv);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0;margin-top:1px;}
+.l2-nt{font-size:14px;font-weight:700;color:var(--nv);margin-bottom:4px;}
+.l2-nb{font-size:13px;color:var(--gy);line-height:1.6;}
+.l2-nb strong{color:var(--nv);}
+
+/* ── SLIDE 6: IMPACT (was 5) ── */
+#s6{background:var(--of);}
+
+/* ── SLIDE 7: CLOSE (was 6) ── */
+#s7{background:linear-gradient(135deg,var(--nv) 0%,#0D0D20 100%);}
 .qbox{background:rgba(255,109,0,.1);border:1px solid rgba(255,109,0,.26);border-radius:18px;padding:28px 36px;font-size:20px;font-style:italic;color:rgba(255,255,255,.86);line-height:1.75;margin-bottom:40px;position:relative;}
 .qbox::before{content:'"';font-size:72px;color:var(--or);line-height:1;position:absolute;top:-12px;left:18px;opacity:.28;}
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
@@ -180,6 +279,139 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .scn{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--or);}
 .sct{font-size:16px;font-weight:700;color:#fff;line-height:1.3;}
 .scd{font-size:12px;color:rgba(255,255,255,.33);margin-top:auto;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);}
+
+/* ── SLIDE 3 VISUAL ENHANCEMENTS ── */
+#p2.panel.active{display:block;}
+.vis-half{flex:1;background:var(--wh);border:2px solid var(--bd);border-radius:16px;padding:20px;}
+.vis-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gyl);margin-bottom:14px;}
+
+/* Matching fan */
+.fan-wrap{display:flex;align-items:center;gap:14px;}
+.fan-col{display:flex;flex-direction:column;gap:7px;flex:1;}
+.fan-item{display:flex;align-items:center;gap:8px;}
+.fan-pill{flex:1;background:var(--rdbg);border:1.5px solid var(--rdb);border-radius:7px;padding:6px 11px;font-size:12px;font-weight:600;color:var(--rd);}
+.fan-arrow{font-size:13px;color:var(--gyl);flex-shrink:0;}
+.fan-gr{background:linear-gradient(135deg,var(--nv),var(--nv2));border-radius:12px;padding:18px 14px;text-align:center;width:148px;flex-shrink:0;box-shadow:0 0 0 6px rgba(255,109,0,.1);}
+.fan-gr-l{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:5px;}
+.fan-gr-n{font-size:13px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:5px;}
+.fan-gr-id{font-size:11px;font-family:monospace;color:var(--or2);}
+
+/* Survivorship table */
+.surv{width:100%;border-collapse:collapse;}
+.surv th{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gyl);padding:7px 9px;border-bottom:2px solid var(--bd);text-align:left;background:var(--of);}
+.surv td{font-size:12px;padding:8px 9px;border-bottom:1px solid var(--bd);vertical-align:top;}
+.surv tr:last-child td{border-bottom:none;}
+.sv-field{font-weight:700;color:var(--nv);}
+.sv-bad{color:var(--rd);font-style:italic;}
+.sv-win{color:var(--gn);font-weight:700;}
+.sv-rule{display:inline-block;font-size:10px;font-weight:700;background:var(--gnbg);border:1px solid var(--gnb);color:var(--gn);border-radius:4px;padding:1px 5px;margin-top:2px;}
+
+/* Q2C flow diagram */
+.qfd-wrap{background:var(--wh);border:2px solid var(--bd);border-radius:16px;padding:20px;margin-bottom:18px;}
+.qfd-row{display:flex;align-items:center;gap:0;margin-bottom:12px;}
+.qfd-node{border-radius:12px;padding:14px 18px;text-align:center;flex-shrink:0;min-width:148px;}
+.n-sf{background:var(--blbg);border:2px solid var(--blb);}
+.n-mdm{background:linear-gradient(135deg,var(--nv),var(--nv2));border:2px solid rgba(255,109,0,.3);}
+.n-wd{background:var(--gnbg);border:2px solid var(--gnb);}
+.qfd-role{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}
+.n-sf .qfd-role{color:var(--bl);}.n-mdm .qfd-role{color:rgba(255,255,255,.4);}.n-wd .qfd-role{color:var(--gn);}
+.qfd-name{font-size:16px;font-weight:800;margin-bottom:3px;}
+.n-sf .qfd-name{color:var(--bl);}.n-mdm .qfd-name{color:#fff;}.n-wd .qfd-name{color:var(--gn);}
+.qfd-sub{font-size:12px;}
+.n-sf .qfd-sub{color:#1E3A8A;}.n-mdm .qfd-sub{color:rgba(255,255,255,.5);}.n-wd .qfd-sub{color:#065F46;}
+.qfd-edge{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:0 8px;}
+.qfd-edge-lbl{font-size:11px;font-weight:600;color:var(--gyl);white-space:nowrap;}
+.qfd-edge-line{width:100%;height:2px;background:var(--bd);position:relative;}
+.qfd-edge-line::after{content:'▶';position:absolute;right:-5px;top:-8px;font-size:11px;color:var(--gyl);}
+.qfd-return{display:flex;align-items:center;gap:10px;background:var(--gnbg);border:1.5px solid var(--gnb);border-radius:10px;padding:10px 16px;}
+.qfd-ret-icon{font-size:18px;color:var(--gn);}
+.qfd-ret-lbl{font-size:13px;font-weight:700;color:var(--gn);}
+.qfd-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+
+/* Compact Q2C hub inside wf.fu */
+.q2c-hub{display:flex;align-items:center;gap:0;background:rgba(255,255,255,.65);border-radius:10px;padding:11px 10px;margin:10px 0 12px;}
+.qhc-node{border-radius:8px;padding:9px 11px;text-align:center;flex-shrink:0;min-width:88px;}
+.qhc-sf{background:var(--blbg);border:1.5px solid var(--blb);}
+.qhc-mdm{background:var(--nv);border:1.5px solid rgba(255,109,0,.4);}
+.qhc-wd{background:rgba(5,150,105,.12);border:1.5px solid var(--gnb);}
+.qhc-role{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:2px;}
+.qhc-sf .qhc-role{color:var(--bl);}
+.qhc-mdm .qhc-role{color:rgba(255,255,255,.45);}
+.qhc-wd .qhc-role{color:var(--gn);}
+.qhc-name{font-size:13px;font-weight:800;}
+.qhc-sf .qhc-name{color:var(--bl);}
+.qhc-mdm .qhc-name{color:#fff;}
+.qhc-wd .qhc-name{color:var(--gn);}
+.qhc-edge{flex:1;display:flex;flex-direction:column;gap:3px;padding:0 7px;align-items:center;}
+.qhc-lbl{font-size:10px;font-weight:600;white-space:nowrap;}
+.qhc-lbl.go{color:var(--gyl);}
+.qhc-lbl.ret{color:var(--gn);}
+.qhc-line{width:100%;height:1.5px;background:rgba(5,150,105,.25);}
+
+/* Cross-sell intro */
+.hier-intro{margin-bottom:14px;}
+.hier-intro-text{font-size:14px;color:var(--gy);line-height:1.7;margin-bottom:10px;}
+.hier-legend{display:flex;gap:20px;align-items:center;}
+.hl-item{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--gy);}
+.hl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.hl-dot.act{background:var(--gn);}
+.hl-dot.zer{background:var(--or);}
+
+/* Verbatim quote block (Slide 4) */
+.verbatim-qbox{background:var(--orbg);border-left:4px solid var(--or);border-radius:0 12px 12px 0;padding:16px 22px;margin-bottom:24px;}
+.vq-attr{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--or);margin-bottom:8px;}
+.vq-text{font-size:14px;font-style:italic;color:var(--nv);line-height:1.75;}
+
+/* Hierarchy tree */
+.hier-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.hier-company{background:var(--wh);border:2px solid var(--bd);border-radius:14px;overflow:hidden;}
+.hco-head{background:linear-gradient(135deg,var(--nv),var(--nv2));padding:12px 16px;display:flex;align-items:center;gap:10px;}
+.hco-icon{font-size:14px;color:rgba(255,255,255,.5);}
+.hco-name{font-size:14px;font-weight:800;color:#fff;flex:1;}
+.hco-rev{font-size:13px;font-weight:700;color:var(--or2);}
+.hco-sites{padding:4px 0;}
+.hsr{display:flex;align-items:center;padding:8px 14px;border-bottom:1px solid var(--bd);}
+.hsr:last-child{border-bottom:none;}
+.hsr-indent{width:16px;flex-shrink:0;}
+.hsr-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-right:9px;}
+.hsr-dot.act{background:var(--gn);}
+.hsr-dot.zer{background:var(--or);}
+.hsr-name{font-size:13px;font-weight:600;flex:1;}
+.hsr.act-site .hsr-name{color:var(--nv);}
+.hsr.zer-site .hsr-name{color:var(--gy);}
+.hsr-rev{font-size:12px;font-weight:700;}
+.hsr.act-site .hsr-rev{color:var(--gn);}
+.hsr.zer-site .hsr-rev{color:var(--gyl);}
+.hsr-badge{font-size:10px;font-weight:700;background:var(--orbg);border:1px solid #FFD0A8;color:var(--or);border-radius:5px;padding:2px 6px;margin-left:7px;white-space:nowrap;}
+.hco-more{font-size:11px;color:var(--gyl);padding:7px 14px 7px 39px;font-style:italic;border-top:1px solid var(--bd);}
+
+/* ── SLIDE 4: HUB & SPOKE ── */
+.hub-spoke{display:flex;align-items:stretch;gap:0;width:100%;margin-bottom:28px;}
+.hub-side{flex:1;display:flex;flex-direction:column;gap:7px;}
+.hub-side-lbl{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--gyl);text-align:center;margin-bottom:5px;}
+.hub-sys{display:flex;align-items:center;gap:8px;border-radius:9px;padding:9px 12px;}
+.h-sf{background:var(--blbg);border:1.5px solid var(--blb);}
+.h-wd{background:var(--gnbg);border:1.5px solid var(--gnb);}
+.h-bh{background:var(--pubg);border:1.5px solid var(--pub);}
+.h-cc{background:var(--orbg);border:1.5px solid #FFD0A8;}
+.h-lg{background:var(--of);border:1.5px dashed var(--bd);}
+.hub-sys-nm{font-size:12px;font-weight:700;flex:1;}
+.h-sf .hub-sys-nm{color:var(--bl);}.h-wd .hub-sys-nm{color:var(--gn);}
+.h-bh .hub-sys-nm{color:var(--pu);}.h-cc .hub-sys-nm{color:var(--or);}
+.h-lg .hub-sys-nm{color:var(--gy);}
+.hub-sys-sub{font-size:10px;color:var(--gyl);}
+.hub-arr-icon{font-size:14px;color:var(--gyl);}
+.hub-arr-col{display:flex;flex-direction:column;justify-content:flex-start;gap:7px;padding:0 10px;padding-top:26px;}
+.hub-arr-row{height:36px;display:flex;align-items:center;justify-content:center;}
+.hub-arr-row .hub-arr-icon{font-size:16px;}
+.hub-src-lbl{font-size:9px;color:var(--gyl);text-align:center;margin-top:4px;letter-spacing:.05em;text-transform:uppercase;}
+.hub-center-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:0 8px;}
+.hub-box{background:linear-gradient(135deg,var(--nv),var(--nv2));border-radius:18px;padding:22px 26px;text-align:center;box-shadow:0 0 0 8px rgba(255,109,0,.07),0 0 0 16px rgba(255,109,0,.04);}
+.hub-box-l{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:5px;}
+.hub-box-t{font-size:20px;font-weight:900;color:#fff;margin-bottom:3px;}
+.hub-box-s{font-size:12px;color:var(--or2);}
+.hub-callout{font-size:11px;color:var(--gyl);text-align:center;font-style:italic;}
+.hub-src-only{font-size:10px;font-weight:600;color:var(--gyl);text-align:center;padding:9px 12px;border:1.5px dashed var(--bd);border-radius:9px;font-style:italic;}
 </style>
 </head>
 <body>
@@ -188,9 +420,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
   <a href="#s1" class="active" title="Title"></a>
   <a href="#s2" title="Your Stack"></a>
   <a href="#s3" title="Golden Record"></a>
-  <a href="#s4" title="Solution"></a>
-  <a href="#s5" title="Impact"></a>
-  <a href="#s6" title="Next Steps"></a>
+  <a href="#s4" title="ExxonMobil Example"></a>
+  <a href="#s5" title="Solution"></a>
+  <a href="#s6" title="Impact"></a>
+  <a href="#s7" title="Next Steps"></a>
 </nav>
 
 <!-- ═══ SLIDE 1: TITLE ═══ -->
@@ -285,41 +518,19 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
   </div>
 </section>
 
-<!-- ═══ SLIDE 3: GOLDEN RECORD CHALLENGE ═══ -->
+<!-- ═══ SLIDE 3: ONPOINT CURRENT DATA CHALLENGES ═══ -->
 <section class="slide" id="s3">
-  <div class="stag">The Golden Record Challenge</div>
-  <div class="sh">The ExxonMobil Beaumont Question — <em>Times a Thousand.</em></div>
+  <div class="stag">OnPoint Current Data Challenges</div>
+  <div class="sh">Three Workflows That Break<br>Without Governed Master Data.</div>
   <div class="tabs">
-    <button class="tb active" onclick="showPanel(0,this)">The ExxonMobil Problem</button>
-    <button class="tb" onclick="showPanel(1,this)">Setting the Standard</button>
-    <button class="tb" onclick="showPanel(2,this)">Quote → Cash Governance</button>
-    <button class="tb" onclick="showPanel(3,this)">Cross-Sell &amp; Hierarchy</button>
+    <button class="tb active" onclick="showPanel(0,this)">Setting the Standard</button>
+    <button class="tb" onclick="showPanel(1,this)">Quote → Cash Governance</button>
+    <button class="tb" onclick="showPanel(2,this)">Cross-Sell &amp; Hierarchy</button>
   </div>
 
-  <!-- Tab 0: ExxonMobil Problem -->
+
+  <!-- Tab 0: Setting the Standard -->
   <div class="panel active" id="p0">
-    <div class="wf">
-      <div class="wfl">❌ Today — ExxonMobil Beaumont</div>
-      <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>Years of history</strong> with ExxonMobil Beaumont — but fragmented across every legacy system since 2005<span class="tag tag-bad">9 acquisitions</span></div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>7 naming iterations</strong> — "ExxonMobil Beaumont," "Exxon BMT," "XOM Beaumont," "XOM-B," and variants across disparate systems</div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Cannot aggregate total revenue</strong> for this customer — same client is counted multiple times<span class="tag tag-bad">Duplicate exposure</span></div></div>
-        <div class="st"><div class="stn">4</div><div class="stx"><strong>PE buyer asks "show me ExxonMobil total revenue"</strong> — no clean answer available without days of manual work</div></div>
-      </div>
-    </div>
-    <div class="wf fu">
-      <div class="wfl">✅ With Informatica MDM</div>
-      <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>MDM ingests all 7 variants</strong> — matches and resolves them to one canonical Golden Record<span class="tag tag-ok">Auto-matched</span></div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>Survivorship rules</strong> determine the winning name — that becomes the new standard going forward</div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Historical data resolved retroactively</strong> — full revenue and relationship history surfaces under one record<span class="tag tag-ok">One answer</span></div></div>
-        <div class="st"><div class="stn">4</div><div class="stx"><strong>PE due diligence answered instantly</strong> — complete ExxonMobil revenue by site, by service line, by year</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tab 1: Setting the Standard -->
-  <div class="panel" id="p1">
     <div class="wf">
       <div class="wfl">❌ Today — No Standard Exists</div>
       <div class="steps">
@@ -332,14 +543,14 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
       <div class="wfl">✅ MDM Sets and Enforces the Standard</div>
       <div class="steps">
         <div class="st"><div class="stn">1</div><div class="stx"><strong>MDM becomes the "data cube"</strong> — one governed model for Customer, Location, and Hierarchy<span class="tag tag-ok">The standard</span></div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>New records enriched at point of entry</strong> — rep types "Exxon," MDM suggests the existing Golden Record</div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Conventions can be standardized</strong> or simply reference back to the governed model in MDM</div></div>
         <div class="st"><div class="stn">3</div><div class="stx"><strong>Workday launches with clean governed data</strong> — MDM sets the standard before Finance goes live<span class="tag tag-ok">Jan 1 ready</span></div></div>
       </div>
     </div>
   </div>
 
-  <!-- Tab 2: Quote to Cash Governance -->
-  <div class="panel" id="p2">
+  <!-- Tab 1: Quote → Cash Governance -->
+  <div class="panel" id="p1">
     <div class="wf">
       <div class="wfl">❌ Today — The Lifecycle Breaks</div>
       <div class="steps">
@@ -351,83 +562,397 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
     </div>
     <div class="wf fu">
       <div class="wfl">✅ MDM Governs the Full Lifecycle</div>
+      <div class="q2c-hub">
+        <div class="qhc-node qhc-sf">
+          <div class="qhc-role">Quote</div>
+          <div class="qhc-name">Salesforce</div>
+        </div>
+        <div class="qhc-edge">
+          <div class="qhc-lbl ret">← Actuals (governed)</div>
+          <div class="qhc-line"></div>
+          <div class="qhc-lbl go">Quote ID →</div>
+        </div>
+        <div class="qhc-node qhc-mdm">
+          <div class="qhc-role">Golden Record</div>
+          <div class="qhc-name">MDM</div>
+        </div>
+        <div class="qhc-edge">
+          <div class="qhc-lbl ret">← Actuals appended</div>
+          <div class="qhc-line"></div>
+          <div class="qhc-lbl go" style="visibility:hidden;">—</div>
+        </div>
+        <div class="qhc-node qhc-wd">
+          <div class="qhc-role">Cash</div>
+          <div class="qhc-name">Workday</div>
+        </div>
+      </div>
       <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>Quote in Salesforce</strong> references the MDM Golden Record — canonical name, canonical ID<span class="tag tag-ok">One ID</span></div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>Same Golden Record ID</strong> flows into Workday — job linked to the customer automatically, no manual re-entry</div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Actuals post in Workday → MDM → back to Salesforce</strong> — the loop that never closed, closed<span class="tag tag-ok">Full loop</span></div></div>
+        <div class="st"><div class="stn">1</div><div class="stx"><strong>SF quote</strong> references MDM Golden Record — canonical ID attached from the start<span class="tag tag-ok">One ID</span></div></div>
+        <div class="st"><div class="stn">2</div><div class="stx"><strong>Same Golden Record ID</strong> flows into Workday — both systems linked to the same master record</div></div>
+        <div class="st"><div class="stn">3</div><div class="stx"><strong>Workday appends Actuals to the Golden Record</strong> — MDM distributes them back to Salesforce in a governed way<span class="tag tag-ok">Loop closed</span></div></div>
+        <div class="st"><div class="stn">4</div><div class="stx"><strong>Sales reps now have immediate access to previous actuals</strong> to make informed proposals in seconds.</div></div>
       </div>
     </div>
   </div>
 
-  <!-- Tab 3: Cross-Sell Hierarchy -->
-  <div class="panel" id="p3">
-    <div class="wf">
-      <div class="wfl">❌ Today — No Hierarchy, No Insight</div>
-      <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>Marathon: 9 sites</strong> — logged under different names across business units</div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>No account hierarchy</strong> — total wallet share requires days of manual aggregation<span class="tag tag-bad">People-dependent</span></div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Rep leaves</strong> — 6–12 months of account intelligence disappears with them</div></div>
+  <!-- Tab 2: Cross-Sell & Hierarchy -->
+  <div class="panel" id="p2">
+    <div class="hier-intro">
+      <p class="hier-intro-text">Without a governed hierarchy, wallet share is invisible and cross-sell opportunities are buried. The view below shows what becomes visible with MDM: every site rolls up to its parent, revenue is visible at every level, and zero-revenue sites surface automatically as targets.</p>
+      <div class="hier-legend">
+        <span class="hl-item"><span class="hl-dot act"></span>Active site with revenue</span>
+        <span class="hl-item"><span class="hl-dot zer"></span>Zero revenue — cross-sell opportunity</span>
       </div>
     </div>
-    <div class="wf fu">
-      <div class="wfl">✅ "Data Texture" — Delivered</div>
-      <div class="steps">
-        <div class="st"><div class="stn">1</div><div class="stx"><strong>B2B Hierarchy:</strong> Marathon parent → 9 sites → projects — all in Salesforce, in one click<span class="tag tag-ok">One click</span></div></div>
-        <div class="st"><div class="stn">2</div><div class="stx"><strong>Zero-revenue sites surface automatically</strong> as cross-sell opportunities — no manual digging</div></div>
-        <div class="st"><div class="stn">3</div><div class="stx"><strong>Account intelligence lives in the system</strong> — not in anyone's head. Survives every rep departure.</div></div>
+    <div class="hier-wrap">
+
+      <!-- ExxonMobil -->
+      <div class="hier-company">
+        <div class="hco-head">
+          <span class="hco-icon">🏭</span>
+          <span class="hco-name">ExxonMobil Corporation</span>
+          <span class="hco-rev">$12.4M</span>
+        </div>
+        <div class="hco-sites">
+          <div class="hsr act-site">
+            <div class="hsr-indent"></div><div class="hsr-dot act"></div>
+            <div class="hsr-name">Baytown Refinery</div>
+            <div class="hsr-rev">$4.1M</div>
+          </div>
+          <div class="hsr act-site">
+            <div class="hsr-indent"></div><div class="hsr-dot act"></div>
+            <div class="hsr-name">Beaumont Refinery</div>
+            <div class="hsr-rev">$3.8M</div>
+          </div>
+          <div class="hsr act-site">
+            <div class="hsr-indent"></div><div class="hsr-dot act"></div>
+            <div class="hsr-name">Baton Rouge Complex</div>
+            <div class="hsr-rev">$2.1M</div>
+          </div>
+          <div class="hsr act-site">
+            <div class="hsr-indent"></div><div class="hsr-dot act"></div>
+            <div class="hsr-name">Joliet Refinery</div>
+            <div class="hsr-rev">$2.4M</div>
+          </div>
+          <div class="hsr zer-site">
+            <div class="hsr-indent"></div><div class="hsr-dot zer"></div>
+            <div class="hsr-name">Deer Park Refinery</div>
+            <div class="hsr-rev">$0</div>
+            <div class="hsr-badge">Cross-sell opportunity</div>
+          </div>
+          <div class="hsr zer-site">
+            <div class="hsr-indent"></div><div class="hsr-dot zer"></div>
+            <div class="hsr-name">Billings Refinery</div>
+            <div class="hsr-rev">$0</div>
+            <div class="hsr-badge">Cross-sell opportunity</div>
+          </div>
+        </div>
       </div>
+
+      <!-- Marathon -->
+      <div class="hier-company">
+        <div class="hco-head">
+          <span class="hco-icon">🏭</span>
+          <span class="hco-name">Marathon Petroleum</span>
+          <span class="hco-rev">$8.7M</span>
+        </div>
+        <div class="hco-sites">
+          <div class="hsr act-site">
+            <div class="hsr-indent"></div><div class="hsr-dot act"></div>
+            <div class="hsr-name">Texas City Refinery</div>
+            <div class="hsr-rev">$3.2M</div>
+          </div>
+          <div class="hsr act-site">
+            <div class="hsr-indent"></div><div class="hsr-dot act"></div>
+            <div class="hsr-name">Galveston Bay Refinery</div>
+            <div class="hsr-rev">$2.8M</div>
+          </div>
+          <div class="hsr act-site">
+            <div class="hsr-indent"></div><div class="hsr-dot act"></div>
+            <div class="hsr-name">Robinson Refinery</div>
+            <div class="hsr-rev">$2.7M</div>
+          </div>
+          <div class="hsr zer-site">
+            <div class="hsr-indent"></div><div class="hsr-dot zer"></div>
+            <div class="hsr-name">Catlettsburg Refinery</div>
+            <div class="hsr-rev">$0</div>
+            <div class="hsr-badge">Cross-sell opportunity</div>
+          </div>
+          <div class="hsr zer-site">
+            <div class="hsr-indent"></div><div class="hsr-dot zer"></div>
+            <div class="hsr-name">Garyville Refinery</div>
+            <div class="hsr-rev">$0</div>
+            <div class="hsr-badge">Cross-sell opportunity</div>
+          </div>
+        </div>
+        <div class="hco-more">+ 4 more sites · Total: 9 sites across Marathon</div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══ SLIDE 4: SOLUTION ═══ -->
+<!-- ═══ SLIDE 4: DATA CHALLENGE EXAMPLE ═══ -->
 <section class="slide" id="s4">
+  <div class="stag">ExxonMobil in the Cash Collections System</div>
+  <div class="sh">Data Challenge Example</div>
+
+  <div class="verbatim-qbox">
+    <div class="vq-attr">Customer Feedback — June 23, 2026</div>
+    <div class="vq-text">"Right now, they are identified by Parent/Company – Site – Job and the only place for a unique identifier is at the job level where we create a job #.<br><br>Current Example – ExxonMobil – Baytown Refinery – 2026 FCC Turnaround (job # 2026 – 15 – xxxx). In this format it is dependent on spelling/naming convention to roll up the data across the business. It is very challenging at best."</div>
+  </div>
+
+  <div class="layer-tabs">
+    <button class="ltb active" onclick="showLayer(0,this)">
+      <span class="ltb-n">Layer 1 — Reactive</span>
+      <span class="ltb-t">MDM Matching Engine</span>
+    </button>
+    <button class="ltb" onclick="showLayer(1,this)">
+      <span class="ltb-n">Layer 2 — Proactive</span>
+      <span class="ltb-t">Search Before Create</span>
+    </button>
+  </div>
+
+  <!-- ── LAYER 1: MATCHING FLOW ── -->
+  <div class="layer active" id="layer0">
+    <div class="match-flow">
+
+      <!-- Col 1: Cash Collections Input -->
+      <div class="match-source">
+        <div class="col-lbl">Cash Collections Entry</div>
+        <div class="msf bad">
+          <div class="msf-l">Customer</div>
+          <div class="msf-v">"Exon Mobile"</div>
+          <div class="msf-tag">Typo — no guardrails</div>
+        </div>
+        <div class="msf bad">
+          <div class="msf-l">Site</div>
+          <div class="msf-v">"Baytown Refinry"</div>
+          <div class="msf-tag">Misspelling</div>
+        </div>
+        <div class="msf neutral">
+          <div class="msf-l">Job #</div>
+          <div class="msf-v">2026-15-0041</div>
+          <div class="msf-tag">Transaction — stays here</div>
+        </div>
+      </div>
+
+      <div class="match-arr">
+        <div class="match-arr-line"></div>
+        <div class="match-arr-icon">→</div>
+        <div class="match-arr-line"></div>
+      </div>
+
+      <!-- Col 2: MDM Engine -->
+      <div class="match-engine">
+        <div class="col-lbl" style="color:rgba(255,255,255,.38);">Informatica MDM Matching Engine</div>
+
+        <div class="match-stream">
+          <div class="ms-head">
+            <div class="ms-num">1</div>
+            <div class="ms-title">Parent Company Match</div>
+          </div>
+          <div class="ms-body">
+            <div class="ms-input">"Exon Mobile"</div>
+            <div class="ms-algo">Fuzzy + phonetic matching against parent domain</div>
+            <div class="ms-score hi">94% confidence → Auto-match</div>
+          </div>
+        </div>
+
+        <div class="match-stream">
+          <div class="ms-head">
+            <div class="ms-num">2</div>
+            <div class="ms-title">Site Match <span class="ms-filter">(ExxonMobil sites only)</span></div>
+          </div>
+          <div class="ms-body">
+            <div class="ms-input">"Baytown Refinry" <span class="ms-parsed">← parent string parsed out first</span></div>
+            <div class="ms-algo">Fuzzy string matching against site domain</div>
+            <div class="ms-score hi">91% confidence → Auto-match</div>
+          </div>
+        </div>
+
+        <div class="match-stream gray">
+          <div class="ms-head">
+            <div class="ms-num gr">?</div>
+            <div class="ms-title gr">Below threshold → Data Steward review queue</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="match-arr">
+        <div class="match-arr-line"></div>
+        <div class="match-arr-icon">→</div>
+        <div class="match-arr-line"></div>
+      </div>
+
+      <!-- Col 3: Results + Bridge -->
+      <div class="match-results">
+        <div class="col-lbl">Golden Records + Bridge</div>
+
+        <div class="mr-rec par">
+          <div class="mr-type">Parent Company</div>
+          <div class="mr-name">ExxonMobil Corporation</div>
+          <div class="mr-id">OP-CUST-00042</div>
+        </div>
+        <div class="mr-hline"></div>
+        <div class="mr-rec sit">
+          <div class="mr-type">Site</div>
+          <div class="mr-name">Baytown Refinery</div>
+          <div class="mr-id">OP-SITE-00042-01</div>
+        </div>
+
+        <div class="mr-bridge">
+          <div class="mrb-l">MDM_Site_ID written back →</div>
+          <div class="mrb-job">Job 2026-15-0041</div>
+          <div class="mrb-val">MDM_Site_ID: OP-SITE-00042-01</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ── LAYER 2: SEARCH BEFORE CREATE ── -->
+  <div class="layer" id="layer1">
+    <div class="l2-grid">
+
+      <!-- UI Mockup -->
+      <div class="ui-mock">
+        <div class="ui-mock-hdr">
+          <div class="ui-mock-ttl">Cash Collections — New Job Entry</div>
+          <div class="ui-mock-bdg">Powered by Informatica MDM</div>
+        </div>
+        <div class="ui-mock-body">
+
+          <div>
+            <div class="ui-fg-lbl">Customer Name</div>
+            <div class="ui-inp focus">Exon<span class="ui-cursor"></span></div>
+            <div class="ui-dd">
+              <div class="ui-dd-hdr">Suggestions from MDM</div>
+              <div class="ui-dd-row sel">✓ &nbsp;ExxonMobil Corporation</div>
+              <div class="ui-dd-row">ExxonMobil Chemical Company</div>
+              <div class="ui-dd-row">ExxonMobil Pipeline Company</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="ui-fg-lbl">Site <span class="ui-fg-note">Filtered to ExxonMobil</span></div>
+            <div class="ui-inp">Select site...</div>
+            <div class="ui-dd">
+              <div class="ui-dd-hdr">ExxonMobil Sites</div>
+              <div class="ui-dd-row">Baytown Refinery</div>
+              <div class="ui-dd-row">Beaumont Refinery</div>
+              <div class="ui-dd-row">Baton Rouge Complex</div>
+              <div class="ui-dd-note">Only sites belonging to ExxonMobil shown</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="ui-fg-lbl">Job #</div>
+            <div class="ui-inp">2026-15-0041</div>
+          </div>
+
+          <div>
+            <div class="ui-fg-lbl">MDM_Site_ID <span class="ui-fg-note">Auto-populated</span></div>
+            <div class="ui-inp auto-fill">OP-SITE-00042-01</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Callout notes -->
+      <div class="l2-notes">
+        <div class="l2-note">
+          <div class="l2-nn">1</div>
+          <div>
+            <div class="l2-nt">Typeahead fires after 3 characters</div>
+            <div class="l2-nb">Informatica's API returns ranked Golden Record matches in real-time. <strong>"Exon" surfaces ExxonMobil Corporation.</strong> The typo never gets committed to the system.</div>
+          </div>
+        </div>
+        <div class="l2-note">
+          <div class="l2-nn">2</div>
+          <div>
+            <div class="l2-nt">Site dropdown is cascading</div>
+            <div class="l2-nb">Once the parent is selected, site options are <strong>filtered to only ExxonMobil's mastered sites.</strong> The user can't accidentally assign to the wrong parent company.</div>
+          </div>
+        </div>
+        <div class="l2-note">
+          <div class="l2-nn">3</div>
+          <div>
+            <div class="l2-nt">MDM_Site_ID auto-populates</div>
+            <div class="l2-nb">The Golden Record reference is attached <strong>before the job is saved.</strong> No post-entry matching required — the referential linkage is clean from keystroke one.</div>
+          </div>
+        </div>
+        <div class="l2-note cond">
+          <div>
+            <div class="l2-nt">⚡ Conditional on IT</div>
+            <div class="l2-nb">Requires Cash Collections to support external API calls and UI customization. <strong>Layer 1 works regardless.</strong> Layer 2 is the question for Ben: does the system support this?</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SLIDE 5: SOLUTION ═══ -->
+<section class="slide" id="s5">
   <div class="stag">The Solution</div>
   <div class="sh">MDM: The Governed Bridge<br>Between Quote and Cash.</div>
 
-  <!-- Golden Record Lifecycle Visual -->
-  <div class="lifecycle">
-    <div class="lc-phase lc-legacy">
-      <div class="lc-l">Historical Problem</div>
-      <div class="lc-title">7 Versions</div>
-      <div class="lc-items">
-        <div class="lc-item">"ExxonMobil Beaumont"</div>
-        <div class="lc-item">"Exxon BMT"</div>
-        <div class="lc-item">"XOM Beaumont"</div>
-        <div class="lc-item">"XOM-B" + 3 more variants</div>
-      </div>
+  <!-- Hub & Spoke: bidirectional source + target -->
+  <div class="hub-spoke">
+
+    <!-- Left: Source Systems -->
+    <div class="hub-side">
+      <div class="hub-side-lbl">Source Systems</div>
+      <div class="hub-sys h-sf"><div class="hub-sys-nm">Salesforce</div><div class="hub-sys-sub">CRM records</div></div>
+      <div class="hub-sys h-wd"><div class="hub-sys-nm">Workday</div><div class="hub-sys-sub">HR &amp; Finance data</div></div>
+      <div class="hub-sys h-bh"><div class="hub-sys-nm">Bullhorn</div><div class="hub-sys-sub">Staffing records</div></div>
+      <div class="hub-sys h-cc"><div class="hub-sys-nm">Cash Collections</div><div class="hub-sys-sub">Job transactions</div></div>
+      <div class="hub-sys h-lg"><div class="hub-sys-nm">Legacy / Excel</div><div class="hub-sys-sub">Historical data</div></div>
     </div>
-    <div class="lc-arrow">→</div>
-    <div class="lc-phase lc-mdm">
-      <div class="lc-l">Informatica MDM</div>
-      <div class="lc-title">Golden Record</div>
-      <div class="lc-items">
-        <div class="lc-item">Matches &amp; merges all variants</div>
-        <div class="lc-item">Sets canonical name + unique ID</div>
-        <div class="lc-item">Governs site hierarchy</div>
-        <div class="lc-item">Enforces standard going forward</div>
-      </div>
+
+    <!-- Inbound arrows -->
+    <div class="hub-arr-col">
+      <div class="hub-src-lbl">Raw data in</div>
+      <div class="hub-arr-row"><span class="hub-arr-icon">→</span></div>
+      <div class="hub-arr-row"><span class="hub-arr-icon">→</span></div>
+      <div class="hub-arr-row"><span class="hub-arr-icon">→</span></div>
+      <div class="hub-arr-row"><span class="hub-arr-icon">→</span></div>
+      <div class="hub-arr-row"><span class="hub-arr-icon">→</span></div>
     </div>
-    <div class="lc-arrow">→</div>
-    <div class="lc-phase lc-sf">
-      <div class="lc-l">Quote System</div>
-      <div class="lc-title">Salesforce</div>
-      <div class="lc-items">
-        <div class="lc-item">Clean, governed customer records</div>
-        <div class="lc-item">Actuals linked to proposals</div>
-        <div class="lc-item">Cross-sell hierarchy visible</div>
+
+    <!-- Center: MDM Hub -->
+    <div class="hub-center-col">
+      <div class="hub-box">
+        <div class="hub-box-l">Informatica</div>
+        <div class="hub-box-t">MDM</div>
+        <div class="hub-box-s">Golden Record</div>
       </div>
+      <div class="hub-callout">Same systems — both in and out.<br>No source changes required.</div>
     </div>
-    <div class="lc-arrow">→</div>
-    <div class="lc-phase lc-wd">
-      <div class="lc-l">Cash System</div>
-      <div class="lc-title">Workday</div>
-      <div class="lc-items">
-        <div class="lc-item">Same Golden Record ID</div>
-        <div class="lc-item">Actuals tied to customer</div>
-        <div class="lc-item">Finance module ready Jan 1</div>
-      </div>
+
+    <!-- Outbound arrows -->
+    <div class="hub-arr-col">
+      <div class="hub-src-lbl">Governed data out</div>
+      <div class="hub-arr-row"><span class="hub-arr-icon">←</span></div>
+      <div class="hub-arr-row"><span class="hub-arr-icon">←</span></div>
+      <div class="hub-arr-row"><span class="hub-arr-icon">←</span></div>
+      <div class="hub-arr-row"><span class="hub-arr-icon">←</span></div>
+      <div class="hub-arr-row" style="opacity:.25;"><span class="hub-arr-icon" style="font-size:11px;">—</span></div>
     </div>
+
+    <!-- Right: Target Systems -->
+    <div class="hub-side">
+      <div class="hub-side-lbl">Target Systems</div>
+      <div class="hub-sys h-sf"><div class="hub-sys-nm">Salesforce</div><div class="hub-sys-sub">Clean customer records</div></div>
+      <div class="hub-sys h-wd"><div class="hub-sys-nm">Workday</div><div class="hub-sys-sub">Governed IDs &amp; actuals</div></div>
+      <div class="hub-sys h-bh"><div class="hub-sys-nm">Bullhorn</div><div class="hub-sys-sub">Matched staffing records</div></div>
+      <div class="hub-sys h-cc"><div class="hub-sys-nm">Cash Collections</div><div class="hub-sys-sub">MDM_Site_ID written back</div></div>
+      <div class="hub-src-only">Legacy / Excel — source only</div>
+    </div>
+
   </div>
 
   <div class="s4-layout">
@@ -488,10 +1013,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
   </div>
 </section>
 
-<!-- ═══ SLIDE 5: BEFORE/AFTER ═══ -->
-<section class="slide" id="s5">
+<!-- ═══ SLIDE 6: BEFORE/AFTER ═══ -->
+<section class="slide" id="s6">
   <div class="stag">Impact</div>
-  <div class="sh">ExxonMobil Beaumont: Before vs. After</div>
+  <div class="sh">Before vs. After</div>
   <div class="toggle-bar">
     <button class="tgb active" onclick="toggleBA('before',this)">Today</button>
     <button class="tgb" onclick="toggleBA('after',this)">With MDM</button>
@@ -534,28 +1059,30 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
   </div>
 </section>
 
-<!-- ═══ SLIDE 6: CLOSE ═══ -->
-<section class="slide" id="s6">
+<!-- ═══ SLIDE 7: CLOSE ═══ -->
+<section class="slide" id="s7">
   <div class="stag" style="color:rgba(255,255,255,.32);">The Bottom Line</div>
   <div class="sh" style="color:#fff;margin-bottom:32px;">Built for your exit. Built for your stack.</div>
   <div class="qbox">"MDM gives OnPoint one governed Golden Record — from the first quote in Salesforce to the final actuals in Workday — so every management meeting with MML Capital's buyer starts with the same clean answer."</div>
-  <div class="steps-grid">
-    <div class="sc"><div class="scn">Step 01</div><div class="sct">MDM Art of the Possible Demo</div><div class="scd">Jun 24, 2026 — Today</div></div>
-    <div class="sc"><div class="scn">Step 02</div><div class="sct">Customer record count &amp; source systems inventory</div><div class="scd">Action: Timothy + Liz — inputs the scope &amp; cost analysis</div></div>
-    <div class="sc"><div class="scn">Step 03</div><div class="sct">Extended session: CEO, CFO, IT + Workday team</div><div class="scd">Target: before Sep 2026 Workday HRIS go-live</div></div>
-    <div class="sc"><div class="scn">Step 04</div><div class="sct">Business case &amp; commercial proposal</div><div class="scd">Phased option: start before Jan 1 Workday Finance go-live</div></div>
-  </div>
 </section>
 
 <script>
 // Nav dots
-const sids=['s1','s2','s3','s4','s5','s6'];
+const sids=['s1','s2','s3','s4','s5','s6','s7'];
 const nls=document.querySelectorAll('.nav a');
 window.addEventListener('scroll',()=>{
   let c=0;
   sids.forEach((id,i)=>{const e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=window.innerHeight*.5)c=i;});
   nls.forEach((a,i)=>a.classList.toggle('active',i===c));
 },{passive:true});
+
+// Layer toggle (Slide 5)
+function showLayer(i,btn){
+  document.querySelectorAll('.layer').forEach(l=>l.classList.remove('active'));
+  document.querySelectorAll('.ltb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('layer'+i).classList.add('active');
+  btn.classList.add('active');
+}
 
 // Tabs
 function showPanel(i,btn){
