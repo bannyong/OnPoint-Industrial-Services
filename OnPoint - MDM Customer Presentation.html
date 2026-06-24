@@ -82,7 +82,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .glb-div{width:1px;background:rgba(255,255,255,.1);align-self:stretch;}
 
 /* ── SLIDE 3: GOLDEN RECORD ── */
-#s3{background:var(--of);}
+#s3{background:var(--wh);}
+#s4{background:var(--of);}
 .tabs{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
 .tb{padding:11px 26px;border-radius:99px;border:2px solid var(--bd);background:var(--wh);font-size:15px;font-weight:600;color:var(--gy);cursor:pointer;transition:.2s;}
 .tb.active,.tb:hover{background:var(--or);border-color:var(--or);color:var(--wh);}
@@ -104,7 +105,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .tag-bad{background:#FEE2E2;color:var(--rd);}.tag-ok{background:#D1FAE5;color:var(--gn);}
 
 /* ── SLIDE 4: SOLUTION ── */
-#s4{background:var(--wh);}
+#s5{background:var(--wh);}
 
 /* Lifecycle diagram */
 .lifecycle{display:flex;align-items:stretch;width:100%;gap:0;margin-bottom:30px;}
@@ -148,7 +149,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .cd-body strong{color:var(--nv);}
 
 /* ── SLIDE 5: BEFORE/AFTER ── */
-#s5{background:var(--of);}
+#s7{background:var(--of);}
 .toggle-bar{display:flex;background:var(--bd);border-radius:99px;padding:5px;width:fit-content;margin-bottom:36px;}
 .tgb{padding:12px 36px;border-radius:99px;font-size:16px;font-weight:700;cursor:pointer;transition:.25s;border:none;background:transparent;color:var(--gy);}
 .tgb.active{background:var(--wh);color:var(--nv);box-shadow:0 2px 12px rgba(0,0,0,.1);}
@@ -171,7 +172,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .oc-stack{display:flex;flex-direction:column;gap:14px;justify-content:center;}
 
 /* ── SLIDE 5: MATCHING & PREVENTION ── */
-#s5{background:var(--wh);}
+#s6{background:var(--wh);}
 
 /* Layer toggle */
 .layer-tabs{display:flex;gap:12px;margin-bottom:28px;}
@@ -267,10 +268,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .l2-nb strong{color:var(--nv);}
 
 /* ── SLIDE 6: IMPACT (was 5) ── */
-#s6{background:var(--of);}
+#s8{background:linear-gradient(135deg,var(--nv) 0%,#0D0D20 100%);}
 
 /* ── SLIDE 7: CLOSE (was 6) ── */
-#s7{background:linear-gradient(135deg,var(--nv) 0%,#0D0D20 100%);}
+/* s8 close bg set above */
 .qbox{background:rgba(255,109,0,.1);border:1px solid rgba(255,109,0,.26);border-radius:18px;padding:28px 36px;font-size:20px;font-style:italic;color:rgba(255,255,255,.86);line-height:1.75;margin-bottom:40px;position:relative;}
 .qbox::before{content:'"';font-size:72px;color:var(--or);line-height:1;position:absolute;top:-12px;left:18px;opacity:.28;}
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
@@ -280,7 +281,46 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 .sct{font-size:16px;font-weight:700;color:#fff;line-height:1.3;}
 .scd{font-size:12px;color:rgba(255,255,255,.33);margin-top:auto;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);}
 
-/* ── SLIDE 3 VISUAL ENHANCEMENTS ── */
+/* ── SLIDE 3: MDM 101 ── */
+.mdm101-layout{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:22px;}
+.mdm101-section{border-radius:18px;padding:24px 26px;}
+.mdm101-master{background:linear-gradient(135deg,var(--nv),var(--nv2));border:2px solid rgba(255,109,0,.3);}
+.mdm101-txn{background:var(--of);border:2px solid var(--bd);}
+.mdm101-sec-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
+.mdm101-master .mdm101-sec-lbl{color:rgba(255,255,255,.4);}
+.mdm101-txn .mdm101-sec-lbl{color:var(--gyl);}
+.mdm101-sec-title{font-size:20px;font-weight:800;margin-bottom:6px;}
+.mdm101-master .mdm101-sec-title{color:#fff;}
+.mdm101-txn .mdm101-sec-title{color:var(--nv);}
+.mdm101-sec-desc{font-size:14px;line-height:1.65;margin-bottom:18px;}
+.mdm101-master .mdm101-sec-desc{color:rgba(255,255,255,.5);}
+.mdm101-txn .mdm101-sec-desc{color:var(--gy);}
+.entity-cards{display:flex;flex-direction:column;gap:10px;}
+.ec{border-radius:11px;padding:14px 16px;}
+.ec-customer{background:rgba(255,109,0,.15);border:1.5px solid rgba(255,109,0,.35);}
+.ec-site{background:rgba(37,99,235,.18);border:1.5px solid rgba(37,99,235,.35);}
+.ec-type{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}
+.ec-customer .ec-type{color:var(--or2);}
+.ec-site .ec-type{color:#93C5FD;}
+.ec-name{font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;}
+.ec-desc{font-size:12px;line-height:1.5;}
+.ec-customer .ec-desc,.ec-site .ec-desc{color:rgba(255,255,255,.55);}
+.ec-id{font-size:11px;font-family:monospace;margin-top:6px;}
+.ec-customer .ec-id{color:var(--or2);}
+.ec-site .ec-id{color:#93C5FD;}
+.txn-cards{display:flex;flex-direction:column;gap:9px;}
+.txn{background:var(--wh);border:1.5px solid var(--bd);border-radius:11px;padding:12px 14px;display:flex;align-items:center;gap:12px;}
+.txn-ico{font-size:20px;flex-shrink:0;}
+.txn-type{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gyl);margin-bottom:2px;}
+.txn-name{font-size:13px;font-weight:700;color:var(--nv);}
+.txn-link{font-size:11px;color:var(--gyl);margin-top:2px;}
+.txn-link strong{color:var(--or);font-weight:600;}
+.mdm101-callout{background:var(--orbg);border:1.5px solid #FFD0A8;border-radius:14px;padding:16px 22px;display:flex;align-items:center;gap:14px;}
+.mdm101-callout-icon{font-size:22px;flex-shrink:0;}
+.mdm101-callout-text{font-size:15px;font-weight:600;color:var(--nv);line-height:1.6;}
+.mdm101-callout-text em{font-style:normal;color:var(--or);font-weight:700;}
+
+/* ── SLIDE 4+ VISUAL ENHANCEMENTS ── */
 #p2.panel.active{display:block;}
 .vis-half{flex:1;background:var(--wh);border:2px solid var(--bd);border-radius:16px;padding:20px;}
 .vis-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gyl);margin-bottom:14px;}
@@ -419,11 +459,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 <nav class="nav" id="sidenav">
   <a href="#s1" class="active" title="Title"></a>
   <a href="#s2" title="Your Stack"></a>
-  <a href="#s3" title="Golden Record"></a>
-  <a href="#s4" title="ExxonMobil Example"></a>
-  <a href="#s5" title="Solution"></a>
-  <a href="#s6" title="Impact"></a>
-  <a href="#s7" title="Next Steps"></a>
+  <a href="#s3" title="MDM 101"></a>
+  <a href="#s4" title="Data Challenges"></a>
+  <a href="#s5" title="ExxonMobil Example"></a>
+  <a href="#s6" title="Solution"></a>
+  <a href="#s7" title="Before vs. After"></a>
+  <a href="#s8" title="Close"></a>
 </nav>
 
 <!-- ═══ SLIDE 1: TITLE ═══ -->
@@ -518,8 +559,78 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
   </div>
 </section>
 
-<!-- ═══ SLIDE 3: ONPOINT CURRENT DATA CHALLENGES ═══ -->
+<!-- ═══ SLIDE 3: WHAT IS MASTER DATA? ═══ -->
 <section class="slide" id="s3">
+  <div class="stag">MDM 101</div>
+  <div class="sh">What Is Master Data?<br><em>And what isn't.</em></div>
+
+  <div class="mdm101-layout">
+
+    <!-- Left: Master Data -->
+    <div class="mdm101-section mdm101-master">
+      <div class="mdm101-sec-lbl">Governed by MDM</div>
+      <div class="mdm101-sec-title">Master Data</div>
+      <div class="mdm101-sec-desc">The core entities your business revolves around — stable, long-lived, and referenced across every system and transaction.</div>
+      <div class="entity-cards">
+        <div class="ec ec-customer">
+          <div class="ec-type">Entity · Customer</div>
+          <div class="ec-name">ExxonMobil Corporation</div>
+          <div class="ec-desc">The parent company — the "who." Referenced by every job, proposal, and invoice across all systems.</div>
+          <div class="ec-id">🏆 Golden Record · OP-CUST-00042</div>
+        </div>
+        <div class="ec ec-site">
+          <div class="ec-type">Entity · Site / Location</div>
+          <div class="ec-name">Baytown Refinery</div>
+          <div class="ec-desc">The physical location — the "where." Child of ExxonMobil. Every job at this site links to this record.</div>
+          <div class="ec-id">📍 Site Record · OP-SITE-00042-01</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Transactional Data -->
+    <div class="mdm101-section mdm101-txn">
+      <div class="mdm101-sec-lbl">Linked to master data · Not mastered by MDM</div>
+      <div class="mdm101-sec-title">Transactional Data</div>
+      <div class="mdm101-sec-desc">Events that happen once and reference master entities by ID — MDM doesn't manage these directly, but links them cleanly so they become reportable.</div>
+      <div class="txn-cards">
+        <div class="txn">
+          <div class="txn-ico">🔧</div>
+          <div>
+            <div class="txn-type">Job</div>
+            <div class="txn-name">2026 FCC Turnaround</div>
+            <div class="txn-link">Links to → <strong>Baytown Refinery (OP-SITE-00042-01)</strong></div>
+          </div>
+        </div>
+        <div class="txn">
+          <div class="txn-ico">📄</div>
+          <div>
+            <div class="txn-type">Proposal</div>
+            <div class="txn-name">2026 Ventilation Quote</div>
+            <div class="txn-link">Links to → <strong>ExxonMobil Corporation (OP-CUST-00042)</strong></div>
+          </div>
+        </div>
+        <div class="txn">
+          <div class="txn-ico">💵</div>
+          <div>
+            <div class="txn-type">Invoice</div>
+            <div class="txn-name">Invoice #2026-15-0041</div>
+            <div class="txn-link">Links to → <strong>Baytown Refinery (OP-SITE-00042-01)</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mdm101-callout">
+    <div class="mdm101-callout-icon">💡</div>
+    <div class="mdm101-callout-text">When the master record is governed, <em>every transaction linked to it becomes instantly reportable</em> — across Salesforce, Workday, and Cash Collections.</div>
+  </div>
+
+</section>
+
+<!-- ═══ SLIDE 4: ONPOINT CURRENT DATA CHALLENGES ═══ -->
+<section class="slide" id="s4">
   <div class="stag">OnPoint Current Data Challenges</div>
   <div class="sh">Three Workflows That Break<br>Without Governed Master Data.</div>
   <div class="tabs">
@@ -692,8 +803,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
   </div>
 </section>
 
-<!-- ═══ SLIDE 4: DATA CHALLENGE EXAMPLE ═══ -->
-<section class="slide" id="s4">
+<!-- ═══ SLIDE 5: DATA CHALLENGE EXAMPLE ═══ -->
+<section class="slide" id="s5">
   <div class="stag">ExxonMobil in the Cash Collections System</div>
   <div class="sh">Data Challenge Example</div>
 
@@ -895,8 +1006,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
   </div>
 </section>
 
-<!-- ═══ SLIDE 5: SOLUTION ═══ -->
-<section class="slide" id="s5">
+<!-- ═══ SLIDE 6: SOLUTION ═══ -->
+<section class="slide" id="s6">
   <div class="stag">The Solution</div>
   <div class="sh">MDM: The Governed Bridge<br>Between Quote and Cash.</div>
 
@@ -1013,8 +1124,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
   </div>
 </section>
 
-<!-- ═══ SLIDE 6: BEFORE/AFTER ═══ -->
-<section class="slide" id="s6">
+<!-- ═══ SLIDE 7: BEFORE/AFTER ═══ -->
+<section class="slide" id="s7">
   <div class="stag">Impact</div>
   <div class="sh">Before vs. After</div>
   <div class="toggle-bar">
@@ -1059,8 +1170,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
   </div>
 </section>
 
-<!-- ═══ SLIDE 7: CLOSE ═══ -->
-<section class="slide" id="s7">
+<!-- ═══ SLIDE 8: CLOSE ═══ -->
+<section class="slide" id="s8">
   <div class="stag" style="color:rgba(255,255,255,.32);">The Bottom Line</div>
   <div class="sh" style="color:#fff;margin-bottom:32px;">Built for your exit. Built for your stack.</div>
   <div class="qbox">"MDM gives OnPoint one governed Golden Record — from the first quote in Salesforce to the final actuals in Workday — so every management meeting with MML Capital's buyer starts with the same clean answer."</div>
@@ -1068,7 +1179,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--of);color:var(
 
 <script>
 // Nav dots
-const sids=['s1','s2','s3','s4','s5','s6','s7'];
+const sids=['s1','s2','s3','s4','s5','s6','s7','s8'];
 const nls=document.querySelectorAll('.nav a');
 window.addEventListener('scroll',()=>{
   let c=0;
